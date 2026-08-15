@@ -1,0 +1,106 @@
+PHOTOS DES ÉQUIPEMENTS DE LA BOUTIQUE
+=====================================
+
+Les cartes de boutique.html acceptent deux visuels, dans cet ordre de
+priorité :
+
+  1. une PHOTO déposée dans ce dossier — elle prime toujours ;
+  2. à défaut, un DESSIN vectoriel intégré à la page (voir
+     scripts/illustrations-boutique.js).
+
+Une carte porte l'un ou l'autre, jamais les deux, jamais aucun. Le contrôle
+de conformité le vérifie.
+
+
+AJOUTER UNE PHOTO
+-----------------
+
+1. Nommer le fichier avec le NOM EXACT du produit tel qu'il apparaît dans
+   la carte, sous <h3 class="apt-product__name"> :
+
+       Dell PowerEdge R760.jpg
+       Synology DiskStation DS224+.jpg
+
+   C'est ce nom qui fait la correspondance. Le fichier est ensuite renommé
+   automatiquement en minuscules sans accents (dell-poweredge-r760.jpg).
+
+   La casse, les espaces en trop et le type d'apostrophe sont tolérés. Les
+   accents aussi : macOS enregistre les noms de fichiers en Unicode
+   décomposé (le « ô » y est un « o » suivi d'un accent séparé) alors que
+   le HTML porte le caractère composé — deux suites d'octets différentes
+   pour un affichage identique. Le script ramène les deux à la même forme.
+
+2. Le déposer dans le dossier photos/ du projet source — pas dans
+   l'archive de déploiement, qui ne contient que ce qui part sur le
+   serveur. La racine du projet est également acceptée, le temps d'un
+   téléchargement, mais photos/ est l'emplacement de rangement. Puis :
+
+       node scripts/photos-produits.js
+
+   Le script copie le fichier, le renomme, insère la balise dans
+   boutique.html et pose les dimensions réelles mesurées sur l'image.
+   Il affiche ensuite la liste de ce qui manque encore, avec le nom de
+   fichier attendu pour chaque produit — il n'y a donc rien à deviner.
+
+3. Vérifier le rendu à l'écran.
+
+Le script est IDEMPOTENT et RÉVERSIBLE : relancez-le autant que voulu, et
+si vous retirez une photo du dossier source, la carte reprend son dessin
+vectoriel et le fichier devenu inutile est supprimé. Les deux
+comportements ont été testés.
+
+
+CE QUI FAIT UNE BONNE PHOTO ICI
+-------------------------------
+
+  - Fond BLANC uni. La feuille de style applique `mix-blend-mode: multiply`,
+    qui fait disparaître ce blanc dans le gris du panneau : la photo paraît
+    posée dessus, sans le rectangle blanc qui trahirait un détourage
+    approximatif. Une photo sur fond coloré ou en situation ne bénéficiera
+    pas de cet effet et se verra encadrée.
+  - Largeur d'au moins 600 px. Les cartes font environ 300 px de large ;
+    600 px couvrent les écrans à haute densité.
+  - Le produit centré, avec un peu d'air autour.
+
+Les attributs width et height de chaque balise doivent correspondre aux
+dimensions réelles du fichier : c'est ce qui réserve la place avant le
+chargement et évite que la page ne saute. Le contrôle de conformité
+compare les valeurs déclarées aux dimensions mesurées et échoue en cas
+d'écart.
+
+
+DROITS
+------
+
+Les photos présentes ici ont été FOURNIES PAR L'ENTREPRISE. Les images de
+produits appartiennent à leurs constructeurs et ne sont pas librement
+réutilisables : elles s'obtiennent auprès des portails partenaires (Dell,
+HP, Lenovo, Cisco…), qui les mettent à disposition de leurs revendeurs
+agréés. S'assurer de disposer de ce droit avant d'en ajouter d'autres.
+
+Une recherche de photos sous licence libre a été menée pour les 21 produits
+du catalogue : 13 n'en ont aucune, et les rares correspondances portaient
+sur d'autres générations de matériel (un ProLiant DL380 G6 de 2009 pour un
+Gen11 de 2023). D'où le dessin vectoriel comme repli — montrer au client un
+matériel qui n'est pas celui décrit serait plus dommageable qu'une
+illustration.
+
+
+VÉRIFIER CE QUE MONTRE LA PHOTO, PAS SEULEMENT SON NOM
+------------------------------------------------------
+
+Le script rapproche un fichier d'une carte par le NOM. Il ne sait pas ce
+que l'image contient. Une photo correctement nommée peut représenter tout
+autre chose — c'est arrivé sur plusieurs fichiers de la première série :
+
+  - « Dell PowerEdge R760 » montrait trois tiroirs de disque vides ;
+  - « Synology DiskStation DS224+ » montrait un NAS TerraMaster, marque
+    concurrente, avec son logo bien lisible ;
+  - « Dell PowerVault ME5 » montrait un bloc d'alimentation 230 W ;
+  - « Lenovo ThinkSystem ST250 » montrait une ThinkStation — le mot est
+    écrit sur la façade, à côté d'un titre qui dit ThinkSystem.
+
+Ces défauts ne se voient qu'à l'écran. Donc : après chaque exécution,
+REGARDEZ la page. Et méfiez-vous des visuels marchands (une photo HP
+portait la mention « 3 mois de forfait Instant Ink gratuits » : sur notre
+site, cette promotion paraîtrait venir de nous).

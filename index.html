@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Signale que JavaScript est actif : les blocs animés ne sont masqués que dans ce cas. -->
+  <script>document.documentElement.classList.add('js');</script>
+  <title>Aquila Prime Technologies — Services IT à Ouagadougou</title>
+  <meta name="description" content="Expert IT à Ouagadougou : infogérance, cloud, cybersécurité, formation. Partenaire stratégique de votre transformation numérique en Afrique. Devis gratuit.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://aquilaprimetech.com/">
+
+  <!-- Favicons (site/assets/img/logo/ — ne pas modifier les fichiers sources) -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/logo/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/img/logo/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/logo/favicon-180.png">
+
+  <!-- Préchargement des polices critiques (au-dessus de la ligne de flottaison) -->
+  <link rel="preload" href="assets/fonts/montserrat-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Feuilles de styles : tokens puis composants (deux balises distinctes, cf. DESIGN-SYSTEM.md §0) -->
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Aquila Prime Technologies">
+  <meta property="og:url" content="https://aquilaprimetech.com/">
+  <meta property="og:title" content="Aquila Prime Technologies — Services IT à Ouagadougou">
+  <meta property="og:description" content="Expert IT à Ouagadougou : infogérance, cloud, cybersécurité, formation. Partenaire stratégique de votre transformation numérique en Afrique.">
+  <!-- Image de partage : logo par défaut en attendant un visuel dédié.
+       À COMPLÉTER PAR LE CLIENT : image Open Graph 1200×630 dédiée (assets/img/og-image-default.png) -->
+  <meta property="og:image" content="https://aquilaprimetech.com/assets/img/logo/logo-couleur.png">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="394">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aquila Prime Technologies — Services IT à Ouagadougou">
+  <meta name="twitter:description" content="Expert IT à Ouagadougou : infogérance, cloud, cybersécurité, formation. Partenaire stratégique de votre transformation numérique.">
+  <meta name="twitter:image" content="https://aquilaprimetech.com/assets/img/logo/logo-couleur.png">
+
+  <!-- JSON-LD : Organization + LocalBusiness (coordonnées vérifiées, brief §1) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness"],
+    "name": "Aquila Prime Technologies",
+    "url": "https://aquilaprimetech.com/",
+    "logo": "https://aquilaprimetech.com/assets/img/logo/logo-couleur.png",
+    "description": "Partenaire stratégique en solutions technologiques pour entreprises : infogérance, cloud, cybersécurité, formation. Basé à Ouagadougou, Burkina Faso.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Secteur 38",
+      "addressLocality": "Ouagadougou",
+      "addressCountry": "BF"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+226-02-21-53-53",
+        "email": "info@aquilaprimetech.com",
+        "availableLanguage": "French"
+      },
+      {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+226-04-44-69-69",
+        "availableLanguage": "French"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD : WebSite (accueil uniquement) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Aquila Prime Technologies",
+    "url": "https://aquilaprimetech.com/",
+    "inLanguage": "fr-FR"
+  }
+  </script>
+</head>
+<body>
+  <a class="apt-skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <!-- ==================================================================
+       EN-TÊTE (identique sur toutes les pages — voir brief/PATTERN-PAGE.md)
+       ================================================================== -->
+  <header class="apt-header" data-header>
+    <div class="apt-container apt-header__inner">
+      <a href="index.html" class="apt-header__brand apt-logo-protect" aria-label="Aquila Prime Technologies — accueil">
+        <img src="assets/img/logo/logo-couleur.png" alt="Aquila Prime Technologies"
+             class="apt-header__logo" width="220" height="54" loading="eager">
+      </a>
+
+      <nav class="apt-nav" aria-label="Navigation principale">
+        <ul class="apt-nav__list">
+          <li><a href="index.html" aria-current="page">Accueil</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li class="apt-nav__item--has-mega">
+            <button class="apt-nav__trigger" aria-expanded="false" aria-controls="mega-services">
+              Services
+              <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+
+            <div id="mega-services" class="apt-mega" role="menu" hidden>
+              <div class="apt-container apt-mega__inner">
+                <ul class="apt-mega__grid" role="none">
+                  <li role="none">
+                    <a role="menuitem" href="services/vente-materiels-informatiques.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg>
+                      <span><strong>Vente de Matériels Informatiques</strong><small>Équipements dernière génération</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/infogerance.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+                      <span><strong>Infogérance</strong><small>Gestion IT externalisée</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/cloud-computing.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.96A5 5 0 0 1 16.9 8.05 4.5 4.5 0 0 1 16.5 18H7Z"/><path d="M12 15V9M9 12l3-3 3 3"/></svg>
+                      <span><strong>Cloud Computing</strong><small>Données accessibles et sécurisées</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/cyber-securite.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+                      <span><strong>Cyber Sécurité</strong><small>Protection contre les cybermenaces</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/technologies-energie.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M13 7l-4 6h3l-1 4 5-6h-3l1-4Z"/></svg>
+                      <span><strong>Nouvelles Technologies de l'Énergie</strong><small>Transition énergétique d'entreprise</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/consultation-formation.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-3 2.5-5 5-5s5 2 5 5"/><path d="M16 6h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1l-2 2v-2h-1a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"/></svg>
+                      <span><strong>Consultation &amp; Formation</strong><small>Renforcement des compétences</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/audit-conformite.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M9 12l2 2 4-4"/></svg>
+                      <span><strong>Audit &amp; Conformité</strong><small>Contrôle et conformité aux normes</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/ingenierie-systeme.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1"/><rect x="3" y="10" width="18" height="5" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/><path d="M6 6.5h.01M6 12.5h.01"/></svg>
+                      <span><strong>Ingénierie Système</strong><small>Infrastructure informatique fiable</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/ingenierie-reseau.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="12" cy="11" r="2"/><path d="M7.5 7l3 3M16.5 7l-3 3M12 13v3"/></svg>
+                      <span><strong>Ingénierie Réseau</strong><small>Réseaux locaux et interconnectés</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/ingenierie-logicielle.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13 6l-2 12"/></svg>
+                      <span><strong>Ingénierie Logicielle</strong><small>Applications et logiciels sur mesure</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/business-intelligence.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V6M16 20V13M4 20h16"/><path d="M4 9l6-3 6 4 4-3"/></svg>
+                      <span><strong>Business Intelligence</strong><small>Données, indicateurs, tableaux de bord</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/sauvegarde-reprise-sinistre.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 1 2.5 5.8"/><path d="M4 17v-4h4"/><circle cx="12" cy="12" r="2.5"/></svg>
+                      <span><strong>Sauvegarde &amp; Reprise après Sinistre</strong><small>Continuité de votre activité</small></span>
+                    </a>
+                  </li>
+                </ul>
+                <a href="services.html" class="apt-mega__all">
+                  Tous nos services
+                  <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="academy.html">Academy</a></li>
+          <li><a href="partenaires.html">Partenaires</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="contact.html" class="apt-btn apt-btn--primary apt-header__cta">Demander un devis</a>
+      <button class="apt-nav__burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu mobile plein écran -->
+  <div id="mobile-menu" class="apt-mobile-menu" hidden>
+    <div class="apt-container apt-mobile-menu__head">
+      <a href="index.html" class="apt-header__brand apt-logo-protect" aria-label="Aquila Prime Technologies — accueil">
+        <img src="assets/img/logo/logo-couleur.png" alt="Aquila Prime Technologies"
+             class="apt-header__logo" width="220" height="54" loading="lazy">
+      </a>
+      <button class="apt-mobile-menu__close" aria-label="Fermer le menu" data-menu-close>
+        <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ul class="apt-mobile-menu__list">
+      <li><a href="index.html" aria-current="page">Accueil</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li>
+        <button class="apt-mobile-menu__sub-trigger" aria-expanded="false" aria-controls="mobile-services">
+          Services
+          <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul id="mobile-services" class="apt-mobile-menu__sub" hidden>
+          <li><a href="services/vente-materiels-informatiques.html">Vente de Matériels Informatiques</a></li>
+          <li><a href="services/infogerance.html">Infogérance</a></li>
+          <li><a href="services/cloud-computing.html">Cloud Computing</a></li>
+          <li><a href="services/cyber-securite.html">Cyber Sécurité</a></li>
+          <li><a href="services/technologies-energie.html">Nouvelles Technologies de l'Énergie</a></li>
+          <li><a href="services/consultation-formation.html">Consultation &amp; Formation</a></li>
+          <li><a href="services/audit-conformite.html">Audit &amp; Conformité</a></li>
+          <li><a href="services/ingenierie-systeme.html">Ingénierie Système</a></li>
+          <li><a href="services/ingenierie-reseau.html">Ingénierie Réseau</a></li>
+          <li><a href="services/ingenierie-logicielle.html">Ingénierie Logicielle</a></li>
+          <li><a href="services/business-intelligence.html">Business Intelligence</a></li>
+          <li><a href="services/sauvegarde-reprise-sinistre.html">Sauvegarde &amp; Reprise après Sinistre</a></li>
+          <li><a href="services.html">Tous nos services</a></li>
+        </ul>
+      </li>
+      <li><a href="boutique.html">Boutique</a></li>
+      <li><a href="academy.html">Academy</a></li>
+      <li><a href="partenaires.html">Partenaires</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="apt-container">
+      <a href="contact.html" class="apt-btn apt-btn--primary apt-btn--block apt-mobile-menu__cta">Demander un devis</a>
+    </div>
+  </div>
+
+  <main id="contenu">
+
+    <!-- ================================================================
+         HERO D'ACCUEIL
+         ================================================================ -->
+    <section class="apt-hero--home">
+      <svg class="apt-pattern-feathers" viewBox="0 0 400 400" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5">
+          <path d="M40 360C120 320 160 240 150 120" />
+          <path d="M80 370C150 330 185 250 175 130" />
+          <path d="M120 375C185 340 210 260 200 140" />
+          <path d="M160 378C215 345 235 270 225 150" />
+          <path d="M200 380C245 350 260 280 250 160" />
+        </g>
+      </svg>
+      <div class="apt-container apt-hero__grid">
+        <div>
+          <span class="apt-eyebrow apt-hero__eyebrow">Solutions technologiques pour entreprises</span>
+          <h1>Vos défis technologiques, résolus. Votre croissance, sécurisée.</h1>
+          <p class="apt-hero__lead">Basée à Ouagadougou et appuyée par un réseau de partenaires internationaux, Aquila Prime Technologies accompagne entreprises, banques, télécoms, ONG et administrations dans leurs projets IT — du matériel à la cybersécurité, en passant par le cloud et la formation.</p>
+          <div class="apt-hero__actions">
+            <a href="contact.html" class="apt-btn apt-btn--primary">Demander un devis</a>
+            <a href="services.html" class="apt-btn apt-btn--secondary">
+              Découvrir nos services
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+        <!-- À COMPLÉTER PAR LE CLIENT : photo hero (équipe, site, ou illustration) — remplace la composition graphique ci-dessous -->
+        <div class="apt-hero__visual" aria-hidden="true">
+          <span class="apt-split__ring apt-hero__visual apt-split__ring--1"></span>
+          <span class="apt-split__ring apt-hero__visual apt-split__ring--2"></span>
+          <span class="apt-hero__glyph">
+            <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="12" cy="11" r="2"/><path d="M7.5 7l3 3M16.5 7l-3 3M12 13v3"/></svg>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         GRILLE DES 12 SERVICES
+         ================================================================ -->
+    <section class="apt-section">
+      <div class="apt-container">
+        <div class="apt-section__head apt-section__head--center">
+          <span class="apt-eyebrow">Nos services</span>
+          <h2>Une expertise complète, pour chaque défi technologique de votre entreprise</h2>
+          <p class="apt-section__intro">Douze domaines d'expertise, un seul interlocuteur pour l'ensemble de vos besoins technologiques.</p>
+        </div>
+
+        <div class="apt-grid-3">
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Vente de Matériels Informatiques</h3>
+            <p class="apt-card-service__text">Des équipements informatiques de haute qualité, sélectionnés parmi les toutes dernières innovations technologiques disponibles.</p>
+            <a href="services/vente-materiels-informatiques.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Infogérance</h3>
+            <p class="apt-card-service__text">Une équipe d'experts prend en charge la gestion complète de votre système informatique, en toute sécurité et fiabilité.</p>
+            <a href="services/infogerance.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.96A5 5 0 0 1 16.9 8.05 4.5 4.5 0 0 1 16.5 18H7Z"/><path d="M12 15V9M9 12l3-3 3 3"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Cloud Computing</h3>
+            <p class="apt-card-service__text">Accédez rapidement à vos données délocalisées, sans supporter les coûts élevés d'une infrastructure à construire vous-même.</p>
+            <a href="services/cloud-computing.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Cyber Sécurité</h3>
+            <p class="apt-card-service__text">Protégez vos systèmes, réseaux et données sensibles contre les cybermenaces grâce à notre expertise dédiée.</p>
+            <a href="services/cyber-securite.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M13 7l-4 6h3l-1 4 5-6h-3l1-4Z"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Nouvelles Technologies de l'Énergie</h3>
+            <p class="apt-card-service__text">Des solutions technologiques pour accompagner votre transition vers une énergie plus propre et renouvelable.</p>
+            <a href="services/technologies-energie.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-3 2.5-5 5-5s5 2 5 5"/><path d="M16 6h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1l-2 2v-2h-1a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Consultation &amp; Formation</h3>
+            <p class="apt-card-service__text">Grâce à un réseau de partenaires internationaux, nous renforçons durablement les compétences technologiques de vos équipes.</p>
+            <a href="services/consultation-formation.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Audit &amp; Conformité</h3>
+            <p class="apt-card-service__text">Nous contrôlons et évaluons vos processus internes pour garantir leur conformité aux normes en vigueur.</p>
+            <a href="services/audit-conformite.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1"/><rect x="3" y="10" width="18" height="5" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/><path d="M6 6.5h.01M6 12.5h.01"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Ingénierie Système</h3>
+            <p class="apt-card-service__text">Conception, déploiement et maintenance de votre infrastructure informatique, quel qu'en soit le type.</p>
+            <a href="services/ingenierie-systeme.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="12" cy="11" r="2"/><path d="M7.5 7l3 3M16.5 7l-3 3M12 13v3"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Ingénierie Réseau</h3>
+            <p class="apt-card-service__text">Analyse, conception, déploiement et sécurisation de vos réseaux locaux comme interconnectés, pour des connexions fiables.</p>
+            <a href="services/ingenierie-reseau.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13 6l-2 12"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Ingénierie Logicielle</h3>
+            <p class="apt-card-service__text">Conception, développement et maintenance de vos sites web, applications mobiles et logiciels de gestion sur mesure.</p>
+            <a href="services/ingenierie-logicielle.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V6M16 20V13M4 20h16"/><path d="M4 9l6-3 6 4 4-3"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Business Intelligence</h3>
+            <p class="apt-card-service__text">Une analyse approfondie de vos données pour des indicateurs pertinents et des tableaux de bord réellement utiles.</p>
+            <a href="services/business-intelligence.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 1 2.5 5.8"/><path d="M4 17v-4h4"/><circle cx="12" cy="12" r="2.5"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Sauvegarde &amp; Reprise après Sinistre</h3>
+            <p class="apt-card-service__text">Une gestion rigoureuse de la sauvegarde, des tests et de la restauration, pour la continuité de votre activité.</p>
+            <a href="services/sauvegarde-reprise-sinistre.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         DEUX CARTES EN VEDETTE
+         ================================================================ -->
+    <section class="apt-section apt-section--alt">
+      <div class="apt-container apt-grid-2">
+        <!-- À COMPLÉTER PAR LE CLIENT : visuel dédié pour cette carte -->
+        <article class="apt-card-feature apt-bg-gradient-brand" data-reveal>
+          <svg class="apt-card-feature__pattern" viewBox="0 0 400 400" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5">
+              <path d="M40 360C120 320 160 240 150 120" />
+              <path d="M80 370C150 330 185 250 175 130" />
+              <path d="M120 375C185 340 210 260 200 140" />
+            </g>
+          </svg>
+          <div class="apt-card-feature__content">
+            <span class="apt-eyebrow apt-eyebrow--inverse">Sécurité</span>
+            <h3>Sécurisez votre activité, en toute confiance</h3>
+            <p>Cybersécurité, sauvegarde et reprise après sinistre : nous protégeons vos systèmes et vos données pour que votre activité ne s'arrête jamais.</p>
+            <a href="services/cyber-securite.html" class="apt-btn apt-btn--secondary apt-btn--on-dark">Découvrir nos solutions de sécurité</a>
+          </div>
+        </article>
+
+        <!-- À COMPLÉTER PAR LE CLIENT : visuel dédié pour cette carte -->
+        <article class="apt-card-feature apt-bg-gradient-brand" data-reveal>
+          <svg class="apt-card-feature__pattern" viewBox="0 0 400 400" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5">
+              <path d="M160 378C215 345 235 270 225 150" />
+              <path d="M200 380C245 350 260 280 250 160" />
+              <path d="M240 375C275 348 290 285 280 175" />
+            </g>
+          </svg>
+          <div class="apt-card-feature__content">
+            <span class="apt-eyebrow apt-eyebrow--inverse">Transformation numérique</span>
+            <h3>Accélérez votre transformation numérique</h3>
+            <p>Cloud, ingénierie logicielle et business intelligence : nous vous aidons à moderniser vos outils et à mieux exploiter vos données.</p>
+            <a href="services/cloud-computing.html" class="apt-btn apt-btn--secondary apt-btn--on-dark">Explorer nos solutions cloud</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         POURQUOI AQUILA (BLOC TEXTE + VISUEL)
+         ================================================================ -->
+    <section class="apt-section">
+      <div class="apt-container">
+        <div class="apt-split">
+          <div class="apt-split__text" data-reveal>
+            <span class="apt-eyebrow">Pourquoi Aquila</span>
+            <h2>Pourquoi choisir Aquila Prime Technologies&nbsp;?</h2>
+            <p>Aquila Prime Technologies se positionne comme un partenaire stratégique pour les entreprises confrontées aux défis technologiques d'aujourd'hui. Là où il faut maintenir une qualité de service irréprochable, maîtriser des coûts opérationnels élevés et sécuriser des investissements souvent incertains, nous apportons des solutions concrètes, fiables et durables — pour que vous puissiez vous concentrer sur votre cœur de métier.</p>
+            <ul class="apt-check-list">
+              <li><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Un interlocuteur unique pour l'ensemble de vos besoins technologiques.</li>
+              <li><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Un réseau de partenaires technologiques et de formateurs internationaux.</li>
+              <li><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Des solutions pensées pour la sécurité et la continuité de votre activité.</li>
+              <li><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Un accompagnement humain, du premier diagnostic jusqu'au support.</li>
+            </ul>
+            <a href="a-propos.html" class="apt-btn apt-btn--primary">En savoir plus sur Aquila</a>
+          </div>
+          <!-- À COMPLÉTER PAR LE CLIENT : photo équipe ou bureaux -->
+          <div class="apt-split__visual" data-reveal aria-hidden="true">
+            <svg class="apt-pattern-feathers" viewBox="0 0 400 400" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5">
+                <path d="M40 360C120 320 160 240 150 120" />
+                <path d="M80 370C150 330 185 250 175 130" />
+                <path d="M120 375C185 340 210 260 200 140" />
+              </g>
+            </svg>
+            <span class="apt-split__ring"></span>
+            <span class="apt-split__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         NOTRE MÉTHODE (4 ÉTAPES)
+         ================================================================ -->
+    <section class="apt-section apt-section--alt">
+      <div class="apt-container">
+        <div class="apt-section__head apt-section__head--center">
+          <span class="apt-eyebrow">Notre méthode</span>
+          <h2>Notre méthode, en quatre étapes claires</h2>
+        </div>
+        <ol class="apt-timeline">
+          <li class="apt-timeline__step" data-reveal>
+            <span class="apt-timeline__index">01</span>
+            <h3>Écoute &amp; audit</h3>
+            <p>Nous prenons le temps de comprendre votre activité, vos contraintes et vos objectifs avant de poser le moindre diagnostic technique.</p>
+          </li>
+          <li class="apt-timeline__step" data-reveal>
+            <span class="apt-timeline__index">02</span>
+            <h3>Conception</h3>
+            <p>Nous concevons une solution adaptée à votre contexte, en combinant fiabilité, sécurité et maîtrise des coûts sur le long terme.</p>
+          </li>
+          <li class="apt-timeline__step" data-reveal>
+            <span class="apt-timeline__index">03</span>
+            <h3>Déploiement</h3>
+            <p>Nos équipes déploient la solution retenue avec rigueur, en limitant les interruptions et en sécurisant chaque étape du projet.</p>
+          </li>
+          <li class="apt-timeline__step" data-reveal>
+            <span class="apt-timeline__index">04</span>
+            <h3>Accompagnement &amp; support</h3>
+            <p>Notre relation ne s'arrête pas à la livraison : nous restons à vos côtés pour le suivi et le support continu.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         COMPTEURS CHIFFRÉS (fond sombre)
+         ================================================================ -->
+    <section class="apt-section apt-section--dark">
+      <div class="apt-container">
+        <div class="apt-grid-4 apt-counters">
+          <div class="apt-counter" data-counter data-count-to="12">
+            <span class="apt-counter__value"><span data-counter-target>12</span></span>
+            <span class="apt-counter__label">domaines d'expertise couverts</span>
+          </div>
+          <div class="apt-counter" data-counter data-count-to="12">
+            <span class="apt-counter__value"><span data-counter-target>12</span></span>
+            <span class="apt-counter__label">partenaires technologiques</span>
+          </div>
+          <div class="apt-counter" data-counter data-count-to="9">
+            <span class="apt-counter__value"><span data-counter-target>9</span>+</span>
+            <span class="apt-counter__label">certifications préparées via Aquila Academy</span>
+          </div>
+          <div class="apt-counter" data-counter data-count-to="8">
+            <span class="apt-counter__value"><span data-counter-target>8</span>+</span>
+            <span class="apt-counter__label">pays dans notre réseau de partenaires</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         NOS ENGAGEMENTS
+         ================================================================ -->
+    <section class="apt-section apt-section--alt">
+      <div class="apt-container">
+        <div class="apt-section__head apt-section__head--center">
+          <span class="apt-eyebrow">Nos engagements</span>
+          <h2>Nos engagements envers vous</h2>
+          <p class="apt-section__intro">Nous ne promettons pas l'impossible. Voici ce sur quoi vous pouvez compter.</p>
+        </div>
+        <div class="apt-grid-3">
+          <article class="apt-commitment" data-reveal>
+            <span class="apt-commitment__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+            <h3>Fiabilité</h3>
+            <p>Nous privilégions des solutions robustes et éprouvées, adaptées à la réalité de votre activité, plutôt que des promesses fragiles.</p>
+          </article>
+          <article class="apt-commitment" data-reveal>
+            <span class="apt-commitment__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg>
+            </span>
+            <h3>Sécurité</h3>
+            <p>Nous protégeons vos systèmes et vos données avec la même rigueur que s'il s'agissait des nôtres.</p>
+          </article>
+          <article class="apt-commitment" data-reveal>
+            <span class="apt-commitment__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            </span>
+            <h3>Transparence</h3>
+            <p>Nous vous informons clairement à chaque étape, sans jargon inutile ni surprise en cours de projet.</p>
+          </article>
+          <article class="apt-commitment" data-reveal>
+            <span class="apt-commitment__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </span>
+            <h3>Proximité</h3>
+            <p>Nous restons joignables et disponibles, à Ouagadougou comme partout où vos activités vous mènent.</p>
+          </article>
+          <article class="apt-commitment" data-reveal>
+            <span class="apt-commitment__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <h3>Intégrité</h3>
+            <p>Nous vous recommandons la solution la plus adaptée à votre besoin, même lorsqu'elle n'est pas la plus coûteuse.</p>
+          </article>
+          <article class="apt-commitment" data-reveal>
+            <span class="apt-commitment__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3 11v2h6v-2a6 6 0 0 0-3-11Z"/></svg>
+            </span>
+            <h3>Innovation</h3>
+            <p>Nous restons en veille sur les technologies qui comptent, pour vous proposer des solutions pertinentes, pas seulement à la mode.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         NOS DOMAINES D'EXPERTISE (3 SERVICES PHARES)
+         ================================================================ -->
+    <section class="apt-section">
+      <div class="apt-container">
+        <div class="apt-section__head apt-section__head--center">
+          <span class="apt-eyebrow">Domaines phares</span>
+          <h2>Trois domaines d'expertise au cœur de vos priorités</h2>
+        </div>
+        <div class="apt-grid-3">
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Cyber Sécurité</h3>
+            <p class="apt-card-service__text">Protégez vos systèmes, réseaux et données sensibles contre les cybermenaces grâce à notre expertise dédiée.</p>
+            <a href="services/cyber-securite.html" class="apt-btn apt-btn--tertiary">Découvrir ce domaine
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Infogérance</h3>
+            <p class="apt-card-service__text">Confiez-nous la gestion complète de votre système informatique&nbsp;: notre équipe d'experts s'en occupe, en toute sécurité et fiabilité.</p>
+            <a href="services/infogerance.html" class="apt-btn apt-btn--tertiary">Découvrir ce domaine
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.96A5 5 0 0 1 16.9 8.05 4.5 4.5 0 0 1 16.5 18H7Z"/><path d="M12 15V9M9 12l3-3 3 3"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Cloud Computing</h3>
+            <p class="apt-card-service__text">Accédez rapidement à vos données délocalisées, sans supporter les coûts élevés d'une infrastructure à construire vous-même.</p>
+            <a href="services/cloud-computing.html" class="apt-btn apt-btn--tertiary">Découvrir ce domaine
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         AQUILA ACADEMY
+         ================================================================ -->
+    <section class="apt-section apt-section--dark">
+      <div class="apt-container">
+        <div class="apt-section__head apt-section__head--center">
+          <span class="apt-eyebrow">Aquila Academy</span>
+          <h2>Aquila Academy&nbsp;: formations et certifications professionnelles</h2>
+          <p class="apt-section__intro">Grâce à nos partenaires, nous vous accompagnons dans tous vos besoins en matière de certifications. Vos équipes se préparent aux certifications les plus reconnues du secteur, avec l'appui d'un réseau de formateurs présents dans plusieurs pays.</p>
+        </div>
+        <ul class="apt-badges apt-cards-center">
+          <li class="apt-badge" data-reveal data-logo="microsoft" data-logo-dir="certifications"><img src="assets/img/certifications/microsoft.svg" alt="" loading="lazy" class="apt-badge__logo"><span class="apt-badge__label">Microsoft</span></li>
+          <li class="apt-badge" data-reveal data-logo="cisco" data-logo-dir="certifications"><img src="assets/img/certifications/cisco.svg" alt="" loading="lazy" class="apt-badge__logo"><span class="apt-badge__label">Cisco</span></li>
+          <li class="apt-badge" data-reveal data-logo="iso" data-logo-dir="certifications"><img src="assets/img/certifications/iso.svg" alt="" loading="lazy" class="apt-badge__logo"><span class="apt-badge__label">ISO</span></li>
+          <li class="apt-badge" data-reveal data-logo="ibm" data-logo-dir="certifications"><img src="assets/img/certifications/ibm.svg" alt="" loading="lazy" class="apt-badge__logo"><span class="apt-badge__label">IBM</span></li>
+          <li class="apt-badge" data-reveal data-logo="itil" data-logo-dir="certifications"><span class="apt-badge__mark apt-badge__mark--itil" aria-hidden="true"><svg class="apt-badge__emblem" viewBox="0 0 32 32" aria-hidden="true"><path d="M27 16a11 11 0 1 1-3.6-8.1" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M24.5 3.5v6h-6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="apt-badge__wordmark">ITIL<sup>&reg;</sup></span></span><span class="apt-badge__label">ITIL</span></li>
+          <li class="apt-badge" data-reveal data-logo="prince2" data-logo-dir="certifications"><span class="apt-badge__mark apt-badge__mark--prince2" aria-hidden="true"><svg class="apt-badge__emblem" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="21" width="7.5" height="8" rx="2" fill="currentColor"/><rect x="12.25" y="14" width="7.5" height="15" rx="2" fill="currentColor" opacity=".68"/><rect x="21.5" y="5" width="7.5" height="24" rx="2" fill="currentColor" opacity="1"/></svg><span class="apt-badge__wordmark">PRINCE2<sup>&reg;</sup></span></span><span class="apt-badge__label">PRINCE2</span></li>
+          <li class="apt-badge" data-reveal data-logo="cobit" data-logo-dir="certifications"><span class="apt-badge__mark apt-badge__mark--cobit" aria-hidden="true"><svg class="apt-badge__emblem" viewBox="0 0 32 32" aria-hidden="true"><rect x="3.5" y="3.5" width="25" height="25" rx="6" fill="none" stroke="currentColor" stroke-width="3.2"/><rect x="11" y="11" width="10" height="10" rx="2.5" fill="currentColor"/></svg><span class="apt-badge__wordmark">COBIT<sup>&reg;</sup></span></span><span class="apt-badge__label">COBIT</span></li>
+          <li class="apt-badge" data-reveal data-logo="pmp" data-logo-dir="certifications"><span class="apt-badge__mark apt-badge__mark--pmp" aria-hidden="true"><svg class="apt-badge__emblem" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2.5l12 6.7v13.6L16 29.5 4 22.8V9.2z" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round"/><path d="M10.8 16.2l3.9 3.9 6.9-7.6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="apt-badge__wordmark">PMP<sup>&reg;</sup></span></span><span class="apt-badge__label">PMP</span></li>
+          <li class="apt-badge" data-reveal data-logo="oracle-java" data-logo-dir="certifications"><img src="assets/img/certifications/oracle-java.svg" alt="" loading="lazy" class="apt-badge__logo"><span class="apt-badge__label">Oracle Java</span></li>
+        </ul>
+        <p class="apt-text-center apt-mt-6 apt-text-inverse-muted">Et bien d'autres certifications préparées via nos partenaires.</p>
+        <div class="apt-text-center apt-mt-8">
+          <a href="academy.html" class="apt-btn apt-btn--secondary apt-btn--on-dark">Découvrir Aquila Academy</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         PARTENAIRES
+         ================================================================ -->
+    <section class="apt-section">
+      <div class="apt-container">
+        <div class="apt-section__head apt-section__head--center">
+          <span class="apt-eyebrow">Écosystème</span>
+          <h2>Un réseau de partenaires technologiques internationaux</h2>
+          <p class="apt-section__intro">Nous nous appuyons sur douze partenaires technologiques de premier plan pour vous garantir des solutions à la pointe, du matériel à la cybersécurité.</p>
+        </div>
+        <ul class="apt-wordmarks apt-grid-4">
+          <li class="apt-wordmark" tabindex="0" data-logo="amazon" data-logo-dir="partners"><img src="assets/img/partners/amazon.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Amazon</span></li>
+          <li class="apt-wordmark" tabindex="0" data-logo="fortinet" data-logo-dir="partners"><img src="assets/img/partners/fortinet.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Fortinet</span></li>
+          <li class="apt-wordmark" tabindex="0" data-logo="oracle" data-logo-dir="partners"><img src="assets/img/partners/oracle.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Oracle</span></li>
+          <li class="apt-wordmark" tabindex="0" data-logo="cisco" data-logo-dir="partners"><img src="assets/img/partners/cisco.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Cisco</span></li>
+          <li class="apt-wordmark" tabindex="0" data-logo="logitech" data-logo-dir="partners"><img src="assets/img/partners/logitech.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Logitech</span></li>
+          <li class="apt-wordmark" tabindex="0" data-logo="dell" data-logo-dir="partners"><img src="assets/img/partners/dell.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Dell</span></li>
+          <li class="apt-wordmark" tabindex="0" data-logo="kaspersky" data-logo-dir="partners"><img src="assets/img/partners/kaspersky.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Kaspersky Lab</span></li>
+          <li class="apt-wordmark" tabindex="0" data-logo="vmware" data-logo-dir="partners"><img src="assets/img/partners/vmware.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">VMware</span></li>
+          <li class="apt-wordmark" tabindex="0" data-logo="symantec" data-logo-dir="partners"><img src="assets/img/partners/symantec.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Symantec</span></li>
+          <li class="apt-wordmark" tabindex="0" data-logo="microsoft" data-logo-dir="partners"><img src="assets/img/partners/microsoft.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Microsoft</span></li>
+          <li class="apt-wordmark" tabindex="0" data-logo="lenovo" data-logo-dir="partners"><img src="assets/img/partners/lenovo.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Lenovo</span></li>
+          <li class="apt-wordmark" tabindex="0" data-logo="hp" data-logo-dir="partners"><img src="assets/img/partners/hp.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">HP</span></li>
+        </ul>
+        <div class="apt-text-center apt-mt-8">
+          <a href="partenaires.html" class="apt-btn apt-btn--secondary">Découvrir notre écosystème de partenaires</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================
+         BANDEAU CTA FINAL
+         ================================================================ -->
+    <section class="apt-cta-final apt-bg-gradient-brand apt-section--sm">
+      <svg class="apt-pattern-feathers" viewBox="0 0 400 400" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5">
+          <path d="M40 360C120 320 160 240 150 120" />
+          <path d="M200 380C245 350 260 280 250 160" />
+        </g>
+      </svg>
+      <div class="apt-container apt-cta-final__inner">
+        <div>
+          <h2>Prêt à relever vos défis technologiques en toute sérénité&nbsp;?</h2>
+          <p class="apt-cta-final__lead">Rejoignez Aquila Prime Technologies dès aujourd'hui pour relever vos défis technologiques en toute sérénité, et laissez-nous vous guider vers un avenir numérique prometteur et prospère.</p>
+        </div>
+        <div class="apt-btn-group">
+          <a href="contact.html" class="apt-btn apt-btn--primary">Nous contacter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================================================================
+       PIED DE PAGE (identique sur toutes les pages — voir brief/PATTERN-PAGE.md)
+       ================================================================== -->
+  <footer class="apt-footer">
+    <div class="apt-container apt-footer__top">
+      <div class="apt-footer__col apt-footer__col--brand apt-logo-protect">
+        <img src="assets/img/logo/logo-blanc.png" alt="Aquila Prime Technologies" width="180" height="44" loading="lazy">
+        <p>« Connecter l'innovation à vos ambitions pour inventer demain, dès aujourd'hui »</p>
+      </div>
+      <nav class="apt-footer__col" aria-label="Nos services">
+        <h3>Nos services</h3>
+        <ul>
+          <li><a href="services/infogerance.html">Infogérance</a></li>
+          <li><a href="services/cyber-securite.html">Cyber Sécurité</a></li>
+          <li><a href="services/cloud-computing.html">Cloud Computing</a></li>
+          <li><a href="services/ingenierie-logicielle.html">Ingénierie Logicielle</a></li>
+          <li><a href="services/consultation-formation.html">Consultation &amp; Formation</a></li>
+          <li><a href="services/business-intelligence.html">Business Intelligence</a></li>
+          <li><a href="services.html">Tous nos services</a></li>
+        </ul>
+      </nav>
+      <nav class="apt-footer__col" aria-label="Entreprise">
+        <h3>Entreprise</h3>
+        <ul>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="academy.html">Aquila Academy</a></li>
+          <li><a href="partenaires.html">Partenaires</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </nav>
+      <div class="apt-footer__col" aria-label="Coordonnées">
+        <h3>Contact</h3>
+        <ul>
+          <li>Secteur 38, Ouagadougou, Burkina Faso</li>
+          <li><a href="tel:+22602215353">+226 02 21 53 53</a></li>
+          <li><a href="tel:+22604446969">+226 04 44 69 69</a></li>
+          <li><a href="mailto:info@aquilaprimetech.com">info@aquilaprimetech.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="apt-container apt-footer__bottom">
+      <p>© <span data-current-year>2026</span> Aquila Prime Technologies. Tous droits réservés.</p>
+      <p><a href="mentions-legales.html">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <button class="apt-back-to-top" aria-label="Retour en haut de page" data-back-to-top hidden>
+    <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

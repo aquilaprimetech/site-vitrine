@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Signale que JavaScript est actif : les blocs animés ne sont masqués que dans ce cas. -->
+  <script>document.documentElement.classList.add('js');</script>
+  <title>Boutique — Équipements informatiques à Ouagadougou</title>
+  <meta name="description" content="Découvrez les équipements informatiques distribués par Aquila Prime Technologies à Ouagadougou : postes de travail, serveurs, stockage, réseau, cybersécurité, énergie et périphériques. Devis sur mesure.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://aquilaprimetech.com/boutique.html">
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/logo/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/img/logo/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/logo/favicon-180.png">
+
+  <!-- Préchargement des polices critiques -->
+  <link rel="preload" href="assets/fonts/montserrat-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Aquila Prime Technologies">
+  <meta property="og:url" content="https://aquilaprimetech.com/boutique.html">
+  <meta property="og:title" content="Boutique — Équipements informatiques à Ouagadougou">
+  <meta property="og:description" content="Découvrez les équipements informatiques distribués par Aquila Prime Technologies à Ouagadougou : postes de travail, serveurs, stockage, réseau, cybersécurité, énergie et périphériques. Devis sur mesure.">
+  <!-- Image de partage : logo par défaut en attendant un visuel dédié.
+       À COMPLÉTER PAR LE CLIENT : image Open Graph 1200×630 dédiée -->
+  <meta property="og:image" content="https://aquilaprimetech.com/assets/img/logo/logo-couleur.png">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="394">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Boutique — Équipements informatiques à Ouagadougou">
+  <meta name="twitter:description" content="Découvrez les équipements informatiques distribués par Aquila Prime Technologies à Ouagadougou : postes de travail, serveurs, stockage, réseau, cybersécurité, énergie et périphériques. Devis sur mesure.">
+  <meta name="twitter:image" content="https://aquilaprimetech.com/assets/img/logo/logo-couleur.png">
+
+  <!-- JSON-LD : BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://aquilaprimetech.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Boutique", "item": "https://aquilaprimetech.com/boutique.html" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Familles d'équipements distribuées par Aquila Prime Technologies",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Ordinateurs & postes de travail", "item": "https://aquilaprimetech.com/boutique.html#postes-de-travail" },
+      { "@type": "ListItem", "position": 2, "name": "Serveurs & virtualisation", "item": "https://aquilaprimetech.com/boutique.html#serveurs" },
+      { "@type": "ListItem", "position": 3, "name": "Stockage & sauvegarde", "item": "https://aquilaprimetech.com/boutique.html#stockage" },
+      { "@type": "ListItem", "position": 4, "name": "Réseau & connectivité", "item": "https://aquilaprimetech.com/boutique.html#reseau" },
+      { "@type": "ListItem", "position": 5, "name": "Cybersécurité & vidéosurveillance", "item": "https://aquilaprimetech.com/boutique.html#securite" },
+      { "@type": "ListItem", "position": 6, "name": "Énergie & continuité de service", "item": "https://aquilaprimetech.com/boutique.html#energie" },
+      { "@type": "ListItem", "position": 7, "name": "Périphériques & collaboration", "item": "https://aquilaprimetech.com/boutique.html#peripheriques" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="apt-skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <!-- ==================================================================
+       EN-TÊTE (identique sur toutes les pages — voir brief/PATTERN-PAGE.md)
+       ================================================================== -->
+  <header class="apt-header" data-header>
+    <div class="apt-container apt-header__inner">
+      <a href="index.html" class="apt-header__brand apt-logo-protect" aria-label="Aquila Prime Technologies — accueil">
+        <img src="assets/img/logo/logo-couleur.png" alt="Aquila Prime Technologies"
+             class="apt-header__logo" width="220" height="54" loading="eager">
+      </a>
+
+      <nav class="apt-nav" aria-label="Navigation principale">
+        <ul class="apt-nav__list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li class="apt-nav__item--has-mega">
+            <button class="apt-nav__trigger" aria-expanded="false" aria-controls="mega-services">
+              Services
+              <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+
+            <div id="mega-services" class="apt-mega" role="menu" hidden>
+              <div class="apt-container apt-mega__inner">
+                <ul class="apt-mega__grid" role="none">
+                  <li role="none">
+                    <a role="menuitem" href="services/vente-materiels-informatiques.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg>
+                      <span><strong>Vente de Matériels Informatiques</strong><small>Équipements dernière génération</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/infogerance.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+                      <span><strong>Infogérance</strong><small>Gestion IT externalisée</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/cloud-computing.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.96A5 5 0 0 1 16.9 8.05 4.5 4.5 0 0 1 16.5 18H7Z"/><path d="M12 15V9M9 12l3-3 3 3"/></svg>
+                      <span><strong>Cloud Computing</strong><small>Données accessibles et sécurisées</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/cyber-securite.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+                      <span><strong>Cyber Sécurité</strong><small>Protection contre les cybermenaces</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/technologies-energie.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M13 7l-4 6h3l-1 4 5-6h-3l1-4Z"/></svg>
+                      <span><strong>Nouvelles Technologies de l'Énergie</strong><small>Transition énergétique d'entreprise</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/consultation-formation.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-3 2.5-5 5-5s5 2 5 5"/><path d="M16 6h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1l-2 2v-2h-1a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"/></svg>
+                      <span><strong>Consultation &amp; Formation</strong><small>Renforcement des compétences</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/audit-conformite.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M9 12l2 2 4-4"/></svg>
+                      <span><strong>Audit &amp; Conformité</strong><small>Contrôle et conformité aux normes</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/ingenierie-systeme.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1"/><rect x="3" y="10" width="18" height="5" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/><path d="M6 6.5h.01M6 12.5h.01"/></svg>
+                      <span><strong>Ingénierie Système</strong><small>Infrastructure informatique fiable</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/ingenierie-reseau.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="12" cy="11" r="2"/><path d="M7.5 7l3 3M16.5 7l-3 3M12 13v3"/></svg>
+                      <span><strong>Ingénierie Réseau</strong><small>Réseaux locaux et interconnectés</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/ingenierie-logicielle.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13 6l-2 12"/></svg>
+                      <span><strong>Ingénierie Logicielle</strong><small>Applications et logiciels sur mesure</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/business-intelligence.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V6M16 20V13M4 20h16"/><path d="M4 9l6-3 6 4 4-3"/></svg>
+                      <span><strong>Business Intelligence</strong><small>Données, indicateurs, tableaux de bord</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/sauvegarde-reprise-sinistre.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 1 2.5 5.8"/><path d="M4 17v-4h4"/><circle cx="12" cy="12" r="2.5"/></svg>
+                      <span><strong>Sauvegarde &amp; Reprise après Sinistre</strong><small>Continuité de votre activité</small></span>
+                    </a>
+                  </li>
+                </ul>
+                <a href="services.html" class="apt-mega__all">
+                  Tous nos services
+                  <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="boutique.html" aria-current="page">Boutique</a></li>
+          <li><a href="academy.html">Academy</a></li>
+          <li><a href="partenaires.html">Partenaires</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="contact.html" class="apt-btn apt-btn--primary apt-header__cta">Demander un devis</a>
+      <button class="apt-nav__burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu mobile plein écran -->
+  <div id="mobile-menu" class="apt-mobile-menu" hidden>
+    <div class="apt-container apt-mobile-menu__head">
+      <a href="index.html" class="apt-header__brand apt-logo-protect" aria-label="Aquila Prime Technologies — accueil">
+        <img src="assets/img/logo/logo-couleur.png" alt="Aquila Prime Technologies"
+             class="apt-header__logo" width="220" height="54" loading="lazy">
+      </a>
+      <button class="apt-mobile-menu__close" aria-label="Fermer le menu" data-menu-close>
+        <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ul class="apt-mobile-menu__list">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li>
+        <button class="apt-mobile-menu__sub-trigger" aria-expanded="false" aria-controls="mobile-services">
+          Services
+          <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul id="mobile-services" class="apt-mobile-menu__sub" hidden>
+          <li><a href="services/vente-materiels-informatiques.html">Vente de Matériels Informatiques</a></li>
+          <li><a href="services/infogerance.html">Infogérance</a></li>
+          <li><a href="services/cloud-computing.html">Cloud Computing</a></li>
+          <li><a href="services/cyber-securite.html">Cyber Sécurité</a></li>
+          <li><a href="services/technologies-energie.html">Nouvelles Technologies de l'Énergie</a></li>
+          <li><a href="services/consultation-formation.html">Consultation &amp; Formation</a></li>
+          <li><a href="services/audit-conformite.html">Audit &amp; Conformité</a></li>
+          <li><a href="services/ingenierie-systeme.html">Ingénierie Système</a></li>
+          <li><a href="services/ingenierie-reseau.html">Ingénierie Réseau</a></li>
+          <li><a href="services/ingenierie-logicielle.html">Ingénierie Logicielle</a></li>
+          <li><a href="services/business-intelligence.html">Business Intelligence</a></li>
+          <li><a href="services/sauvegarde-reprise-sinistre.html">Sauvegarde &amp; Reprise après Sinistre</a></li>
+          <li><a href="services.html">Tous nos services</a></li>
+        </ul>
+      </li>
+      <li><a href="boutique.html" aria-current="page">Boutique</a></li>
+      <li><a href="academy.html">Academy</a></li>
+      <li><a href="partenaires.html">Partenaires</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="apt-container">
+      <a href="contact.html" class="apt-btn apt-btn--primary apt-btn--block apt-mobile-menu__cta">Demander un devis</a>
+    </div>
+  </div>
+
+  <main id="contenu">
+
+    <!-- Fil d'Ariane -->
+    <nav class="apt-breadcrumb apt-section--sm" aria-label="Fil d'Ariane">
+      <div class="apt-container">
+        <ol>
+          <li><a href="index.html">Accueil</a></li>
+          <li aria-current="page">Boutique</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Hero de page interne -->
+    <section class="apt-hero apt-hero--page">
+      <div class="apt-container apt-container--narrow">
+        <span class="apt-eyebrow">
+          <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16l-1.4 12.2a2 2 0 0 1-2 1.8H7.4a2 2 0 0 1-2-1.8Z"/><path d="M9 7V5.5a3 3 0 0 1 6 0V7"/></svg>
+          Catalogue d'équipements
+        </span>
+        <h1>Des équipements professionnels, sélectionnés et accompagnés</h1>
+        <p class="apt-hero--page__lead">Nous distribuons du matériel issu de nos constructeurs partenaires, choisi pour tenir dans la durée et pour rester réparable et maintenable sur place. Chaque équipement est livré, installé et suivi par nos équipes.</p>
+      </div>
+    </section>
+
+    <section class="apt-section">
+      <div class="apt-container apt-container--narrow apt-flow">
+        <p class="apt-service-article__lead">Cette page présente une sélection représentative de nos familles d'équipements. Elle n'est pas exhaustive : notre rôle est de partir de votre besoin réel, puis de vous proposer la configuration juste — ni surdimensionnée, ni sous-calibrée.</p>
+        <p>Les configurations exactes (mémoire, stockage, nombre de ports, autonomie) sont définies avec vous lors de l'étude. C'est pourquoi aucun prix n'est affiché ici : chaque devis dépend de la configuration retenue, des quantités et des services associés — livraison, installation, mise en service et garantie.</p>
+      </div>
+    </section>
+
+      <nav class="apt-section apt-section--sm" aria-label="Familles d'équipements">
+        <div class="apt-container">
+          <ul class="apt-catnav">
+            <li><a href="#postes-de-travail"><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="1.5"/><path d="M2 20h20M9.5 17h5"/></svg><span>Ordinateurs &amp; postes de travail</span></a></li>
+            <li><a href="#serveurs"><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M6.5 7h.01M9.5 7h.01M6.5 17h.01M9.5 17h.01M15 7h3M15 17h3"/></svg><span>Serveurs &amp; virtualisation</span></a></li>
+            <li><a href="#stockage"><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 3v18M16 3v18M5.8 18.5h.01M17.8 18.5h.01"/></svg><span>Stockage &amp; sauvegarde</span></a></li>
+            <li><a href="#reseau"><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="8" width="19" height="8" rx="1.5"/><path d="M6 12h.01M9 12h.01M12 12h.01M15 12h.01M18 12h.01"/></svg><span>Réseau &amp; connectivité</span></a></li>
+            <li><a href="#securite"><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.8 20 6v6c0 4.4-3.2 7.6-8 9.2C7.2 19.6 4 16.4 4 12V6Z"/><path d="M9 11.5h6M12 9v5"/></svg><span>Cybersécurité &amp; vidéosurveillance</span></a></li>
+            <li><a href="#energie"><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1.5"/><path d="M13 8.5 9.5 13H12l-1 2.5L14.5 11H12Z"/></svg><span>Énergie &amp; continuité de service</span></a></li>
+            <li><a href="#peripheriques"><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 9V3.5h11V9"/><rect x="3" y="9" width="18" height="7" rx="1.5"/><path d="M6.5 14h11v6.5h-11Z"/></svg><span>Périphériques &amp; collaboration</span></a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <section class="apt-section" id="postes-de-travail">
+        <div class="apt-container">
+          <div class="apt-section__head">
+            <h2>Ordinateurs &amp; postes de travail</h2>
+            <p class="apt-section__intro">Des machines professionnelles pour vos équipes, du poste bureautique à la station de travail exigeante.</p>
+          </div>
+          <div class="apt-grid-3">
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Portable 15″</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/dell-xps-15.jpg" alt="" loading="lazy" width="679" height="448"></div>
+              <h3 class="apt-product__name">Dell XPS 15</h3>
+              <ul class="apt-product__specs">
+                <li>Processeurs Intel Core Ultra</li>
+                <li>Jusqu'à 64 Go de mémoire</li>
+                <li>SSD NVMe de 512 Go à 4 To</li>
+                <li>Écran OLED ou IPS haute définition</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Portable 14″</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/lenovo-thinkpad-t14.jpg" alt="" loading="lazy" width="679" height="615"></div>
+              <h3 class="apt-product__name">Lenovo ThinkPad T14</h3>
+              <ul class="apt-product__specs">
+                <li>Châssis testé aux normes militaires</li>
+                <li>Clavier réputé et autonomie longue</li>
+                <li>Lecteur d'empreinte et puce TPM</li>
+                <li>Station d'accueil en option</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Poste fixe</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/hp-elitedesk-800-sff.jpg" alt="" loading="lazy" width="679" height="497"></div>
+              <h3 class="apt-product__name">HP EliteDesk 800 SFF</h3>
+              <ul class="apt-product__specs">
+                <li>Format compact pour bureau</li>
+                <li>Évolutif en mémoire et stockage</li>
+                <li>Administration à distance intégrée</li>
+                <li>Sécurité matérielle HP Sure Start</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="apt-section apt-section--alt" id="serveurs">
+        <div class="apt-container">
+          <div class="apt-section__head">
+            <h2>Serveurs &amp; virtualisation</h2>
+            <p class="apt-section__intro">Le socle de vos applications métier, dimensionné pour la virtualisation et la montée en charge.</p>
+          </div>
+          <div class="apt-grid-3">
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Rack 2U</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/dell-poweredge-r760.jpg" alt="" loading="lazy" width="464" height="475"></div>
+              <h3 class="apt-product__name">Dell PowerEdge R760</h3>
+              <ul class="apt-product__specs">
+                <li>Bi-processeurs Intel Xeon Scalable</li>
+                <li>Mémoire extensible en DDR5</li>
+                <li>Disques SSD NVMe ou SAS</li>
+                <li>Administration à distance iDRAC</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Rack 2U</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/hpe-proliant-dl380-gen11.jpg" alt="" loading="lazy" width="679" height="205"></div>
+              <h3 class="apt-product__name">HPE ProLiant DL380 Gen11</h3>
+              <ul class="apt-product__specs">
+                <li>Référence du serveur d'entreprise</li>
+                <li>Nombreuses combinaisons de disques</li>
+                <li>Alimentations redondantes</li>
+                <li>Supervision iLO intégrée</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Serveur tour</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/lenovo-thinksystem-st250.jpg" alt="" loading="lazy" width="564" height="816"></div>
+              <h3 class="apt-product__name">Lenovo ThinkSystem ST250</h3>
+              <ul class="apt-product__specs">
+                <li>Format tour, silencieux</li>
+                <li>Adapté aux PME et aux agences</li>
+                <li>Fonctionne hors salle serveur</li>
+                <li>Évolutif en disques et mémoire</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="apt-section" id="stockage">
+        <div class="apt-container">
+          <div class="apt-section__head">
+            <h2>Stockage &amp; sauvegarde</h2>
+            <p class="apt-section__intro">Conserver, protéger et restaurer vos données — le matériel qui soutient nos prestations de sauvegarde et de reprise après sinistre.</p>
+          </div>
+          <div class="apt-grid-3">
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">NAS 2 baies</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/synology-diskstation-ds224.jpg" alt="" loading="lazy" width="679" height="508"></div>
+              <h3 class="apt-product__name">Synology DiskStation DS224+</h3>
+              <ul class="apt-product__specs">
+                <li>Stockage réseau pour PME</li>
+                <li>Sauvegarde des postes et serveurs</li>
+                <li>Synchronisation multi-sites</li>
+                <li>Système DSM avec gestion des droits</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Baie de stockage</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/dell-powervault-me5.jpg" alt="" loading="lazy" width="679" height="667"></div>
+              <h3 class="apt-product__name">Dell PowerVault ME5</h3>
+              <ul class="apt-product__specs">
+                <li>Baie partagée pour serveurs</li>
+                <li>Disques SSD et disques durs mixables</li>
+                <li>Chemins d'accès redondants</li>
+                <li>Capacité extensible par tiroirs</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Archivage</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/lecteur-de-bandes-lto.jpg" alt="" loading="lazy" width="679" height="255"></div>
+              <h3 class="apt-product__name">Lecteur de bandes LTO</h3>
+              <ul class="apt-product__specs">
+                <li>Archivage longue durée hors ligne</li>
+                <li>Support déconnecté, insensible aux rançongiciels</li>
+                <li>Externalisation des sauvegardes</li>
+                <li>Coût au téraoctet maîtrisé</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="apt-section apt-section--alt" id="reseau">
+        <div class="apt-container">
+          <div class="apt-section__head">
+            <h2>Réseau &amp; connectivité</h2>
+            <p class="apt-section__intro">Commutation, routage et couverture sans fil pour des sites fiables et administrables à distance.</p>
+          </div>
+          <div class="apt-grid-3">
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Switch 24/48 ports</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/cisco-catalyst-9300.jpg" alt="" loading="lazy" width="679" height="197"></div>
+              <h3 class="apt-product__name">Cisco Catalyst 9300</h3>
+              <ul class="apt-product__specs">
+                <li>Commutateur d'entreprise empilable</li>
+                <li>Segmentation par VLAN</li>
+                <li>Alimentation PoE des équipements</li>
+                <li>Administration centralisée</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Borne Wi-Fi 6</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/ubiquiti-unifi-u6-pro.jpg" alt="" loading="lazy" width="679" height="734"></div>
+              <h3 class="apt-product__name">Ubiquiti UniFi U6 Pro</h3>
+              <ul class="apt-product__specs">
+                <li>Wi-Fi 6 pour forte densité</li>
+                <li>Itinérance entre bornes</li>
+                <li>Réseaux invités isolés</li>
+                <li>Pilotage depuis une console unique</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Routeur</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/cisco-isr-1100.jpg" alt="" loading="lazy" width="679" height="378"></div>
+              <h3 class="apt-product__name">Cisco ISR 1100</h3>
+              <ul class="apt-product__specs">
+                <li>Routeur pour site distant</li>
+                <li>Liaisons multi-opérateurs et secours 4G</li>
+                <li>Tunnels VPN entre agences</li>
+                <li>Qualité de service pour la voix</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="apt-section" id="securite">
+        <div class="apt-container">
+          <div class="apt-section__head">
+            <h2>Cybersécurité &amp; vidéosurveillance</h2>
+            <p class="apt-section__intro">Protéger le périmètre numérique et les locaux : le matériel qui accompagne nos prestations de cybersécurité.</p>
+          </div>
+          <div class="apt-grid-3">
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Pare-feu UTM</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/fortinet-fortigate-60f.jpg" alt="" loading="lazy" width="374" height="374"></div>
+              <h3 class="apt-product__name">Fortinet FortiGate 60F</h3>
+              <ul class="apt-product__specs">
+                <li>Pare-feu nouvelle génération</li>
+                <li>Filtrage web et antivirus de flux</li>
+                <li>Accès distant VPN sécurisé</li>
+                <li>Journalisation et rapports</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Caméra IP</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/hikvision-ds-2cd2347g2-l.jpg" alt="" loading="lazy" width="679" height="702"></div>
+              <h3 class="apt-product__name">Hikvision DS-2CD2347G2-L</h3>
+              <ul class="apt-product__specs">
+                <li>Caméra réseau haute définition</li>
+                <li>Couleur de nuit</li>
+                <li>Détection intelligente des intrusions</li>
+                <li>Alimentation par le câble réseau (PoE)</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Accès aux locaux</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/controle-d-acces-par-badge.jpg" alt="" loading="lazy" width="679" height="734"></div>
+              <h3 class="apt-product__name">Contrôle d'accès par badge</h3>
+              <ul class="apt-product__specs">
+                <li>Lecteurs de badge sur portes sensibles</li>
+                <li>Droits par personne et par horaire</li>
+                <li>Historique des passages</li>
+                <li>Couplage possible à la vidéo</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="apt-section apt-section--alt" id="energie">
+        <div class="apt-container">
+          <div class="apt-section__head">
+            <h2>Énergie &amp; continuité de service</h2>
+            <p class="apt-section__intro">Une informatique qui tient debout malgré les coupures — le volet matériel de notre offre Technologies &amp; Énergie.</p>
+          </div>
+          <div class="apt-grid-3">
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Onduleur</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/apc-smart-ups-1500-va.jpg" alt="" loading="lazy" width="679" height="767"></div>
+              <h3 class="apt-product__name">APC Smart-UPS 1500 VA</h3>
+              <ul class="apt-product__specs">
+                <li>Protège postes et petits serveurs</li>
+                <li>Régulation automatique de tension</li>
+                <li>Arrêt propre des machines</li>
+                <li>Supervision réseau en option</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Salle serveur</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/onduleur-en-ligne-pour-baie.jpg" alt="" loading="lazy" width="679" height="551"></div>
+              <h3 class="apt-product__name">Onduleur en ligne pour baie</h3>
+              <ul class="apt-product__specs">
+                <li>Double conversion permanente</li>
+                <li>Autonomie extensible par batteries</li>
+                <li>Format rack ou tour</li>
+                <li>Maintenance sans coupure</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Site isolé</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/kit-solaire-photovoltaique.jpg" alt="" loading="lazy" width="679" height="698"></div>
+              <h3 class="apt-product__name">Kit solaire photovoltaïque</h3>
+              <ul class="apt-product__specs">
+                <li>Alimentation de sites mal desservis</li>
+                <li>Panneaux, régulateur et batteries</li>
+                <li>Dimensionnement selon la charge</li>
+                <li>Complément ou relais du réseau</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="apt-section" id="peripheriques">
+        <div class="apt-container">
+          <div class="apt-section__head">
+            <h2>Périphériques &amp; collaboration</h2>
+            <p class="apt-section__intro">Impression, affichage et réunions à distance : l'équipement quotidien des espaces de travail.</p>
+          </div>
+          <div class="apt-grid-3">
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Multifonction A3</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/hp-officejet-pro-9730.jpg" alt="" loading="lazy" width="679" height="549"></div>
+              <h3 class="apt-product__name">HP OfficeJet Pro 9730</h3>
+              <ul class="apt-product__specs">
+                <li>Impression jusqu'au format A3</li>
+                <li>Numérisation avec chargeur automatique</li>
+                <li>Connexion réseau et sans fil</li>
+                <li>Adapté aux volumes de bureau</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Écran 27″ 4K</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/dell-ultrasharp-u2723qe.jpg" alt="" loading="lazy" width="679" height="528"></div>
+              <h3 class="apt-product__name">Dell UltraSharp U2723QE</h3>
+              <ul class="apt-product__specs">
+                <li>Définition 4K, dalle IPS Black</li>
+                <li>Raccordement USB-C avec charge</li>
+                <li>Concentrateur USB intégré</li>
+                <li>Pied réglable en hauteur</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+            <article class="apt-product" data-reveal>
+              <p class="apt-product__tag">Visioconférence</p>
+              <div class="apt-product__visual apt-product__visual--photo" aria-hidden="true"><img class="apt-product__photo" src="assets/img/produits/logitech-rally-bar.jpg" alt="" loading="lazy" width="679" height="202"></div>
+              <h3 class="apt-product__name">Logitech Rally Bar</h3>
+              <ul class="apt-product__specs">
+                <li>Barre tout-en-un pour salle de réunion</li>
+                <li>Cadrage automatique des participants</li>
+                <li>Micros et haut-parleurs intégrés</li>
+                <li>Compatible avec les plateformes courantes</li>
+              </ul>
+              <a href="contact.html" class="apt-btn apt-btn--tertiary">Demander un devis
+                <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    <!-- CE QUI ACCOMPAGNE CHAQUE ÉQUIPEMENT -->
+    <section class="apt-section apt-section--alt">
+      <div class="apt-container">
+        <div class="apt-section__head">
+          <h2>Ce qui accompagne chaque équipement</h2>
+          <p class="apt-section__intro">Un matériel livré seul règle rarement un problème. Nos prestations d'installation et de suivi font partie de l'offre.</p>
+        </div>
+        <ul class="apt-cards-center apt-cards-center--4">
+          <li class="apt-commitment" data-reveal>
+            <h3>Étude du besoin</h3>
+            <p>Nous partons de votre usage réel et de vos contraintes avant de recommander une configuration.</p>
+          </li>
+          <li class="apt-commitment" data-reveal>
+            <h3>Livraison &amp; installation</h3>
+            <p>Acheminement, mise en service sur site et raccordement à votre environnement existant.</p>
+          </li>
+          <li class="apt-commitment" data-reveal>
+            <h3>Garantie constructeur</h3>
+            <p>Nous gérons les démarches de garantie auprès du constructeur en cas de défaillance.</p>
+          </li>
+          <li class="apt-commitment" data-reveal>
+            <h3>Support post-vente</h3>
+            <p>Assistance technique après la mise en service, et maintenance si vous le souhaitez.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Bandeau CTA final -->
+    <section class="apt-cta-final apt-bg-gradient-brand apt-section--sm">
+      <svg class="apt-pattern-feathers" viewBox="0 0 400 400" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5">
+          <path d="M40 360C120 320 160 240 150 120" />
+          <path d="M200 380C245 350 260 280 250 160" />
+        </g>
+      </svg>
+      <div class="apt-container apt-cta-final__inner">
+        <div>
+          <h2>Un besoin d'équipement à chiffrer&nbsp;?</h2>
+          <p class="apt-cta-final__lead">Décrivez-nous votre contexte&nbsp;: nombre de postes, contraintes de site, budget indicatif. Nous revenons vers vous avec une proposition argumentée.</p>
+        </div>
+        <div class="apt-btn-group">
+          <a href="contact.html" class="apt-btn apt-btn--primary">Demander un devis</a>
+          <a href="services/vente-materiels-informatiques.html" class="apt-btn apt-btn--secondary">Notre démarche</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================================================================
+       PIED DE PAGE (identique sur toutes les pages — voir brief/PATTERN-PAGE.md)
+       ================================================================== -->
+  <footer class="apt-footer">
+    <div class="apt-container apt-footer__top">
+      <div class="apt-footer__col apt-footer__col--brand apt-logo-protect">
+        <img src="assets/img/logo/logo-blanc.png" alt="Aquila Prime Technologies" width="180" height="44" loading="lazy">
+        <p>« Connecter l'innovation à vos ambitions pour inventer demain, dès aujourd'hui »</p>
+      </div>
+      <nav class="apt-footer__col" aria-label="Nos services">
+        <h3>Nos services</h3>
+        <ul>
+          <li><a href="services/infogerance.html">Infogérance</a></li>
+          <li><a href="services/cyber-securite.html">Cyber Sécurité</a></li>
+          <li><a href="services/cloud-computing.html">Cloud Computing</a></li>
+          <li><a href="services/ingenierie-logicielle.html">Ingénierie Logicielle</a></li>
+          <li><a href="services/consultation-formation.html">Consultation &amp; Formation</a></li>
+          <li><a href="services/business-intelligence.html">Business Intelligence</a></li>
+          <li><a href="services.html">Tous nos services</a></li>
+        </ul>
+      </nav>
+      <nav class="apt-footer__col" aria-label="Entreprise">
+        <h3>Entreprise</h3>
+        <ul>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="academy.html">Aquila Academy</a></li>
+          <li><a href="partenaires.html">Partenaires</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </nav>
+      <div class="apt-footer__col" aria-label="Coordonnées">
+        <h3>Contact</h3>
+        <ul>
+          <li>Secteur 38, Ouagadougou, Burkina Faso</li>
+          <li><a href="tel:+22602215353">+226 02 21 53 53</a></li>
+          <li><a href="tel:+22604446969">+226 04 44 69 69</a></li>
+          <li><a href="mailto:info@aquilaprimetech.com">info@aquilaprimetech.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="apt-container apt-footer__bottom">
+      <p>© <span data-current-year>2026</span> Aquila Prime Technologies. Tous droits réservés.</p>
+      <p><a href="mentions-legales.html">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <button class="apt-back-to-top" aria-label="Retour en haut de page" data-back-to-top hidden>
+    <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

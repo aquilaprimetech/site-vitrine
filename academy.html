@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Signale que JavaScript est actif : les blocs animés ne sont masqués que dans ce cas. -->
+  <script>document.documentElement.classList.add('js');</script>
+  <title>Aquila Academy — Formations IT certifiantes à Ouagadougou</title>
+  <meta name="description" content="Formations IT certifiantes à Ouagadougou : Microsoft, Cisco, ITIL, PMP, Oracle Java. Parcours personnalisés, du diagnostic à l'examen officiel.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://aquilaprimetech.com/academy.html">
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/logo/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/img/logo/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/logo/favicon-180.png">
+
+  <!-- Préchargement des polices critiques -->
+  <link rel="preload" href="assets/fonts/montserrat-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Aquila Prime Technologies">
+  <meta property="og:url" content="https://aquilaprimetech.com/academy.html">
+  <meta property="og:title" content="Aquila Academy — Formations IT certifiantes à Ouagadougou">
+  <meta property="og:description" content="Formations IT certifiantes à Ouagadougou : Microsoft, Cisco, ITIL, PMP, Oracle Java. Parcours personnalisés, du diagnostic à l'examen officiel.">
+  <!-- Image de partage : logo par défaut en attendant un visuel dédié.
+       À COMPLÉTER PAR LE CLIENT : image Open Graph 1200×630 dédiée -->
+  <meta property="og:image" content="https://aquilaprimetech.com/assets/img/logo/logo-couleur.png">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="394">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aquila Academy — Formations IT certifiantes à Ouagadougou">
+  <meta name="twitter:description" content="Formations IT certifiantes à Ouagadougou : Microsoft, Cisco, ITIL, PMP, Oracle Java. Parcours personnalisés, du diagnostic à l'examen officiel.">
+  <meta name="twitter:image" content="https://aquilaprimetech.com/assets/img/logo/logo-couleur.png">
+
+  <!-- JSON-LD : BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://aquilaprimetech.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Aquila Academy", "item": "https://aquilaprimetech.com/academy.html" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD : les neuf filières de certification, décrites comme des cours.
+       Chaque entrée reprend exactement une filière annoncée sur la page ; rien
+       n'est ajouté ici qui ne figure dans le contenu visible. Ni tarif ni date
+       de session n'est déclaré : ces informations n'existent pas encore, et un
+       balisage qui annoncerait ce que la page ne dit pas serait trompeur pour
+       l'internaute comme pour le moteur. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Filières de certification — Aquila Academy",
+    "itemListOrder": "https://schema.org/ItemListUnordered",
+    "numberOfItems": 9,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "Course", "name": "Certification Microsoft", "description": "Parcours de préparation à la certification Microsoft, du diagnostic du niveau à l'examen officiel.", "inLanguage": "fr", "url": "https://aquilaprimetech.com/academy.html", "provider": { "@type": "Organization", "name": "Aquila Academy", "url": "https://aquilaprimetech.com/academy.html" } } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "Course", "name": "Certification Cisco", "description": "Parcours de préparation aux certifications réseau Cisco, du diagnostic du niveau à l'examen officiel.", "inLanguage": "fr", "url": "https://aquilaprimetech.com/academy.html", "provider": { "@type": "Organization", "name": "Aquila Academy", "url": "https://aquilaprimetech.com/academy.html" } } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "Course", "name": "Certification ISO", "description": "Parcours de préparation aux certifications des normes ISO, du diagnostic du niveau à l'examen officiel.", "inLanguage": "fr", "url": "https://aquilaprimetech.com/academy.html", "provider": { "@type": "Organization", "name": "Aquila Academy", "url": "https://aquilaprimetech.com/academy.html" } } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "Course", "name": "Certification IBM", "description": "Parcours de préparation aux certifications IBM, du diagnostic du niveau à l'examen officiel.", "inLanguage": "fr", "url": "https://aquilaprimetech.com/academy.html", "provider": { "@type": "Organization", "name": "Aquila Academy", "url": "https://aquilaprimetech.com/academy.html" } } },
+      { "@type": "ListItem", "position": 5, "item": { "@type": "Course", "name": "Certification ITIL", "description": "Parcours de préparation à la certification ITIL en gestion des services informatiques, du diagnostic du niveau à l'examen officiel.", "inLanguage": "fr", "url": "https://aquilaprimetech.com/academy.html", "provider": { "@type": "Organization", "name": "Aquila Academy", "url": "https://aquilaprimetech.com/academy.html" } } },
+      { "@type": "ListItem", "position": 6, "item": { "@type": "Course", "name": "Certification PRINCE2", "description": "Parcours de préparation à la certification PRINCE2 en gestion de projet, du diagnostic du niveau à l'examen officiel.", "inLanguage": "fr", "url": "https://aquilaprimetech.com/academy.html", "provider": { "@type": "Organization", "name": "Aquila Academy", "url": "https://aquilaprimetech.com/academy.html" } } },
+      { "@type": "ListItem", "position": 7, "item": { "@type": "Course", "name": "Certification COBIT", "description": "Parcours de préparation à la certification COBIT en gouvernance des systèmes d'information, du diagnostic du niveau à l'examen officiel.", "inLanguage": "fr", "url": "https://aquilaprimetech.com/academy.html", "provider": { "@type": "Organization", "name": "Aquila Academy", "url": "https://aquilaprimetech.com/academy.html" } } },
+      { "@type": "ListItem", "position": 8, "item": { "@type": "Course", "name": "Certification PMP", "description": "Parcours de préparation à la certification PMP en management de projet, du diagnostic du niveau à l'examen officiel.", "inLanguage": "fr", "url": "https://aquilaprimetech.com/academy.html", "provider": { "@type": "Organization", "name": "Aquila Academy", "url": "https://aquilaprimetech.com/academy.html" } } },
+      { "@type": "ListItem", "position": 9, "item": { "@type": "Course", "name": "Certification Oracle Java", "description": "Parcours de préparation à la certification Oracle Java, du diagnostic du niveau à l'examen officiel.", "inLanguage": "fr", "url": "https://aquilaprimetech.com/academy.html", "provider": { "@type": "Organization", "name": "Aquila Academy", "url": "https://aquilaprimetech.com/academy.html" } } }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD : l'organisme de formation lui-même, rattaché à l'entreprise et
+       localisé — c'est ce qui relie « formation IT » à « Ouagadougou ». -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Aquila Academy",
+    "url": "https://aquilaprimetech.com/academy.html",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Aquila Prime Technologies",
+      "url": "https://aquilaprimetech.com/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Secteur 38",
+      "addressLocality": "Ouagadougou",
+      "addressCountry": "BF"
+    },
+    "telephone": "+226-02-21-53-53",
+    "email": "info@aquilaprimetech.com",
+    "areaServed": { "@type": "Country", "name": "Burkina Faso" },
+    "inLanguage": "fr"
+  }
+  </script>
+</head>
+<body>
+  <a class="apt-skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <!-- ==================================================================
+       EN-TÊTE (identique sur toutes les pages — voir brief/PATTERN-PAGE.md)
+       ================================================================== -->
+  <header class="apt-header" data-header>
+    <div class="apt-container apt-header__inner">
+      <a href="index.html" class="apt-header__brand apt-logo-protect" aria-label="Aquila Prime Technologies — accueil">
+        <img src="assets/img/logo/logo-couleur.png" alt="Aquila Prime Technologies"
+             class="apt-header__logo" width="220" height="54" loading="eager">
+      </a>
+
+      <nav class="apt-nav" aria-label="Navigation principale">
+        <ul class="apt-nav__list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li class="apt-nav__item--has-mega">
+            <button class="apt-nav__trigger" aria-expanded="false" aria-controls="mega-services">
+              Services
+              <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+
+            <div id="mega-services" class="apt-mega" role="menu" hidden>
+              <div class="apt-container apt-mega__inner">
+                <ul class="apt-mega__grid" role="none">
+                  <li role="none">
+                    <a role="menuitem" href="services/vente-materiels-informatiques.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg>
+                      <span><strong>Vente de Matériels Informatiques</strong><small>Équipements dernière génération</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/infogerance.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+                      <span><strong>Infogérance</strong><small>Gestion IT externalisée</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/cloud-computing.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.96A5 5 0 0 1 16.9 8.05 4.5 4.5 0 0 1 16.5 18H7Z"/><path d="M12 15V9M9 12l3-3 3 3"/></svg>
+                      <span><strong>Cloud Computing</strong><small>Données accessibles et sécurisées</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/cyber-securite.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+                      <span><strong>Cyber Sécurité</strong><small>Protection contre les cybermenaces</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/technologies-energie.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M13 7l-4 6h3l-1 4 5-6h-3l1-4Z"/></svg>
+                      <span><strong>Nouvelles Technologies de l'Énergie</strong><small>Transition énergétique d'entreprise</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/consultation-formation.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-3 2.5-5 5-5s5 2 5 5"/><path d="M16 6h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1l-2 2v-2h-1a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"/></svg>
+                      <span><strong>Consultation &amp; Formation</strong><small>Renforcement des compétences</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/audit-conformite.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M9 12l2 2 4-4"/></svg>
+                      <span><strong>Audit &amp; Conformité</strong><small>Contrôle et conformité aux normes</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/ingenierie-systeme.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1"/><rect x="3" y="10" width="18" height="5" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/><path d="M6 6.5h.01M6 12.5h.01"/></svg>
+                      <span><strong>Ingénierie Système</strong><small>Infrastructure informatique fiable</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/ingenierie-reseau.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="12" cy="11" r="2"/><path d="M7.5 7l3 3M16.5 7l-3 3M12 13v3"/></svg>
+                      <span><strong>Ingénierie Réseau</strong><small>Réseaux locaux et interconnectés</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/ingenierie-logicielle.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13 6l-2 12"/></svg>
+                      <span><strong>Ingénierie Logicielle</strong><small>Applications et logiciels sur mesure</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/business-intelligence.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V6M16 20V13M4 20h16"/><path d="M4 9l6-3 6 4 4-3"/></svg>
+                      <span><strong>Business Intelligence</strong><small>Données, indicateurs, tableaux de bord</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/sauvegarde-reprise-sinistre.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 1 2.5 5.8"/><path d="M4 17v-4h4"/><circle cx="12" cy="12" r="2.5"/></svg>
+                      <span><strong>Sauvegarde &amp; Reprise après Sinistre</strong><small>Continuité de votre activité</small></span>
+                    </a>
+                  </li>
+                </ul>
+                <a href="services.html" class="apt-mega__all">
+                  Tous nos services
+                  <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="academy.html" aria-current="page">Academy</a></li>
+          <li><a href="partenaires.html">Partenaires</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="contact.html" class="apt-btn apt-btn--primary apt-header__cta">Demander un devis</a>
+      <button class="apt-nav__burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu mobile plein écran -->
+  <div id="mobile-menu" class="apt-mobile-menu" hidden>
+    <div class="apt-container apt-mobile-menu__head">
+      <a href="index.html" class="apt-header__brand apt-logo-protect" aria-label="Aquila Prime Technologies — accueil">
+        <img src="assets/img/logo/logo-couleur.png" alt="Aquila Prime Technologies"
+             class="apt-header__logo" width="220" height="54" loading="lazy">
+      </a>
+      <button class="apt-mobile-menu__close" aria-label="Fermer le menu" data-menu-close>
+        <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ul class="apt-mobile-menu__list">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li>
+        <button class="apt-mobile-menu__sub-trigger" aria-expanded="false" aria-controls="mobile-services">
+          Services
+          <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul id="mobile-services" class="apt-mobile-menu__sub" hidden>
+          <li><a href="services/vente-materiels-informatiques.html">Vente de Matériels Informatiques</a></li>
+          <li><a href="services/infogerance.html">Infogérance</a></li>
+          <li><a href="services/cloud-computing.html">Cloud Computing</a></li>
+          <li><a href="services/cyber-securite.html">Cyber Sécurité</a></li>
+          <li><a href="services/technologies-energie.html">Nouvelles Technologies de l'Énergie</a></li>
+          <li><a href="services/consultation-formation.html">Consultation &amp; Formation</a></li>
+          <li><a href="services/audit-conformite.html">Audit &amp; Conformité</a></li>
+          <li><a href="services/ingenierie-systeme.html">Ingénierie Système</a></li>
+          <li><a href="services/ingenierie-reseau.html">Ingénierie Réseau</a></li>
+          <li><a href="services/ingenierie-logicielle.html">Ingénierie Logicielle</a></li>
+          <li><a href="services/business-intelligence.html">Business Intelligence</a></li>
+          <li><a href="services/sauvegarde-reprise-sinistre.html">Sauvegarde &amp; Reprise après Sinistre</a></li>
+          <li><a href="services.html">Tous nos services</a></li>
+        </ul>
+      </li>
+      <li><a href="boutique.html">Boutique</a></li>
+      <li><a href="academy.html" aria-current="page">Academy</a></li>
+      <li><a href="partenaires.html">Partenaires</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="apt-container">
+      <a href="contact.html" class="apt-btn apt-btn--primary apt-btn--block apt-mobile-menu__cta">Demander un devis</a>
+    </div>
+  </div>
+
+  <main id="contenu">
+
+    <!-- Fil d'Ariane -->
+    <nav class="apt-breadcrumb apt-section--sm" aria-label="Fil d'Ariane">
+      <div class="apt-container">
+        <ol>
+          <li><a href="index.html">Accueil</a></li>
+          <li aria-current="page">Aquila Academy</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Hero de page interne -->
+    <section class="apt-hero--page apt-section--sm">
+      <svg class="apt-pattern-feathers" viewBox="0 0 400 400" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5">
+          <path d="M40 360C120 320 160 240 150 120" />
+          <path d="M120 375C185 340 210 260 200 140" />
+        </g>
+      </svg>
+      <div class="apt-container">
+        <span class="apt-eyebrow">
+          <svg class="apt-icon apt-icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4L2 9l10 5 10-5-10-5Z"/><path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5"/></svg>
+          Centre de formation et certification
+        </span>
+        <h1>Aquila Academy — Développez les compétences IT de votre entreprise</h1>
+        <p class="apt-hero--page__lead">Plus de 9 filières de certification officielle, du diagnostic des besoins à l'obtention d'une certification reconnue internationalement.</p>
+      </div>
+    </section>
+
+    <section class="apt-section">
+      <div class="apt-container apt-container--narrow apt-flow">
+        <p class="apt-service-article__lead">Aquila Academy, c'est plus de 9 filières de certification officielle — Microsoft, Cisco, ISO, IBM, ITIL, PRINCE II, COBIT, PMP, Oracle Java — et bien d'autres. Nous vous accompagnons dans votre parcours de formation, du diagnostic des besoins à l'obtention de votre certification. Vos collaborateurs deviennent des experts reconnus, un atout pour votre entreprise.</p>
+        <p>L'écosystème IT évolue rapidement. Rester compétitif signifie investir dans le développement continu des talents. Aquila Academy s'appuie sur un réseau de partenaires internationaux — États-Unis, Canada, France, Inde, Tunisie, Maroc, Cameroun, Burkina Faso et bien d'autres — pour apporter une formation de qualité mondiale, adaptée au contexte africain.</p>
+      </div>
+    </section>
+
+    <!-- FILIÈRES : BADGES -->
+    <section class="apt-section apt-section--alt">
+      <div class="apt-container">
+        <div class="apt-section__head apt-section__head--center">
+          <span class="apt-eyebrow">Certifications préparées</span>
+          <h2>Neuf filières de certification</h2>
+          <p class="apt-section__intro">Grâce à nos partenaires, nous vous accompagnons dans tous vos besoins en matière de certifications.</p>
+        </div>
+        <ul class="apt-badges apt-cards-center">
+          <li class="apt-badge" data-reveal data-logo="microsoft" data-logo-dir="certifications"><img src="assets/img/certifications/microsoft.svg" alt="" loading="lazy" class="apt-badge__logo"><span class="apt-badge__label">Microsoft</span></li>
+          <li class="apt-badge" data-reveal data-logo="cisco" data-logo-dir="certifications"><img src="assets/img/certifications/cisco.svg" alt="" loading="lazy" class="apt-badge__logo"><span class="apt-badge__label">Cisco</span></li>
+          <li class="apt-badge" data-reveal data-logo="iso" data-logo-dir="certifications"><img src="assets/img/certifications/iso.svg" alt="" loading="lazy" class="apt-badge__logo"><span class="apt-badge__label">ISO</span></li>
+          <li class="apt-badge" data-reveal data-logo="ibm" data-logo-dir="certifications"><img src="assets/img/certifications/ibm.svg" alt="" loading="lazy" class="apt-badge__logo"><span class="apt-badge__label">IBM</span></li>
+          <li class="apt-badge" data-reveal data-logo="itil" data-logo-dir="certifications"><span class="apt-badge__mark apt-badge__mark--itil" aria-hidden="true"><svg class="apt-badge__emblem" viewBox="0 0 32 32" aria-hidden="true"><path d="M27 16a11 11 0 1 1-3.6-8.1" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"/><path d="M24.5 3.5v6h-6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="apt-badge__wordmark">ITIL<sup>&reg;</sup></span></span><span class="apt-badge__label">ITIL</span></li>
+          <li class="apt-badge" data-reveal data-logo="prince2" data-logo-dir="certifications"><span class="apt-badge__mark apt-badge__mark--prince2" aria-hidden="true"><svg class="apt-badge__emblem" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="21" width="7.5" height="8" rx="2" fill="currentColor"/><rect x="12.25" y="14" width="7.5" height="15" rx="2" fill="currentColor" opacity=".68"/><rect x="21.5" y="5" width="7.5" height="24" rx="2" fill="currentColor" opacity="1"/></svg><span class="apt-badge__wordmark">PRINCE2<sup>&reg;</sup></span></span><span class="apt-badge__label">PRINCE2</span></li>
+          <li class="apt-badge" data-reveal data-logo="cobit" data-logo-dir="certifications"><span class="apt-badge__mark apt-badge__mark--cobit" aria-hidden="true"><svg class="apt-badge__emblem" viewBox="0 0 32 32" aria-hidden="true"><rect x="3.5" y="3.5" width="25" height="25" rx="6" fill="none" stroke="currentColor" stroke-width="3.2"/><rect x="11" y="11" width="10" height="10" rx="2.5" fill="currentColor"/></svg><span class="apt-badge__wordmark">COBIT<sup>&reg;</sup></span></span><span class="apt-badge__label">COBIT</span></li>
+          <li class="apt-badge" data-reveal data-logo="pmp" data-logo-dir="certifications"><span class="apt-badge__mark apt-badge__mark--pmp" aria-hidden="true"><svg class="apt-badge__emblem" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2.5l12 6.7v13.6L16 29.5 4 22.8V9.2z" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round"/><path d="M10.8 16.2l3.9 3.9 6.9-7.6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="apt-badge__wordmark">PMP<sup>&reg;</sup></span></span><span class="apt-badge__label">PMP</span></li>
+          <li class="apt-badge" data-reveal data-logo="oracle-java" data-logo-dir="certifications"><img src="assets/img/certifications/oracle-java.svg" alt="" loading="lazy" class="apt-badge__logo"><span class="apt-badge__label">Oracle Java</span></li>
+        </ul>
+        <!-- Ces certifications sont PRÉPARÉES via nos partenaires : elles ne sont pas détenues par Aquila Prime Technologies. -->
+      </div>
+    </section>
+
+    <!-- À QUI S'ADRESSE -->
+    <section class="apt-section">
+      <div class="apt-container apt-container--narrow">
+        <h2>À qui s'adresse Aquila Academy</h2>
+        <ul class="apt-service-list">
+          <li>
+            <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>Collaborateurs IT</strong> — Vous cherchez à progresser, à valider vos compétences et à accélérer votre carrière.</span>
+          </li>
+          <li>
+            <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>Managers IT</strong> — Vous souhaitez renforcer les compétences de votre équipe et retenir vos talents.</span>
+          </li>
+          <li>
+            <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>Directeurs informatiques</strong> — Vous avez besoin d'une stratégie de montée en compétences globale.</span>
+          </li>
+          <li>
+            <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>Entreprises en transformation</strong> — Vous avez besoin de talents formés aux technologies émergentes.</span>
+          </li>
+          <li>
+            <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+            <span><strong>Startups et scale-ups</strong> — Vous construisez une équipe IT de haut niveau dès le départ.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- DÉROULÉ -->
+    <section class="apt-section apt-section--alt">
+      <div class="apt-container">
+        <div class="apt-section__head apt-section__head--center">
+          <span class="apt-eyebrow">Le parcours</span>
+          <h2>Le déroulé d'un parcours de certification</h2>
+        </div>
+        <ol class="apt-timeline">
+          <li class="apt-timeline__step" data-reveal>
+            <span class="apt-timeline__index">01</span>
+            <h3>Diagnostic</h3>
+            <p>Évaluation du niveau initial, des compétences existantes et des objectifs à atteindre.</p>
+          </li>
+          <li class="apt-timeline__step" data-reveal>
+            <span class="apt-timeline__index">02</span>
+            <h3>Formation</h3>
+            <p>Cours théoriques et pratiques avec des formateurs, et accès à une plateforme e-learning partenaire. En intra-entreprise, à distance ou en format mixte.</p>
+          </li>
+          <li class="apt-timeline__step" data-reveal>
+            <span class="apt-timeline__index">03</span>
+            <h3>Accompagnement</h3>
+            <p>Exercices pratiques, examens blancs, séances de coaching et tutorat personnalisé selon les besoins.</p>
+          </li>
+          <li class="apt-timeline__step" data-reveal>
+            <span class="apt-timeline__index">04</span>
+            <h3>Certification</h3>
+            <p>Passage de l'examen officiel accrédité, avec le support logistique associé (centre d'examen, surveillance).</p>
+          </li>
+          <li class="apt-timeline__step" data-reveal>
+            <span class="apt-timeline__index">05</span>
+            <h3>Post-certification</h3>
+            <p>Suivi des acquis, retours en contexte professionnel et accès aux communautés de certification.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- DÉTAIL DES FILIÈRES -->
+    <section class="apt-section">
+      <div class="apt-container apt-service-article">
+        <section>
+          <h2>Le détail des filières</h2>
+          <div class="apt-accordion">
+            <div class="apt-accordion__item">
+              <h3>
+                <button class="apt-accordion__trigger" aria-expanded="false" aria-controls="faq-1" id="faq-1-trigger">
+                  Microsoft — cloud, productivité, sécurité
+                  <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="apt-accordion__panel" id="faq-1" role="region" aria-labelledby="faq-1-trigger" hidden>
+                <p>Formation aux technologies Microsoft Cloud (Azure), Microsoft 365 (bureautique et collaboration) et Dynamics (ERP/CRM). Adaptée aux administrateurs système, administrateurs cloud, développeurs et professionnels de la productivité.</p>
+              </div>
+            </div>
+            <div class="apt-accordion__item">
+              <h3>
+                <button class="apt-accordion__trigger" aria-expanded="false" aria-controls="faq-2" id="faq-2-trigger">
+                  Cisco — réseaux, sécurité, infrastructure
+                  <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="apt-accordion__panel" id="faq-2" role="region" aria-labelledby="faq-2-trigger" hidden>
+                <p>Formation aux réseaux Cisco&nbsp;: routage, commutation et cybersécurité réseau, avec les parcours CCNA (débutant), CCNP (confirmé) et sécurité. Adaptée aux ingénieurs réseau, administrateurs d'infrastructure et responsables sécurité.</p>
+              </div>
+            </div>
+            <div class="apt-accordion__item">
+              <h3>
+                <button class="apt-accordion__trigger" aria-expanded="false" aria-controls="faq-3" id="faq-3-trigger">
+                  ISO — conformité, qualité, sécurité de l'information
+                  <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="apt-accordion__panel" id="faq-3" role="region" aria-labelledby="faq-3-trigger" hidden>
+                <p>Formation aux normes ISO 9001 (qualité), ISO 27001 (sécurité de l'information) et ISO 20000 (gestion des services IT). Adaptée aux consultants conformité, auditeurs internes et managers IT.</p>
+              </div>
+            </div>
+            <div class="apt-accordion__item">
+              <h3>
+                <button class="apt-accordion__trigger" aria-expanded="false" aria-controls="faq-4" id="faq-4-trigger">
+                  IBM — données, cloud, infrastructure
+                  <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="apt-accordion__panel" id="faq-4" role="region" aria-labelledby="faq-4-trigger" hidden>
+                <p>Formation aux technologies et produits IBM&nbsp;: cloud, analytique, intelligence artificielle et infrastructure. Adaptée aux profils data, aux développeurs et aux administrateurs cloud.</p>
+              </div>
+            </div>
+            <div class="apt-accordion__item">
+              <h3>
+                <button class="apt-accordion__trigger" aria-expanded="false" aria-controls="faq-5" id="faq-5-trigger">
+                  ITIL — gestion des services IT et gouvernance
+                  <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="apt-accordion__panel" id="faq-5" role="region" aria-labelledby="faq-5-trigger" hidden>
+                <p>Formation à la gestion IT selon le cadre ITIL&nbsp;: centre de services, gestion des incidents, des changements et des problèmes. Adaptée aux managers IT, responsables support et coordinateurs de services.</p>
+              </div>
+            </div>
+            <div class="apt-accordion__item">
+              <h3>
+                <button class="apt-accordion__trigger" aria-expanded="false" aria-controls="faq-6" id="faq-6-trigger">
+                  PRINCE II — gestion de projets et gouvernance
+                  <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="apt-accordion__panel" id="faq-6" role="region" aria-labelledby="faq-6-trigger" hidden>
+                <p>Formation à la méthode PRINCE II de gestion de projets&nbsp;: structure, processus et contrôle. Adaptée aux chefs de projets IT, directeurs de programme et responsables gouvernance.</p>
+              </div>
+            </div>
+            <div class="apt-accordion__item">
+              <h3>
+                <button class="apt-accordion__trigger" aria-expanded="false" aria-controls="faq-7" id="faq-7-trigger">
+                  COBIT — gouvernance IT, risques, conformité
+                  <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="apt-accordion__panel" id="faq-7" role="region" aria-labelledby="faq-7-trigger" hidden>
+                <p>Formation au cadre COBIT de gouvernance IT&nbsp;: évaluation, contrôle et reporting. Adaptée aux directeurs IT, consultants gouvernance et auditeurs.</p>
+              </div>
+            </div>
+            <div class="apt-accordion__item">
+              <h3>
+                <button class="apt-accordion__trigger" aria-expanded="false" aria-controls="faq-8" id="faq-8-trigger">
+                  PMP — gestion de projets et leadership
+                  <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="apt-accordion__panel" id="faq-8" role="region" aria-labelledby="faq-8-trigger" hidden>
+                <p>Formation à la gestion de projets selon le cadre du Project Management Institute&nbsp;: phases, processus, leadership et communication. Adaptée aux chefs de projets de tous secteurs et aux responsables de transformation.</p>
+              </div>
+            </div>
+            <div class="apt-accordion__item">
+              <h3>
+                <button class="apt-accordion__trigger" aria-expanded="false" aria-controls="faq-9" id="faq-9-trigger">
+                  Oracle Java — développement logiciel et backend
+                  <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="apt-accordion__panel" id="faq-9" role="region" aria-labelledby="faq-9-trigger" hidden>
+                <p>Formation au langage Java, à ses frameworks et au développement backend, avec les parcours Oracle Java Associate et Professional. Adaptée aux développeurs Java, architectes backend et responsables de plateforme.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Modalités de formation</h2>
+          <ul class="apt-service-list">
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Intra-entreprise</strong> — Formation délivrée directement dans vos locaux, adaptée à votre contexte et à vos horaires.</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>À distance (e-learning)</strong> — Entièrement en ligne, pour une flexibilité maximale et un accès continu aux ressources.</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Format mixte</strong> — Une combinaison de présentiel et de distanciel, alliant interactivité et souplesse.</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Calendrier flexible</strong> — Sessions à la carte, intensives ou étalées dans le temps.</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Accompagnement personnalisé</strong> — Coaching individuel, mentorat et révisions ciblées selon les besoins.</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Réseau international de partenaires</strong> — Accès aux ressources, aux communautés et au réseau de nos partenaires.</span>
+            </li>
+          </ul>
+        </section>
+
+        <div class="apt-service-article__cta">
+          <h2>Lancez votre parcours de certification</h2>
+          <a href="contact.html" class="apt-btn apt-btn--primary">Demander une consultation Academy</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGAGEMENTS -->
+    <section class="apt-section apt-section--alt">
+      <div class="apt-container">
+        <div class="apt-section__head apt-section__head--center">
+          <span class="apt-eyebrow">Nos engagements</span>
+          <h2>Ce sur quoi vous pouvez compter</h2>
+        </div>
+        <div class="apt-grid-3">
+          <article class="apt-commitment" data-reveal>
+            <span class="apt-commitment__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9L6.7 19.6l1.1-6L3.4 9.4l6-.8L12 3Z"/></svg>
+            </span>
+            <h3>Formateurs expérimentés</h3>
+            <p>Des experts de terrain, pas de simples donneurs de cours.</p>
+          </article>
+          <article class="apt-commitment" data-reveal>
+            <span class="apt-commitment__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M9 13h6M9 17h4"/></svg>
+            </span>
+            <h3>Matériel pédagogique actualisé</h3>
+            <p>Un contenu qui reflète les dernières versions des technologies enseignées.</p>
+          </article>
+          <article class="apt-commitment" data-reveal>
+            <span class="apt-commitment__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21a7 7 0 0 0 7-7V9a1.5 1.5 0 0 0-3 0V6a1.5 1.5 0 0 0-3 0V5a1.5 1.5 0 0 0-3 0v6"/><path d="M10 11V8a1.5 1.5 0 0 0-3 0v7"/></svg>
+            </span>
+            <h3>Flexibilité de calendrier</h3>
+            <p>Nous adaptons les horaires et le rythme à votre contexte professionnel.</p>
+          </article>
+          <article class="apt-commitment" data-reveal>
+            <span class="apt-commitment__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+            <h3>Accompagnement jusqu'à l'examen</h3>
+            <p>Nous vous accompagnons jusqu'au passage de l'examen officiel, examens blancs compris.</p>
+          </article>
+          <article class="apt-commitment" data-reveal>
+            <span class="apt-commitment__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3 11v2h6v-2a6 6 0 0 0-3-11Z"/></svg>
+            </span>
+            <h3>Valeur sur le long terme</h3>
+            <p>Une certification continue de valoriser un profil bien après son obtention.</p>
+          </article>
+          <article class="apt-commitment" data-reveal>
+            <span class="apt-commitment__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg>
+            </span>
+            <h3>Réseau international</h3>
+            <p>Un accès aux ressources et aux communautés de nos partenaires à l'international.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bandeau CTA final -->
+    <section class="apt-cta-final apt-bg-gradient-brand apt-section--sm">
+      <svg class="apt-pattern-feathers" viewBox="0 0 400 400" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5">
+          <path d="M40 360C120 320 160 240 150 120" />
+          <path d="M200 380C245 350 260 280 250 160" />
+        </g>
+      </svg>
+      <div class="apt-container apt-cta-final__inner">
+        <div>
+          <h2>Formez vos équipes aux certifications qui comptent</h2>
+          <p class="apt-cta-final__lead">Parlons de vos besoins en compétences&nbsp;: nous construisons ensemble un parcours adapté à votre équipe et à votre calendrier.</p>
+        </div>
+        <div class="apt-btn-group">
+          <a href="contact.html" class="apt-btn apt-btn--primary">Nous contacter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================================================================
+       PIED DE PAGE (identique sur toutes les pages — voir brief/PATTERN-PAGE.md)
+       ================================================================== -->
+  <footer class="apt-footer">
+    <div class="apt-container apt-footer__top">
+      <div class="apt-footer__col apt-footer__col--brand apt-logo-protect">
+        <img src="assets/img/logo/logo-blanc.png" alt="Aquila Prime Technologies" width="180" height="44" loading="lazy">
+        <p>« Connecter l'innovation à vos ambitions pour inventer demain, dès aujourd'hui »</p>
+      </div>
+      <nav class="apt-footer__col" aria-label="Nos services">
+        <h3>Nos services</h3>
+        <ul>
+          <li><a href="services/infogerance.html">Infogérance</a></li>
+          <li><a href="services/cyber-securite.html">Cyber Sécurité</a></li>
+          <li><a href="services/cloud-computing.html">Cloud Computing</a></li>
+          <li><a href="services/ingenierie-logicielle.html">Ingénierie Logicielle</a></li>
+          <li><a href="services/consultation-formation.html">Consultation &amp; Formation</a></li>
+          <li><a href="services/business-intelligence.html">Business Intelligence</a></li>
+          <li><a href="services.html">Tous nos services</a></li>
+        </ul>
+      </nav>
+      <nav class="apt-footer__col" aria-label="Entreprise">
+        <h3>Entreprise</h3>
+        <ul>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="academy.html">Aquila Academy</a></li>
+          <li><a href="partenaires.html">Partenaires</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </nav>
+      <div class="apt-footer__col" aria-label="Coordonnées">
+        <h3>Contact</h3>
+        <ul>
+          <li>Secteur 38, Ouagadougou, Burkina Faso</li>
+          <li><a href="tel:+22602215353">+226 02 21 53 53</a></li>
+          <li><a href="tel:+22604446969">+226 04 44 69 69</a></li>
+          <li><a href="mailto:info@aquilaprimetech.com">info@aquilaprimetech.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="apt-container apt-footer__bottom">
+      <p>© <span data-current-year>2026</span> Aquila Prime Technologies. Tous droits réservés.</p>
+      <p><a href="mentions-legales.html">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <button class="apt-back-to-top" aria-label="Retour en haut de page" data-back-to-top hidden>
+    <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

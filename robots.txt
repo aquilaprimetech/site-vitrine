@@ -1,0 +1,26 @@
+# robots.txt — Aquila Prime Technologies
+# Domaine : aquilaprimetech.com
+
+# NE JAMAIS lister ici un chemin que l'on souhaite protéger : ce fichier est
+# public par construction, et un Disallow revient donc à PUBLIER l'existence
+# du chemin auprès de quiconque le lit — moteurs comme scanners.
+# Trois lignes /admin/, /private/ et /temp/ y figuraient ; aucun de ces
+# répertoires n'existe (le site est entièrement statique), elles ne faisaient
+# qu'offrir des chemins à sonder. Le contrôle d'accès se fait dans nginx.conf.
+User-agent: *
+Allow: /
+
+# Les URL de campagne (?utm_…, ?fbclid=…) désignent la même page que l'URL
+# propre : on évite qu'elles soient explorées et indexées en double.
+Disallow: /*?*utm_
+Disallow: /*?*fbclid=
+
+# Directives crawl
+Crawl-delay: 1
+
+# Répertoire principal
+User-agent: Googlebot
+Allow: /
+
+# Sitemap
+Sitemap: https://aquilaprimetech.com/sitemap.xml

@@ -1,0 +1,70 @@
+LOGOS DES PARTENAIRES TECHNOLOGIQUES
+====================================
+
+Les 12 logos sont livrés avec le site, au format SVG, dans ce dossier.
+
+Ils sont écrits DIRECTEMENT dans le HTML des pages, sous la forme :
+
+    <img src="assets/img/partners/dell.svg" alt="" loading="lazy"
+         class="apt-wordmark__logo">
+
+C'est volontaire. Une version précédente les injectait en JavaScript, à
+partir du manifeste logos.json lu par fetch(). Ce mécanisme se justifiait
+tant qu'aucun logo n'etait livré, mais il avait un défaut : fetch() est
+bloqué par les navigateurs quand la page est ouverte directement depuis le
+disque (file://). Les logos disparaissaient alors, alors qu'ils
+fonctionnaient parfaitement une fois le site servi par un serveur web.
+En statique, ils s'affichent dans les deux cas, et même sans JavaScript.
+
+logos.json reste présent : il documente les fichiers livrés et sert encore
+de repli pour les tuiles dont le logo n'est pas fourni (certifications).
+
+PROVENANCE
+----------
+Fichiers récupérés sur Wikimedia Commons, où ils sont publiés sous licence
+libre ou dans le domaine public (la plupart des logotypes sont en dessous du
+seuil d'originalité requis pour la protection par le droit d'auteur).
+Chaque fichier a été nettoyé avant intégration : suppression des métadonnées,
+des scripts et de toute référence externe, et normalisation du viewBox pour
+qu'il se redimensionne correctement.
+
+MARQUES DÉPOSÉES
+----------------
+Le droit d'auteur n'est pas le droit des marques. Ces logos restent la
+propriété de leurs titulaires. Ils sont affichés à titre informatif, pour
+identifier les constructeurs dont Aquila Prime Technologies distribue ou met
+en oeuvre les solutions (usage dit « nominatif »). Cet affichage ne vaut pas
+revendication d'agrément ni de partenariat officiel : voir la section
+« Propriété intellectuelle » des mentions légales.
+
+Si un titulaire demande le retrait de son logo, il suffit de supprimer le
+fichier correspondant et de retirer son nom de logos.json : le site retombe
+automatiquement sur le nom composé typographiquement, sans autre modification.
+
+REMPLACER UN LOGO
+-----------------
+Deposez le nouveau fichier dans ce dossier, avec le MEME nom exact
+(dell.svg reste dell.svg). Aucune modification du HTML n'est necessaire :
+les pages pointent vers ce nom de fichier.
+
+AJOUTER UN PARTENAIRE
+---------------------
+Il faut cette fois toucher au HTML, puisque les logos y sont ecrits en dur :
+1. Deposez le fichier ici et ajoutez son nom dans logos.json.
+2. Ajoutez la tuile dans partenaires.html (et index.html si voulu), en
+   copiant une tuile existante et en adaptant le nom du fichier.
+
+FICHIERS LIVRES
+---------------
+  amazon.svg      Amazon Web Services
+  fortinet.svg    Fortinet
+  oracle.svg      Oracle
+  cisco.svg       Cisco
+  logitech.svg    Logitech
+  dell.svg        Dell
+  kaspersky.svg   Kaspersky
+  vmware.svg      VMware
+  symantec.svg    Symantec
+  microsoft.svg   Microsoft
+  lenovo.svg      Lenovo
+  hp.svg          HP

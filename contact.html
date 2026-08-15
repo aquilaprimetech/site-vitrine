@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Signale que JavaScript est actif : les blocs animés ne sont masqués que dans ce cas. -->
+  <script>document.documentElement.classList.add('js');</script>
+  <title>Contact — Aquila Prime Technologies, Ouagadougou</title>
+  <meta name="description" content="Prenez contact avec Aquila Prime Technologies : devis gratuit, audit de vos besoins IT. Secteur 38, Ouagadougou. Tél. +226 02 21 53 53.">
+  <!--
+    « index » et non « noindex ». La page portait un noindex tout en figurant
+    dans sitemap.xml : les deux se contredisaient, et le moteur suit toujours
+    le noindex. Or c'est l'une des pages les plus rentables d'une entreprise
+    locale — c'est elle qui répond aux recherches « Aquila Prime Ouagadougou »,
+    « adresse », « téléphone », et elle porte les données structurées
+    ContactPage avec l'adresse et les deux numéros.
+  -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://aquilaprimetech.com/contact.html">
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/logo/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/img/logo/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/logo/favicon-180.png">
+
+  <!-- Préchargement des polices critiques -->
+  <link rel="preload" href="assets/fonts/montserrat-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Aquila Prime Technologies">
+  <meta property="og:url" content="https://aquilaprimetech.com/contact.html">
+  <meta property="og:title" content="Contact — Aquila Prime Technologies, Ouagadougou">
+  <meta property="og:description" content="Prenez contact avec Aquila Prime Technologies : devis gratuit, audit de vos besoins IT. Secteur 38, Ouagadougou.">
+  <meta property="og:image" content="https://aquilaprimetech.com/assets/img/logo/logo-couleur.png">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="394">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact — Aquila Prime Technologies, Ouagadougou">
+  <meta name="twitter:description" content="Décrivez-nous votre besoin, notre équipe vous recontacte avec une solution adaptée.">
+  <meta name="twitter:image" content="https://aquilaprimetech.com/assets/img/logo/logo-couleur.png">
+
+  <!-- JSON-LD : BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://aquilaprimetech.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://aquilaprimetech.com/contact.html" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD : ContactPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contactez Aquila Prime Technologies",
+    "url": "https://aquilaprimetech.com/contact.html",
+    "about": {
+      "@type": "Organization",
+      "name": "Aquila Prime Technologies",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Secteur 38",
+        "addressLocality": "Ouagadougou",
+        "addressCountry": "BF"
+      },
+      "telephone": "+226-02-21-53-53",
+      "email": "info@aquilaprimetech.com"
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="apt-skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <!-- ==================================================================
+       EN-TÊTE (identique sur toutes les pages — voir brief/PATTERN-PAGE.md)
+       ================================================================== -->
+  <header class="apt-header" data-header>
+    <div class="apt-container apt-header__inner">
+      <a href="index.html" class="apt-header__brand apt-logo-protect" aria-label="Aquila Prime Technologies — accueil">
+        <img src="assets/img/logo/logo-couleur.png" alt="Aquila Prime Technologies"
+             class="apt-header__logo" width="220" height="54" loading="eager">
+      </a>
+
+      <nav class="apt-nav" aria-label="Navigation principale">
+        <ul class="apt-nav__list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li class="apt-nav__item--has-mega">
+            <button class="apt-nav__trigger" aria-expanded="false" aria-controls="mega-services">
+              Services
+              <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+
+            <div id="mega-services" class="apt-mega" role="menu" hidden>
+              <div class="apt-container apt-mega__inner">
+                <ul class="apt-mega__grid" role="none">
+                  <li role="none">
+                    <a role="menuitem" href="services/vente-materiels-informatiques.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg>
+                      <span><strong>Vente de Matériels Informatiques</strong><small>Équipements dernière génération</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/infogerance.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+                      <span><strong>Infogérance</strong><small>Gestion IT externalisée</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/cloud-computing.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.96A5 5 0 0 1 16.9 8.05 4.5 4.5 0 0 1 16.5 18H7Z"/><path d="M12 15V9M9 12l3-3 3 3"/></svg>
+                      <span><strong>Cloud Computing</strong><small>Données accessibles et sécurisées</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/cyber-securite.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+                      <span><strong>Cyber Sécurité</strong><small>Protection contre les cybermenaces</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/technologies-energie.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M13 7l-4 6h3l-1 4 5-6h-3l1-4Z"/></svg>
+                      <span><strong>Nouvelles Technologies de l'Énergie</strong><small>Transition énergétique d'entreprise</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/consultation-formation.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-3 2.5-5 5-5s5 2 5 5"/><path d="M16 6h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1l-2 2v-2h-1a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"/></svg>
+                      <span><strong>Consultation &amp; Formation</strong><small>Renforcement des compétences</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/audit-conformite.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M9 12l2 2 4-4"/></svg>
+                      <span><strong>Audit &amp; Conformité</strong><small>Contrôle et conformité aux normes</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/ingenierie-systeme.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1"/><rect x="3" y="10" width="18" height="5" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/><path d="M6 6.5h.01M6 12.5h.01"/></svg>
+                      <span><strong>Ingénierie Système</strong><small>Infrastructure informatique fiable</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/ingenierie-reseau.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="12" cy="11" r="2"/><path d="M7.5 7l3 3M16.5 7l-3 3M12 13v3"/></svg>
+                      <span><strong>Ingénierie Réseau</strong><small>Réseaux locaux et interconnectés</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/ingenierie-logicielle.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13 6l-2 12"/></svg>
+                      <span><strong>Ingénierie Logicielle</strong><small>Applications et logiciels sur mesure</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/business-intelligence.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V6M16 20V13M4 20h16"/><path d="M4 9l6-3 6 4 4-3"/></svg>
+                      <span><strong>Business Intelligence</strong><small>Données, indicateurs, tableaux de bord</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="services/sauvegarde-reprise-sinistre.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 1 2.5 5.8"/><path d="M4 17v-4h4"/><circle cx="12" cy="12" r="2.5"/></svg>
+                      <span><strong>Sauvegarde &amp; Reprise après Sinistre</strong><small>Continuité de votre activité</small></span>
+                    </a>
+                  </li>
+                </ul>
+                <a href="services.html" class="apt-mega__all">
+                  Tous nos services
+                  <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="academy.html">Academy</a></li>
+          <li><a href="partenaires.html">Partenaires</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="contact.html" class="apt-btn apt-btn--primary apt-header__cta">Demander un devis</a>
+      <button class="apt-nav__burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu mobile plein écran -->
+  <div id="mobile-menu" class="apt-mobile-menu" hidden>
+    <div class="apt-container apt-mobile-menu__head">
+      <a href="index.html" class="apt-header__brand apt-logo-protect" aria-label="Aquila Prime Technologies — accueil">
+        <img src="assets/img/logo/logo-couleur.png" alt="Aquila Prime Technologies"
+             class="apt-header__logo" width="220" height="54" loading="lazy">
+      </a>
+      <button class="apt-mobile-menu__close" aria-label="Fermer le menu" data-menu-close>
+        <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ul class="apt-mobile-menu__list">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li>
+        <button class="apt-mobile-menu__sub-trigger" aria-expanded="false" aria-controls="mobile-services">
+          Services
+          <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul id="mobile-services" class="apt-mobile-menu__sub" hidden>
+          <li><a href="services/vente-materiels-informatiques.html">Vente de Matériels Informatiques</a></li>
+          <li><a href="services/infogerance.html">Infogérance</a></li>
+          <li><a href="services/cloud-computing.html">Cloud Computing</a></li>
+          <li><a href="services/cyber-securite.html">Cyber Sécurité</a></li>
+          <li><a href="services/technologies-energie.html">Nouvelles Technologies de l'Énergie</a></li>
+          <li><a href="services/consultation-formation.html">Consultation &amp; Formation</a></li>
+          <li><a href="services/audit-conformite.html">Audit &amp; Conformité</a></li>
+          <li><a href="services/ingenierie-systeme.html">Ingénierie Système</a></li>
+          <li><a href="services/ingenierie-reseau.html">Ingénierie Réseau</a></li>
+          <li><a href="services/ingenierie-logicielle.html">Ingénierie Logicielle</a></li>
+          <li><a href="services/business-intelligence.html">Business Intelligence</a></li>
+          <li><a href="services/sauvegarde-reprise-sinistre.html">Sauvegarde &amp; Reprise après Sinistre</a></li>
+          <li><a href="services.html">Tous nos services</a></li>
+        </ul>
+      </li>
+      <li><a href="boutique.html">Boutique</a></li>
+      <li><a href="academy.html">Academy</a></li>
+      <li><a href="partenaires.html">Partenaires</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+    <div class="apt-container">
+      <a href="contact.html" class="apt-btn apt-btn--primary apt-btn--block apt-mobile-menu__cta">Demander un devis</a>
+    </div>
+  </div>
+
+  <main id="contenu">
+
+    <!-- Fil d'Ariane -->
+    <nav class="apt-breadcrumb apt-section--sm" aria-label="Fil d'Ariane">
+      <div class="apt-container">
+        <ol>
+          <li><a href="index.html">Accueil</a></li>
+          <li aria-current="page">Contact</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Hero de page interne -->
+    <section class="apt-hero--page apt-section--sm">
+      <svg class="apt-pattern-feathers" viewBox="0 0 400 400" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5">
+          <path d="M40 360C120 320 160 240 150 120" />
+          <path d="M120 375C185 340 210 260 200 140" />
+        </g>
+      </svg>
+      <div class="apt-container">
+        <span class="apt-eyebrow">Contact</span>
+        <h1>Contactez Aquila Prime Technologies</h1>
+        <p class="apt-hero--page__lead">Décrivez-nous votre besoin&nbsp;: notre équipe l'étudie et revient vers vous avec une solution adaptée à votre contexte — pas un discours commercial générique.</p>
+      </div>
+    </section>
+
+    <!-- Formulaire + coordonnées -->
+    <section class="apt-section">
+      <div class="apt-container apt-grid-2">
+
+        <div data-reveal>
+          <h2>Votre demande</h2>
+          <!--
+            Le site n'a pas de traitement côté serveur : la demande part par la
+            messagerie du visiteur, vers l'adresse de l'entreprise.
+
+            method="post" est indispensable même si JavaScript prend la main :
+            en cas d'échec du script, le navigateur soumet nativement, et un
+            GET écrirait le nom, l'adresse électronique, le téléphone et le
+            message du visiteur dans l'URL, dans son historique et dans le
+            journal d'accès nginx. Avec POST, rien ne fuite.
+
+            enctype="text/plain" produit un corps de message lisible plutôt
+            qu'une suite encodée en pourcent.
+          -->
+          <form class="apt-form apt-mt-6"
+                action="mailto:info@aquilaprimetech.com"
+                method="post"
+                enctype="text/plain"
+                novalidate data-contact-form>
+
+            <div class="apt-form__error-summary" role="alert" tabindex="-1" hidden>
+              Un champ obligatoire est manquant ou incorrect. Merci de vérifier vos informations avant de renvoyer le formulaire.
+            </div>
+
+            <div class="apt-form__row apt-form__row--2">
+              <div class="apt-field">
+                <label for="nom">Nom complet <span aria-hidden="true">*</span></label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom et prénom" required autocomplete="name" aria-describedby="nom-error">
+                <p class="apt-field__error" id="nom-error" role="alert" hidden>Merci d'indiquer votre nom.</p>
+              </div>
+              <div class="apt-field">
+                <label for="entreprise">Entreprise / organisation</label>
+                <input type="text" id="entreprise" name="entreprise" placeholder="Nom de votre entreprise ou organisation" autocomplete="organization">
+              </div>
+            </div>
+
+            <div class="apt-form__row apt-form__row--2">
+              <div class="apt-field">
+                <label for="email">Email professionnel <span aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="email" placeholder="vous@entreprise.com" required autocomplete="email" aria-describedby="email-error">
+                <p class="apt-field__error" id="email-error" role="alert" hidden>Merci de renseigner une adresse email valide.</p>
+              </div>
+              <div class="apt-field">
+                <label for="telephone">Téléphone</label>
+                <input type="tel" id="telephone" name="telephone" placeholder="+226 XX XX XX XX" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="apt-field">
+              <label for="service">Service concerné</label>
+              <select id="service" name="service">
+                <option value="" selected>Sélectionnez un service (facultatif)</option>
+                <option value="vente-materiels-informatiques">Vente de matériels informatiques</option>
+                <option value="infogerance">Infogérance</option>
+                <option value="cloud-computing">Cloud Computing</option>
+                <option value="cyber-securite">Cyber Sécurité</option>
+                <option value="technologies-energie">Nouvelles Technologies de l'Énergie</option>
+                <option value="consultation-formation">Consultation &amp; Formation</option>
+                <option value="audit-conformite">Audit &amp; Conformité</option>
+                <option value="ingenierie-systeme">Ingénierie Système</option>
+                <option value="ingenierie-reseau">Ingénierie Réseau</option>
+                <option value="ingenierie-logicielle">Ingénierie Logicielle</option>
+                <option value="business-intelligence">Business Intelligence</option>
+                <option value="sauvegarde-reprise-sinistre">Sauvegarde &amp; Reprise après Sinistre</option>
+                <option value="autre">Autre demande</option>
+              </select>
+            </div>
+
+            <div class="apt-field">
+              <label for="message">Votre message <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" placeholder="Décrivez votre besoin, votre contexte, vos délais…" required aria-describedby="message-error"></textarea>
+              <p class="apt-field__error" id="message-error" role="alert" hidden>Merci de décrire votre besoin en quelques mots.</p>
+            </div>
+
+            <button type="submit" class="apt-btn apt-btn--primary">Envoyer ma demande</button>
+
+            <p class="apt-form__privacy">Les informations transmises via ce formulaire sont utilisées exclusivement pour traiter votre demande et ne sont jamais cédées à des tiers.</p>
+
+            <div class="apt-form__success" role="status" aria-live="polite" tabindex="-1" hidden>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <!--
+                Formulation volontairement exacte : le site ne peut pas
+                envoyer le message lui-même, il le prépare. Annoncer « votre
+                message a bien été envoyé » alors que le visiteur doit encore
+                cliquer sur « Envoyer » dans sa messagerie ferait perdre la
+                demande sans que personne ne s'en aperçoive.
+              -->
+              <span>Votre logiciel de messagerie s'ouvre avec votre demande déjà rédigée&nbsp;: il ne vous reste qu'à l'envoyer. Si rien ne s'ouvre, écrivez-nous directement à <a href="mailto:info@aquilaprimetech.com">info@aquilaprimetech.com</a>.</span>
+            </div>
+          </form>
+        </div>
+
+        <div data-reveal>
+          <h2>Nos coordonnées</h2>
+          <div class="apt-flow apt-mt-6">
+            <p class="apt-contact-item">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              Secteur 38, Ouagadougou, Burkina Faso
+            </p>
+            <p class="apt-contact-item">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+              <a href="tel:+22602215353">+226 02 21 53 53</a> · <a href="tel:+22604446969">+226 04 44 69 69</a>
+            </p>
+            <p class="apt-contact-item">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <a href="mailto:info@aquilaprimetech.com">info@aquilaprimetech.com</a>
+            </p>
+            <!-- À COMPLÉTER PAR LE CLIENT : horaires d'ouverture -->
+          </div>
+
+          <div class="apt-contact-note">
+            <h3>Nous trouver</h3>
+            <p class="apt-mt-3 apt-text-muted">Aucune carte intégrée sur ce site (zéro dépendance externe). Vous pouvez rechercher notre adresse sur la cartographie de votre choix.</p>
+            <a href="https://www.openstreetmap.org/search?query=Secteur%2038%2C%20Ouagadougou%2C%20Burkina%20Faso" class="apt-btn apt-btn--tertiary apt-mt-4" target="_blank" rel="noopener noreferrer">
+              Rechercher notre adresse
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================================================================
+       PIED DE PAGE (identique sur toutes les pages — voir brief/PATTERN-PAGE.md)
+       ================================================================== -->
+  <footer class="apt-footer">
+    <div class="apt-container apt-footer__top">
+      <div class="apt-footer__col apt-footer__col--brand apt-logo-protect">
+        <img src="assets/img/logo/logo-blanc.png" alt="Aquila Prime Technologies" width="180" height="44" loading="lazy">
+        <p>« Connecter l'innovation à vos ambitions pour inventer demain, dès aujourd'hui »</p>
+      </div>
+      <nav class="apt-footer__col" aria-label="Nos services">
+        <h3>Nos services</h3>
+        <ul>
+          <li><a href="services/infogerance.html">Infogérance</a></li>
+          <li><a href="services/cyber-securite.html">Cyber Sécurité</a></li>
+          <li><a href="services/cloud-computing.html">Cloud Computing</a></li>
+          <li><a href="services/ingenierie-logicielle.html">Ingénierie Logicielle</a></li>
+          <li><a href="services/consultation-formation.html">Consultation &amp; Formation</a></li>
+          <li><a href="services/business-intelligence.html">Business Intelligence</a></li>
+          <li><a href="services.html">Tous nos services</a></li>
+        </ul>
+      </nav>
+      <nav class="apt-footer__col" aria-label="Entreprise">
+        <h3>Entreprise</h3>
+        <ul>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="boutique.html">Boutique</a></li>
+          <li><a href="academy.html">Aquila Academy</a></li>
+          <li><a href="partenaires.html">Partenaires</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </nav>
+      <div class="apt-footer__col" aria-label="Coordonnées">
+        <h3>Contact</h3>
+        <ul>
+          <li>Secteur 38, Ouagadougou, Burkina Faso</li>
+          <li><a href="tel:+22602215353">+226 02 21 53 53</a></li>
+          <li><a href="tel:+22604446969">+226 04 44 69 69</a></li>
+          <li><a href="mailto:info@aquilaprimetech.com">info@aquilaprimetech.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="apt-container apt-footer__bottom">
+      <p>© <span data-current-year>2026</span> Aquila Prime Technologies. Tous droits réservés.</p>
+      <p><a href="mentions-legales.html">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <button class="apt-back-to-top" aria-label="Retour en haut de page" data-back-to-top hidden>
+    <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

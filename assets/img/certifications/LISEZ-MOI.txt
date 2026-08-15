@@ -1,0 +1,139 @@
+LOGOS DES FILIÈRES DE CERTIFICATION
+===================================
+
+Ce dossier contient les logos affichés sur les tuiles de certification
+(page academy.html et bloc correspondant de la page d'accueil).
+
+
+CE QUI EST LIVRÉ
+----------------
+
+  cisco.svg          Cisco Systems, Inc.
+  ibm.svg            International Business Machines Corp.
+  iso.svg            Organisation internationale de normalisation
+  microsoft.svg      Microsoft Corp.
+  oracle-java.svg    Oracle Corp. (filière « Oracle Java »)
+
+Les fichiers cisco.svg, microsoft.svg et oracle-java.svg sont les mêmes
+images que celles du dossier ../partners/ : ce sont les mêmes marques. Ils
+sont dupliqués ici plutôt que référencés en travers pour que chaque dossier
+reste autonome — le coût est de quelques kilo-octets.
+
+Origine : Wikimedia Commons, fichiers relevant du domaine public.
+Chaque fichier a été nettoyé (métadonnées d'export, scripts, dimensions
+fixes retirés) et vérifié : XML valide, viewBox unique, aucune référence
+externe.
+
+
+CE QUI N'EST PAS LIVRÉ, ET POURQUOI
+-----------------------------------
+
+Quatre filières portent une MARQUE DESSINÉE : un emblème coloré suivi du
+nom et du symbole ®, sur le modèle exact de la tuile Microsoft (signe
+coloré à gauche, nom en gris à droite) :
+
+  ITIL        marque de PeopleCert / AXELOS
+  PRINCE2     marque de PeopleCert / AXELOS
+              (l'intitulé du site disait « PRINCE II » ; la marque
+               s'écrit PRINCE2, il a été corrigé)
+  COBIT       marque de l'ISACA
+  PMP         marque du Project Management Institute
+
+Il n'existe pour ces quatre-là aucun fichier de logo sous licence libre :
+ce sont des marques déposées que leurs titulaires ne diffusent pas
+librement, et elles sont volontairement absentes de Wikimedia Commons.
+Les récupérer ailleurs reviendrait à héberger un fichier dont l'origine et
+les droits ne seraient pas établis.
+
+Recherche menée et consignée ici pour ne pas être refaite :
+  - Wikimedia Commons : aucun fichier pour ITIL, PRINCE2 ni COBIT.
+  - Wikipédia (fichiers locaux, hors Commons) : « PMI-logo.png » existe,
+    mais sous licence « Fair use » — un usage autorisé dans l'article de
+    Wikipédia, et nulle part ailleurs. Inutilisable ici.
+  - « ISACA logo.png » est en domaine public mais explicitement signalé
+    « trademarked », et l'ISACA n'est pas COBIT.
+
+Chaque emblème a sa propre couleur et son propre dessin, choisis pour
+évoquer la discipline concernée :
+
+  ITIL      #6B2FA0  boucle d'amélioration continue (cycle de vie des services)
+  PRINCE2   #0F8A7E  étapes maîtrisées d'un projet
+  COBIT     #1668B3  cadre de gouvernance et son noyau
+  PMP       #1B3B6F  écusson de qualification professionnelle
+
+Une première version composait les quatre noms dans l'orange du site :
+elles devenaient interchangeables et se lisaient comme du texte décoré,
+non comme des marques distinctes. D'où les couleurs propres.
+
+CE SONT DES DESSINS ORIGINAUX, PAS LES LOGOS OFFICIELS. Ils désignent la
+certification sans prétendre reproduire l'identité visuelle de l'organisme
+qui la délivre.
+
+Les couleurs sont déclarées dans style.css (.apt-badge__mark--<slug>) et
+non en attribut style : la politique de sécurité du site interdit les
+styles en ligne (style-src 'self'), qui seraient purement et simplement
+ignorés par le navigateur.
+
+Ce traitement n'est donc pas un pis-aller de dernière minute :
+c'est le traitement retenu tant que l'entreprise n'a pas obtenu les
+fichiers officiels auprès de ces organismes — ce qui se fait normalement
+par le programme partenaire ou le centre de formation agréé.
+
+Il est cohérent avec le reste de la grille : la tuile Microsoft associe
+elle aussi un signe coloré et un nom composé. Les quatre marques dessinées
+s'y insèrent sans détonner, et toutes les tuiles présentent désormais un
+visuel de même hauteur (48 px mesurés).
+
+
+PIÈGE VÉRIFIÉ — À LIRE AVANT D'AJOUTER UN LOGO
+----------------------------------------------
+
+Un fichier peut porter la bonne licence ET représenter la mauvaise marque.
+
+Lors de la préparation de ce dossier, le fichier « Pmi logo text only.svg »
+de Wikimedia Commons a été retenu pour la filière PMP sur la foi de son nom
+et de sa licence (domaine public). Le rendu a montré qu'il s'agissait du
+logo de PHILIP MORRIS INTERNATIONAL — même sigle « PMI », entreprise sans
+aucun rapport. Le défaut n'a été vu qu'en regardant l'image affichée.
+
+Donc : après tout ajout, REGARDEZ le logo dans le navigateur. La licence se
+contrôle par programme, le contenu non.
+
+
+PROCÉDURE D'AJOUT
+-----------------
+
+1. Déposer le fichier ici sous le nom <slug>.svg, où <slug> est la valeur
+   de l'attribut data-logo de la tuile (voir academy.html) : itil, prince2,
+   cobit, pmp.
+
+2. Ajouter le nom du fichier dans logos.json.
+
+3. Dans academy.html ET index.html, remplacer sur la tuile concernée :
+
+       <span class="apt-badge__mark apt-badge__mark--itil" aria-hidden="true">…</span>
+
+   par :
+
+       <img src="assets/img/certifications/itil.svg" alt=""
+            loading="lazy" class="apt-badge__logo">
+
+   Le logo est écrit en dur dans le HTML, et non injecté par JavaScript :
+   il s'affiche ainsi sans JavaScript, et aussi quand la page est ouverte
+   directement depuis le disque (en file://, fetch() est bloqué par le
+   navigateur — c'est ce qui faisait disparaître les logos partenaires).
+
+4. Vérifier : XML valide (xmllint --noout <fichier>), un seul viewBox dans
+   la balise <svg>, et le rendu à l'écran.
+
+
+STATUT JURIDIQUE
+----------------
+
+Ces logos sont affichés à titre de référence, pour indiquer les filières de
+certification préparées. Il s'agit d'un usage nominatif : désigner une
+certification par le nom et le signe de l'organisme qui la délivre. Aucune
+affiliation, aucun agrément ni aucun parrainage n'est suggéré par leur
+seule présence. Les marques restent la propriété de leurs titulaires.
+
+Pour toute demande de retrait : info@aquilaprimetech.com

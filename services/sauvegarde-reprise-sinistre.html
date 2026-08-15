@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Signale que JavaScript est actif : les blocs animés ne sont masqués que dans ce cas. -->
+  <script>document.documentElement.classList.add('js');</script>
+  <title>Sauvegarde &amp; reprise après sinistre à Ouagadougou</title>
+  <meta name="description" content="Sauvegarde sécurisée, plan de reprise après sinistre, tests réguliers de restauration. Continuité d'activité, Ouagadougou, Afrique de l'Ouest.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://aquilaprimetech.com/services/sauvegarde-reprise-sinistre.html">
+
+  <!-- Favicons -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/img/logo/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="../assets/img/logo/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/img/logo/favicon-180.png">
+
+  <!-- Préchargement des polices critiques -->
+  <link rel="preload" href="../assets/fonts/montserrat-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Aquila Prime Technologies">
+  <meta property="og:url" content="https://aquilaprimetech.com/services/sauvegarde-reprise-sinistre.html">
+  <meta property="og:title" content="Sauvegarde &amp; reprise après sinistre à Ouagadougou">
+  <meta property="og:description" content="Sauvegarde sécurisée, plan de reprise après sinistre, tests réguliers de restauration. Continuité d'activité, Ouagadougou, Afrique de l'Ouest.">
+  <!-- Image de partage : logo par défaut en attendant un visuel dédié.
+       À COMPLÉTER PAR LE CLIENT : image Open Graph 1200×630 dédiée -->
+  <meta property="og:image" content="https://aquilaprimetech.com/assets/img/logo/logo-couleur.png">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="394">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sauvegarde &amp; reprise après sinistre à Ouagadougou">
+  <meta name="twitter:description" content="Sauvegarde sécurisée, plan de reprise après sinistre, tests réguliers de restauration.">
+  <meta name="twitter:image" content="https://aquilaprimetech.com/assets/img/logo/logo-couleur.png">
+
+  <!-- JSON-LD : BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://aquilaprimetech.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://aquilaprimetech.com/services.html" },
+      { "@type": "ListItem", "position": 3, "name": "Sauvegarde & Reprise après Sinistre", "item": "https://aquilaprimetech.com/services/sauvegarde-reprise-sinistre.html" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD : Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Sauvegarde & Reprise après Sinistre — Continuité Assurée",
+    "description": "Sauvegarde sécurisée, plan de reprise après sinistre, tests réguliers de restauration. Continuité d'activité, Ouagadougou, Afrique de l'Ouest.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Aquila Prime Technologies",
+      "url": "https://aquilaprimetech.com/",
+      "telephone": "+226-02-21-53-53",
+      "email": "info@aquilaprimetech.com",
+      "address": { "@type": "PostalAddress", "streetAddress": "Secteur 38", "addressLocality": "Ouagadougou", "addressCountry": "BF" }
+    },
+    "url": "https://aquilaprimetech.com/services/sauvegarde-reprise-sinistre.html",
+    "areaServed": { "@type": "Country", "name": "Burkina Faso" }
+  }
+  </script>
+
+  <!-- JSON-LD : FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Qu'est-ce qu'une sauvegarde « incrémentielle » et une sauvegarde « complète » ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Une sauvegarde complète copie l'intégralité de vos données. Une sauvegarde incrémentielle copie uniquement les données modifiées depuis la dernière sauvegarde, ce qui est plus rapide et moins consommateur de bande passante. Nous combinons généralement une sauvegarde complète hebdomadaire et des sauvegardes incrémentielles quotidiennes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien de temps faut-il pour restaurer après un sinistre ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le temps de restauration dépend du RTO (Recovery Time Objective) défini avec vous selon la criticité de chaque système. Nous concevons l'architecture de sauvegarde pour minimiser ce délai, avec des solutions de réplication renforcée pour les systèmes les plus critiques."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Les tests de restauration sont-ils vraiment importants ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Une sauvegarde non testée est comme un parachute jamais vérifié. Nous testons régulièrement pour nous assurer qu'en cas réel, la restauration fonctionne sans surprise. Les tests révèlent souvent des défaillances qui seraient restées invisibles."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="apt-skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <!-- ==================================================================
+       EN-TÊTE (identique sur toutes les pages — voir brief/PATTERN-PAGE.md)
+       ================================================================== -->
+  <header class="apt-header" data-header>
+    <div class="apt-container apt-header__inner">
+      <a href="../index.html" class="apt-header__brand apt-logo-protect" aria-label="Aquila Prime Technologies — accueil">
+        <img src="../assets/img/logo/logo-couleur.png" alt="Aquila Prime Technologies"
+             class="apt-header__logo" width="220" height="54" loading="eager">
+      </a>
+
+      <nav class="apt-nav" aria-label="Navigation principale">
+        <ul class="apt-nav__list">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="../a-propos.html">À propos</a></li>
+          <li class="apt-nav__item--has-mega">
+            <button class="apt-nav__trigger" aria-expanded="false" aria-controls="mega-services">
+              Services
+              <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+
+            <div id="mega-services" class="apt-mega" role="menu" hidden>
+              <div class="apt-container apt-mega__inner">
+                <ul class="apt-mega__grid" role="none">
+                  <li role="none">
+                    <a role="menuitem" href="vente-materiels-informatiques.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg>
+                      <span><strong>Vente de Matériels Informatiques</strong><small>Équipements dernière génération</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="infogerance.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+                      <span><strong>Infogérance</strong><small>Gestion IT externalisée</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="cloud-computing.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.96A5 5 0 0 1 16.9 8.05 4.5 4.5 0 0 1 16.5 18H7Z"/><path d="M12 15V9M9 12l3-3 3 3"/></svg>
+                      <span><strong>Cloud Computing</strong><small>Données accessibles et sécurisées</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="cyber-securite.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+                      <span><strong>Cyber Sécurité</strong><small>Protection contre les cybermenaces</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="technologies-energie.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M13 7l-4 6h3l-1 4 5-6h-3l1-4Z"/></svg>
+                      <span><strong>Nouvelles Technologies de l'Énergie</strong><small>Transition énergétique d'entreprise</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="consultation-formation.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-3 2.5-5 5-5s5 2 5 5"/><path d="M16 6h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1l-2 2v-2h-1a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"/></svg>
+                      <span><strong>Consultation &amp; Formation</strong><small>Renforcement des compétences</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="audit-conformite.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M9 12l2 2 4-4"/></svg>
+                      <span><strong>Audit &amp; Conformité</strong><small>Contrôle et conformité aux normes</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="ingenierie-systeme.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1"/><rect x="3" y="10" width="18" height="5" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/><path d="M6 6.5h.01M6 12.5h.01"/></svg>
+                      <span><strong>Ingénierie Système</strong><small>Infrastructure informatique fiable</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="ingenierie-reseau.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="12" cy="11" r="2"/><path d="M7.5 7l3 3M16.5 7l-3 3M12 13v3"/></svg>
+                      <span><strong>Ingénierie Réseau</strong><small>Réseaux locaux et interconnectés</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="ingenierie-logicielle.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13 6l-2 12"/></svg>
+                      <span><strong>Ingénierie Logicielle</strong><small>Applications et logiciels sur mesure</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="business-intelligence.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V6M16 20V13M4 20h16"/><path d="M4 9l6-3 6 4 4-3"/></svg>
+                      <span><strong>Business Intelligence</strong><small>Données, indicateurs, tableaux de bord</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="sauvegarde-reprise-sinistre.html" aria-current="page" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 1 2.5 5.8"/><path d="M4 17v-4h4"/><circle cx="12" cy="12" r="2.5"/></svg>
+                      <span><strong>Sauvegarde &amp; Reprise après Sinistre</strong><small>Continuité de votre activité</small></span>
+                    </a>
+                  </li>
+                </ul>
+                <a href="../services.html" class="apt-mega__all">
+                  Tous nos services
+                  <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="../boutique.html">Boutique</a></li>
+          <li><a href="../academy.html">Academy</a></li>
+          <li><a href="../partenaires.html">Partenaires</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="../contact.html" class="apt-btn apt-btn--primary apt-header__cta">Demander un devis</a>
+      <button class="apt-nav__burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu mobile plein écran -->
+  <div id="mobile-menu" class="apt-mobile-menu" hidden>
+    <div class="apt-container apt-mobile-menu__head">
+      <a href="../index.html" class="apt-header__brand apt-logo-protect" aria-label="Aquila Prime Technologies — accueil">
+        <img src="../assets/img/logo/logo-couleur.png" alt="Aquila Prime Technologies"
+             class="apt-header__logo" width="220" height="54" loading="lazy">
+      </a>
+      <button class="apt-mobile-menu__close" aria-label="Fermer le menu" data-menu-close>
+        <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ul class="apt-mobile-menu__list">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../a-propos.html">À propos</a></li>
+      <li>
+        <button class="apt-mobile-menu__sub-trigger" aria-expanded="false" aria-controls="mobile-services">
+          Services
+          <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul id="mobile-services" class="apt-mobile-menu__sub" hidden>
+          <li><a href="vente-materiels-informatiques.html">Vente de Matériels Informatiques</a></li>
+          <li><a href="infogerance.html">Infogérance</a></li>
+          <li><a href="cloud-computing.html">Cloud Computing</a></li>
+          <li><a href="cyber-securite.html">Cyber Sécurité</a></li>
+          <li><a href="technologies-energie.html">Nouvelles Technologies de l'Énergie</a></li>
+          <li><a href="consultation-formation.html">Consultation &amp; Formation</a></li>
+          <li><a href="audit-conformite.html">Audit &amp; Conformité</a></li>
+          <li><a href="ingenierie-systeme.html">Ingénierie Système</a></li>
+          <li><a href="ingenierie-reseau.html">Ingénierie Réseau</a></li>
+          <li><a href="ingenierie-logicielle.html">Ingénierie Logicielle</a></li>
+          <li><a href="business-intelligence.html">Business Intelligence</a></li>
+          <li><a href="sauvegarde-reprise-sinistre.html" aria-current="page">Sauvegarde &amp; Reprise après Sinistre</a></li>
+          <li><a href="../services.html">Tous nos services</a></li>
+        </ul>
+      </li>
+      <li><a href="../boutique.html">Boutique</a></li>
+      <li><a href="../academy.html">Academy</a></li>
+      <li><a href="../partenaires.html">Partenaires</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <div class="apt-container">
+      <a href="../contact.html" class="apt-btn apt-btn--primary apt-btn--block apt-mobile-menu__cta">Demander un devis</a>
+    </div>
+  </div>
+
+  <main id="contenu">
+
+    <!-- Fil d'Ariane -->
+    <nav class="apt-breadcrumb apt-section--sm" aria-label="Fil d'Ariane">
+      <div class="apt-container">
+        <ol>
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li aria-current="page">Sauvegarde &amp; Reprise après Sinistre</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Hero de page interne -->
+    <section class="apt-hero--page apt-section--sm">
+      <svg class="apt-pattern-feathers" viewBox="0 0 400 400" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5">
+          <path d="M40 360C120 320 160 240 150 120" />
+          <path d="M120 375C185 340 210 260 200 140" />
+        </g>
+      </svg>
+      <div class="apt-container">
+        <span class="apt-eyebrow">
+          <svg class="apt-icon apt-icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 1 2.5 5.8"/><path d="M4 17v-4h4"/><circle cx="12" cy="12" r="2.5"/></svg>
+          Continuité assurée
+        </span>
+        <h1>Garantissez la continuité de votre activité grâce à une stratégie de sauvegarde et de reprise rigoureuse</h1>
+        <p class="apt-hero--page__lead">Un sinistre informatique (panne matériel, cyberattaque, catastrophe naturelle) peut paralyser votre activité en heures, voire en minutes.</p>
+      </div>
+    </section>
+
+    <section class="apt-section">
+      <div class="apt-container apt-service-article">
+        <p class="apt-service-article__lead">Un sinistre informatique (panne matériel, cyberattaque, catastrophe naturelle) peut paralyser votre activité en heures, voire en minutes. Aquila Prime Technologies déploie une stratégie complète de sauvegarde et de reprise après sinistre&nbsp;: sauvegardes régulières, tests de restauration, infrastructure de secours, plans de continuité documentés.</p>
+
+        <section>
+          <h2>Le défi</h2>
+          <p>Beaucoup d'entreprises ouest-africaines n'ont aucun plan d'urgence informatique. Elles sauvegardent leurs données « quand c'est possible » — sur un vieux serveur, une clé USB… Les tests de restauration sont rares. En cas de perte de données ou d'infrastructure, elles perdent des jours, voire des semaines de données. Le coût réel d'une perte de continuité (chiffre d'affaires perdu, clients déçus, réputation endommagée) est énorme.</p>
+        </section>
+
+        <section>
+          <h2>Notre réponse</h2>
+          <p>Nous mettons en place une stratégie éprouvée&nbsp;: sauvegardes régulières et chiffrées, réplication vers un second site pour la haute disponibilité, tests réguliers de restauration pour s'assurer de la fiabilité, et un plan de continuité documenté. En cas de sinistre, vous retrouvez vos données et redémarrez rapidement.</p>
+        </section>
+
+        <section>
+          <h2>Ce que nous prenons en charge</h2>
+          <ul class="apt-service-list">
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Audit de résilience</strong> — Évaluation des risques, identification des données et systèmes critiques</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Stratégie de sauvegarde</strong> — Choix du type (incrémentielle, complète, snapshots), fréquence, rétention</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Infrastructure de sauvegarde</strong> — Serveurs de sauvegarde, stockage redondant, chiffrement, sécurité physique</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Réplication et géo-redondance</strong> — Copie des sauvegardes sur un second site ou en cloud pour une protection renforcée</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Plan de reprise après sinistre (DRP)</strong> — Documenté, avec procédures claires et rôles assignés</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Tests réguliers</strong> — Tests de restauration périodiques pour valider la fiabilité de vos sauvegardes</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Gestion et monitoring</strong> — Rapports de sauvegarde, alertes en cas de défaillance, amélioration continue</span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Les bénéfices pour vous</h2>
+          <div class="apt-benefits">
+            <div class="apt-benefit-box">
+              <h3>Continuité renforcée</h3>
+              <p>Perte de données minimale, redémarrage rapide en cas de sinistre.</p>
+            </div>
+            <div class="apt-benefit-box">
+              <h3>Conformité</h3>
+              <p>Respect des obligations légales de conservation de données.</p>
+            </div>
+            <div class="apt-benefit-box">
+              <h3>Tranquillité d'esprit</h3>
+              <p>Vous savez qu'en cas de crise, vos données critiques sont sauves.</p>
+            </div>
+            <div class="apt-benefit-box">
+              <h3>Impact économique limité</h3>
+              <p>RTO (temps de reprise) et RPO (perte de données admissible) définis et maîtrisés avec vous.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Pour qui</h2>
+          <ul class="apt-check-list">
+            <li><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Institutions financières et banques</li>
+            <li><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> E-commerce et retail</li>
+            <li><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Entreprises traitant des données critiques</li>
+            <li><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Administrations publiques</li>
+            <li><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Secteur santé</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Technologies et partenaires mobilisés</h2>
+          <ul class="apt-wordmarks apt-cards-center">
+            <li class="apt-wordmark" tabindex="0" data-logo="amazon" data-logo-dir="partners"><img src="../assets/img/partners/amazon.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Amazon</span></li>
+            <li class="apt-wordmark" tabindex="0" data-logo="dell" data-logo-dir="partners"><img src="../assets/img/partners/dell.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Dell</span></li>
+            <li class="apt-wordmark" tabindex="0" data-logo="symantec" data-logo-dir="partners"><img src="../assets/img/partners/symantec.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Symantec</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Questions fréquentes</h2>
+          <div class="apt-accordion">
+            <div class="apt-accordion__item">
+              <h3>
+                <button class="apt-accordion__trigger" aria-expanded="false" aria-controls="faq-1" id="faq-1-trigger">
+                  Qu'est-ce qu'une sauvegarde « incrémentielle » et une sauvegarde « complète »&nbsp;?
+                  <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="apt-accordion__panel" id="faq-1" role="region" aria-labelledby="faq-1-trigger" hidden>
+                <p>Une sauvegarde complète copie l'intégralité de vos données. Une sauvegarde incrémentielle copie uniquement les données modifiées depuis la dernière sauvegarde, ce qui est plus rapide et moins consommateur de bande passante. Nous combinons généralement une sauvegarde complète hebdomadaire et des sauvegardes incrémentielles quotidiennes.</p>
+              </div>
+            </div>
+            <div class="apt-accordion__item">
+              <h3>
+                <button class="apt-accordion__trigger" aria-expanded="false" aria-controls="faq-2" id="faq-2-trigger">
+                  Combien de temps faut-il pour restaurer après un sinistre&nbsp;?
+                  <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="apt-accordion__panel" id="faq-2" role="region" aria-labelledby="faq-2-trigger" hidden>
+                <p>Le temps de restauration dépend du RTO (Recovery Time Objective) défini avec vous selon la criticité de chaque système. Nous concevons l'architecture de sauvegarde pour minimiser ce délai, avec des solutions de réplication renforcée pour les systèmes les plus critiques.</p>
+              </div>
+            </div>
+            <div class="apt-accordion__item">
+              <h3>
+                <button class="apt-accordion__trigger" aria-expanded="false" aria-controls="faq-3" id="faq-3-trigger">
+                  Les tests de restauration sont-ils vraiment importants&nbsp;?
+                  <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="apt-accordion__panel" id="faq-3" role="region" aria-labelledby="faq-3-trigger" hidden>
+                <p>Oui. Une sauvegarde non testée est comme un parachute jamais vérifié. Nous testons régulièrement pour nous assurer qu'en cas réel, la restauration fonctionne sans surprise. Les tests révèlent souvent des défaillances qui seraient restées invisibles.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="apt-service-article__cta">
+          <h2>Sécurisez votre continuité d'activité</h2>
+          <a href="../contact.html" class="apt-btn apt-btn--primary">Demander un audit de continuité</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Maillage interne -->
+    <section class="apt-section apt-section--alt">
+      <div class="apt-container">
+        <div class="apt-section__head apt-section__head--center">
+          <span class="apt-eyebrow">Services complémentaires</span>
+          <h2>À découvrir également</h2>
+        </div>
+        <div class="apt-grid-3">
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Cyber Sécurité</h3>
+            <p class="apt-card-service__text">Protéger vos sauvegardes contre les rançongiciels.</p>
+            <a href="cyber-securite.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Infogérance</h3>
+            <p class="apt-card-service__text">Intégrer vos sauvegardes à votre gestion IT externalisée.</p>
+            <a href="infogerance.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Audit &amp; Conformité</h3>
+            <p class="apt-card-service__text">Respecter les obligations de rétention et de sauvegarde.</p>
+            <a href="audit-conformite.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bandeau CTA final -->
+    <section class="apt-cta-final apt-bg-gradient-brand apt-section--sm">
+      <svg class="apt-pattern-feathers" viewBox="0 0 400 400" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5">
+          <path d="M40 360C120 320 160 240 150 120" />
+          <path d="M200 380C245 350 260 280 250 160" />
+        </g>
+      </svg>
+      <div class="apt-container apt-cta-final__inner">
+        <div>
+          <h2>Assurez la continuité de votre activité</h2>
+          <p class="apt-cta-final__lead">Sauvegardes régulières, tests de restauration et plan de reprise documenté&nbsp;: nous sécurisons la continuité de vos opérations, quelle que soit la nature de l'incident.</p>
+        </div>
+        <div class="apt-btn-group">
+          <a href="../contact.html" class="apt-btn apt-btn--primary">Nous contacter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================================================================
+       PIED DE PAGE (identique sur toutes les pages — voir brief/PATTERN-PAGE.md)
+       ================================================================== -->
+  <footer class="apt-footer">
+    <div class="apt-container apt-footer__top">
+      <div class="apt-footer__col apt-footer__col--brand apt-logo-protect">
+        <img src="../assets/img/logo/logo-blanc.png" alt="Aquila Prime Technologies" width="180" height="44" loading="lazy">
+        <p>« Connecter l'innovation à vos ambitions pour inventer demain, dès aujourd'hui »</p>
+      </div>
+      <nav class="apt-footer__col" aria-label="Nos services">
+        <h3>Nos services</h3>
+        <ul>
+          <li><a href="infogerance.html">Infogérance</a></li>
+          <li><a href="cyber-securite.html">Cyber Sécurité</a></li>
+          <li><a href="cloud-computing.html">Cloud Computing</a></li>
+          <li><a href="ingenierie-logicielle.html">Ingénierie Logicielle</a></li>
+          <li><a href="consultation-formation.html">Consultation &amp; Formation</a></li>
+          <li><a href="business-intelligence.html">Business Intelligence</a></li>
+          <li><a href="../services.html">Tous nos services</a></li>
+        </ul>
+      </nav>
+      <nav class="apt-footer__col" aria-label="Entreprise">
+        <h3>Entreprise</h3>
+        <ul>
+          <li><a href="../a-propos.html">À propos</a></li>
+          <li><a href="../boutique.html">Boutique</a></li>
+          <li><a href="../academy.html">Aquila Academy</a></li>
+          <li><a href="../partenaires.html">Partenaires</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </nav>
+      <div class="apt-footer__col" aria-label="Coordonnées">
+        <h3>Contact</h3>
+        <ul>
+          <li>Secteur 38, Ouagadougou, Burkina Faso</li>
+          <li><a href="tel:+22602215353">+226 02 21 53 53</a></li>
+          <li><a href="tel:+22604446969">+226 04 44 69 69</a></li>
+          <li><a href="mailto:info@aquilaprimetech.com">info@aquilaprimetech.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="apt-container apt-footer__bottom">
+      <p>© <span data-current-year>2026</span> Aquila Prime Technologies. Tous droits réservés.</p>
+      <p><a href="../mentions-legales.html">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <button class="apt-back-to-top" aria-label="Retour en haut de page" data-back-to-top hidden>
+    <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

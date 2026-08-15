@@ -1,0 +1,2378 @@
+/* ==========================================================================
+   AQUILA PRIME TECHNOLOGIES — STYLE.CSS
+   Feuille de composants complète. Consomme exclusivement les tokens de
+   assets/css/tokens.css (chargé AVANT ce fichier dans le <head>).
+   Aucune valeur hexadécimale codée en dur ici : tout passe par var(--apt-…).
+   Mobile-first — points de rupture : 360 (base) / 768 / 1024 / 1200 (bascule
+   de la navigation) / 1440.
+
+   SOMMAIRE
+   1.  Typographie complémentaire & utilitaires de texte
+   2.  Accessibilité — lien d'évitement (skip-link)
+   3.  En-tête (header) sticky à deux états
+   4.  Méga-menu Services (desktop ≥ 1200px)
+   5.  Menu mobile plein écran (< 1200px)
+   6.  Boutons
+   7.  Icônes
+   8.  Carte de service
+   9.  Carte de service en vedette
+   10. Bloc texte + visuel alterné (split)
+   11. Timeline « Notre méthode »
+   12. Compteurs chiffrés
+   13. Bloc « Nos engagements »
+   14. Grille de wordmarks partenaires
+   15. Grille de badges certifications
+   16. Accordéon FAQ
+   17. Formulaire de contact
+   18. Fil d'Ariane
+   19. Hero de page interne
+   20. Hero d'accueil
+   21. Mise en page d'article de service
+   22. Bandeau CTA final
+   23. Footer (4 colonnes)
+   24. Bouton retour en haut
+   25. Page 404
+   26. Motifs graphiques décoratifs
+   27. Animations au scroll (reveal)
+   28. Utilitaires divers
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. TYPOGRAPHIE COMPLÉMENTAIRE & UTILITAIRES DE TEXTE
+   ========================================================================== */
+
+.apt-eyebrow--inverse {
+  color: var(--apt-blanc);
+  opacity: .85;
+}
+
+.apt-eyebrow--inverse::before {
+  background: var(--apt-blanc);
+  opacity: .6;
+}
+
+.apt-section__intro {
+  max-width: 65ch;
+  margin-top: var(--apt-space-4);
+  font-size: var(--apt-fs-md);
+  color: var(--apt-text-muted);
+}
+
+.apt-section--dark .apt-section__intro {
+  color: var(--apt-text-inverse-muted);
+}
+
+.apt-section__head {
+  margin-bottom: var(--apt-space-9);
+}
+
+.apt-section__head--center {
+  text-align: center;
+}
+
+.apt-section__head--center .apt-section__intro {
+  margin-inline: auto;
+}
+
+.apt-check-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--apt-space-3);
+  padding-left: 0;
+  margin-top: var(--apt-space-6);
+  list-style: none;
+}
+
+.apt-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--apt-space-3);
+  margin-top: 0;
+}
+
+.apt-check-list .apt-icon {
+  flex-shrink: 0;
+  margin-top: .15em;
+  color: var(--apt-brand-solid);
+}
+
+
+/* ==========================================================================
+   2. ACCESSIBILITÉ — LIEN D'ÉVITEMENT (SKIP-LINK)
+   ========================================================================== */
+
+.apt-skip-link {
+  position: fixed;
+  top: var(--apt-space-2);
+  left: var(--apt-space-2);
+  z-index: var(--apt-z-toast);
+  padding: var(--apt-space-3) var(--apt-space-5);
+  background: var(--apt-bg-dark);
+  color: var(--apt-text-inverse);
+  font-weight: var(--apt-fw-semibold);
+  border-radius: var(--apt-radius-sm);
+  transform: translateY(-150%);
+  transition: transform var(--apt-duration-base) var(--apt-ease-standard);
+}
+
+.apt-skip-link:focus {
+  transform: translateY(0);
+}
+
+body.apt-no-scroll {
+  overflow: hidden;
+}
+
+
+/* ==========================================================================
+   3. EN-TÊTE (HEADER) STICKY À DEUX ÉTATS
+
+   Bascule desktop à 75rem (1200px) et non 1024px : à 1024px la barre
+   complète — logo + zone de protection imposée par la charte §4, six
+   entrées de navigation et bouton de devis — mesurait 1128px et débordait
+   de 104px. Entre 1024 et 1200px, on conserve donc le menu burger.
+   ========================================================================== */
+
+.apt-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--apt-z-header);
+  width: 100%;
+  background-color: var(--apt-bg);
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color var(--apt-duration-base) var(--apt-ease-standard),
+    box-shadow var(--apt-duration-base) var(--apt-ease-standard),
+    border-color var(--apt-duration-base) var(--apt-ease-standard);
+}
+
+.apt-header--scrolled {
+  --apt-logo-header-height: clamp(1.75rem, 1.5rem + 0.5vw, 2.25rem);
+  box-shadow: var(--apt-shadow-sm);
+}
+
+/* Variante « sur hero » : uniquement sur l'accueil, transparente tant que
+   le header n'est pas encore scrollé (le hero d'accueil est sombre). */
+.apt-header--on-hero:not(.apt-header--scrolled) {
+  position: absolute;
+  background-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.apt-header--on-hero:not(.apt-header--scrolled) .apt-nav__list a,
+.apt-header--on-hero:not(.apt-header--scrolled) .apt-nav__trigger {
+  color: var(--apt-text-inverse);
+}
+
+.apt-header--on-hero:not(.apt-header--scrolled) .apt-nav__burger span {
+  background-color: var(--apt-blanc);
+}
+
+.apt-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--apt-space-4);
+}
+
+.apt-header__brand {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.apt-header__logo {
+  height: var(--apt-logo-header-height);
+  width: auto;
+  min-width: var(--apt-logo-min-width);
+}
+
+.apt-nav {
+  display: none;
+}
+
+@media (min-width: 75rem) {
+  .apt-nav {
+    display: block;
+    flex: 1;
+  }
+}
+
+/* L'écart entre entrées se resserre sur les écrans de bureau les plus
+   étroits. Avec l'ajout de « Boutique », la barre compte 7 entrées plus le
+   bouton de devis : à 32 px d'écart, « À propos » se cassait en deux lignes
+   dès 1440 px. On repasse à l'écart large seulement quand la place le
+   permet réellement. */
+.apt-nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--apt-space-4);
+}
+
+@media (min-width: 100rem) {
+  .apt-nav__list {
+    gap: var(--apt-space-6);
+  }
+}
+
+.apt-nav__list > li {
+  position: relative;
+  margin-top: 0;
+}
+
+.apt-nav__list a,
+.apt-nav__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--apt-space-1);
+  padding-block: var(--apt-space-2);
+  font-family: var(--apt-font-heading);
+  font-weight: var(--apt-fw-semibold);
+  font-size: var(--apt-fs-sm);
+  color: var(--apt-text);
+  position: relative;
+  /* Un libellé de menu ne doit jamais se couper : « À propos » sur deux
+     lignes désaligne toute la barre et le soulignement de l'onglet actif. */
+  white-space: nowrap;
+}
+
+.apt-nav__trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.apt-nav__list a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -2px;
+  height: 2px;
+  background: var(--apt-gradient-brand-h);
+  transition: right var(--apt-duration-base) var(--apt-ease-standard);
+}
+
+.apt-nav__list a:hover::after,
+.apt-nav__list a:focus-visible::after,
+.apt-nav__list a[aria-current="page"]::after {
+  right: 0;
+}
+
+.apt-nav__list a[aria-current="page"] {
+  color: var(--apt-brand-text);
+}
+
+.apt-icon--chevron {
+  width: 1rem;
+  height: 1rem;
+  transition: transform var(--apt-duration-fast) var(--apt-ease-standard);
+}
+
+.apt-nav__trigger[aria-expanded="true"] .apt-icon--chevron {
+  transform: rotate(180deg);
+}
+
+/* Le bouton du header porte aussi la classe `.apt-btn`, déclarée plus bas
+   dans ce fichier (§6) avec `display: inline-flex`. À spécificité égale,
+   c'est la dernière règle du fichier qui gagne : le bouton restait donc
+   affiché en mobile, comprimant le burger et provoquant un débordement
+   horizontal. On remonte la spécificité pour reprendre la main. */
+.apt-header .apt-header__cta {
+  display: none;
+  flex-shrink: 0;
+}
+
+@media (min-width: 75rem) {
+  .apt-header .apt-header__cta {
+    display: inline-flex;
+  }
+}
+
+/* Burger — visible uniquement en dessous de 1200px */
+.apt-nav__burger {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 75rem) {
+  .apt-nav__burger {
+    display: none;
+  }
+}
+
+.apt-nav__burger span {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--apt-text);
+  border-radius: var(--apt-radius-full);
+  transition: transform var(--apt-duration-base) var(--apt-ease-standard),
+              opacity var(--apt-duration-base) var(--apt-ease-standard);
+}
+
+.apt-nav__burger[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.apt-nav__burger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.apt-nav__burger[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ==========================================================================
+   4. MÉGA-MENU SERVICES (desktop ≥ 1200px)
+   ========================================================================== */
+
+.apt-mega {
+  display: none;
+}
+
+@media (min-width: 75rem) {
+  /* Spécificité alignée sur `.apt-nav__list > li { position: relative }` (§3) :
+     sans cela, le panneau se positionnerait dans le <li> étroit au lieu de
+     s'étendre sur toute la largeur du header. */
+  .apt-nav__list > li.apt-nav__item--has-mega {
+    position: static;
+  }
+
+  .apt-mega {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: block;
+    background-color: var(--apt-surface);
+    box-shadow: var(--apt-shadow-lg);
+    border-top: 3px solid;
+    border-image: var(--apt-gradient-brand-h) 1;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity var(--apt-duration-base) var(--apt-ease-standard),
+                transform var(--apt-duration-base) var(--apt-ease-standard),
+                visibility var(--apt-duration-base);
+  }
+
+  .apt-mega:not([hidden]) {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Repli sans JavaScript : le déclencheur « Services » est un <button> piloté
+     par main.js. Si le script est absent, le survol et le focus clavier
+     ouvrent quand même le panneau — le menu ne devient jamais un cul-de-sac. */
+  html:not(.js) .apt-nav__item--has-mega:hover .apt-mega[hidden],
+  html:not(.js) .apt-nav__item--has-mega:focus-within .apt-mega[hidden] {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.apt-mega__inner {
+  padding-block: var(--apt-space-8);
+}
+
+.apt-mega__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--apt-space-2) var(--apt-space-6);
+  padding-left: 0;
+}
+
+/* Au-delà de 1280px, 4 colonnes : les 12 services tiennent en 3 rangées. */
+@media (min-width: 80rem) {
+  .apt-mega__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.apt-mega__grid > li {
+  margin-top: 0;
+}
+
+.apt-mega__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--apt-space-3);
+  padding: var(--apt-space-3);
+  border-radius: var(--apt-radius-md);
+  transition: background-color var(--apt-duration-fast) var(--apt-ease-standard);
+}
+
+.apt-mega__item .apt-icon {
+  color: var(--apt-text-muted);
+  transition: color var(--apt-duration-fast) var(--apt-ease-standard);
+  align-self: flex-start; /* reste calée sur la 1re ligne du titre, même
+                             lorsque l'intitulé du service passe sur 2 lignes */
+  margin-top: .1em;
+}
+
+.apt-mega__item:hover,
+.apt-mega__item:focus-visible {
+  background-color: var(--apt-bg-alt);
+}
+
+.apt-mega__item:hover .apt-icon,
+.apt-mega__item:focus-visible .apt-icon {
+  color: var(--apt-brand-solid);
+}
+
+.apt-mega__item strong {
+  display: block;
+  font-family: var(--apt-font-heading);
+  font-weight: var(--apt-fw-semibold);
+  font-size: var(--apt-fs-sm);
+  color: var(--apt-text);
+}
+
+.apt-mega__item small {
+  display: block;
+  margin-top: var(--apt-space-1);
+  font-size: var(--apt-fs-xs);
+  color: var(--apt-text-muted);
+}
+
+.apt-mega__all {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--apt-space-2);
+  margin-top: var(--apt-space-6);
+  padding-top: var(--apt-space-6);
+  border-top: 1px solid var(--apt-border);
+  font-family: var(--apt-font-heading);
+  font-weight: var(--apt-fw-semibold);
+  color: var(--apt-brand-text);
+}
+
+.apt-mega__all .apt-icon--arrow {
+  transition: transform var(--apt-duration-fast) var(--apt-ease-standard);
+}
+
+.apt-mega__all:hover .apt-icon--arrow,
+.apt-mega__all:focus-visible .apt-icon--arrow {
+  transform: translateX(4px);
+}
+
+
+/* ==========================================================================
+   5. MENU MOBILE PLEIN ÉCRAN (< 1200px)
+   ========================================================================== */
+
+.apt-mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: var(--apt-z-overlay);
+  background-color: var(--apt-bg);
+  overflow-y: auto;
+  padding-bottom: var(--apt-space-9);
+}
+
+@media (min-width: 75rem) {
+  .apt-mobile-menu {
+    display: none !important;
+  }
+}
+
+.apt-mobile-menu__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.apt-mobile-menu__close {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--apt-logo-protect-x);
+}
+
+.apt-mobile-menu__list {
+  display: flex;
+  flex-direction: column;
+  padding: var(--apt-space-6) var(--apt-container-pad);
+}
+
+.apt-mobile-menu__list > li {
+  margin-top: 0;
+  border-bottom: 1px solid var(--apt-border);
+}
+
+.apt-mobile-menu__list > li > a,
+.apt-mobile-menu__sub-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-block: var(--apt-space-4);
+  font-family: var(--apt-font-heading);
+  font-weight: var(--apt-fw-semibold);
+  font-size: var(--apt-fs-xl);
+  color: var(--apt-text);
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.apt-mobile-menu__list a[aria-current="page"] {
+  color: var(--apt-brand-text);
+}
+
+.apt-mobile-menu__sub-trigger .apt-icon--chevron {
+  transition: transform var(--apt-duration-fast) var(--apt-ease-standard);
+}
+
+.apt-mobile-menu__sub-trigger[aria-expanded="true"] .apt-icon--chevron {
+  transform: rotate(180deg);
+}
+
+.apt-mobile-menu__sub {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--apt-space-4);
+}
+
+.apt-mobile-menu__sub[hidden] {
+  display: none;
+}
+
+.apt-mobile-menu__sub li {
+  margin-top: 0;
+}
+
+.apt-mobile-menu__sub a {
+  display: block;
+  padding-block: var(--apt-space-2);
+  padding-left: var(--apt-space-4);
+  font-size: var(--apt-fs-base);
+  color: var(--apt-text-muted);
+}
+
+.apt-mobile-menu__cta {
+  display: block;
+  width: 100%;
+  margin-top: var(--apt-space-6);
+  text-align: center;
+}
+
+
+/* ==========================================================================
+   6. BOUTONS
+   ========================================================================== */
+
+.apt-btn {
+  --apt-btn-py: var(--apt-space-4);
+  --apt-btn-px: var(--apt-space-7);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--apt-space-2);
+  padding: var(--apt-btn-py) var(--apt-btn-px);
+  font-family: var(--apt-font-heading);
+  font-weight: var(--apt-fw-semibold);
+  font-size: var(--apt-fs-sm);
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: var(--apt-radius-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--apt-duration-fast) var(--apt-ease-standard),
+              border-color var(--apt-duration-fast) var(--apt-ease-standard),
+              color var(--apt-duration-fast) var(--apt-ease-standard),
+              filter var(--apt-duration-fast) var(--apt-ease-standard),
+              transform var(--apt-duration-fast) var(--apt-ease-standard);
+}
+
+@media (max-width: 47.9375rem) {
+  .apt-btn {
+    --apt-btn-py: var(--apt-space-3);
+    --apt-btn-px: var(--apt-space-6);
+  }
+}
+
+.apt-btn:active {
+  transform: translateY(1px);
+}
+
+.apt-btn[disabled],
+.apt-btn[aria-disabled="true"] {
+  opacity: .5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Primaire */
+.apt-btn--primary {
+  background-color: var(--apt-orange);
+  color: var(--apt-blanc);
+}
+
+.apt-btn--primary:hover {
+  background-color: var(--apt-orange-vif);
+}
+
+.apt-btn--primary:active {
+  filter: brightness(.92);
+}
+
+/* Secondaire */
+.apt-btn--secondary {
+  background-color: transparent;
+  color: var(--apt-text);
+  border-color: var(--apt-brand-solid);
+}
+
+.apt-btn--secondary:hover {
+  background-color: color-mix(in srgb, var(--apt-orange) 8%, transparent);
+  border-color: var(--apt-orange-vif);
+}
+
+/* Secondaire sur fond sombre (cartes vedette, CTA final) */
+.apt-btn--on-dark {
+  color: var(--apt-blanc);
+  border-color: var(--apt-blanc);
+}
+
+.apt-btn--on-dark:hover {
+  background-color: rgba(255, 255, 255, .1);
+  border-color: var(--apt-blanc);
+}
+
+/* Tertiaire (lien fléché) */
+.apt-btn--tertiary {
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--apt-brand-text);
+  font-size: var(--apt-fs-sm);
+}
+
+.apt-btn--tertiary:hover {
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.apt-btn--tertiary .apt-icon--arrow {
+  transition: transform var(--apt-duration-fast) var(--apt-ease-standard);
+}
+
+.apt-btn--tertiary:hover .apt-icon--arrow,
+.apt-btn--tertiary:focus-visible .apt-icon--arrow {
+  transform: translateX(4px);
+}
+
+/* Bouton pleine largeur (menu mobile, formulaires) */
+.apt-btn--block {
+  width: 100%;
+}
+
+
+/* ==========================================================================
+   7. ICÔNES
+   ========================================================================== */
+
+.apt-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: currentColor;
+  flex-shrink: 0;
+}
+
+.apt-icon--sm {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.apt-icon--lg {
+  width: 2rem;
+  height: 2rem;
+}
+
+
+/* ==========================================================================
+   8. CARTE DE SERVICE
+   ========================================================================== */
+
+.apt-card-service {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--apt-space-6);
+  background-color: var(--apt-surface);
+  border: 1px solid var(--apt-border);
+  border-radius: var(--apt-radius-lg);
+  transition: box-shadow var(--apt-duration-base) var(--apt-ease-out),
+              transform var(--apt-duration-base) var(--apt-ease-out),
+              border-color var(--apt-duration-base) var(--apt-ease-out);
+}
+
+.apt-card-service:hover {
+  box-shadow: var(--apt-shadow-md);
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--apt-orange) 35%, var(--apt-border));
+}
+
+.apt-card-service__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: var(--apt-space-5);
+  background-color: var(--apt-bg-alt);
+  border-radius: var(--apt-radius-md);
+  color: var(--apt-brand-solid);
+}
+
+.apt-card-service__title {
+  font-size: var(--apt-fs-lg);
+  margin-bottom: var(--apt-space-3);
+}
+
+.apt-card-service__text {
+  flex: 1;
+  color: var(--apt-text-muted);
+  font-size: var(--apt-fs-sm);
+  margin-bottom: var(--apt-space-5);
+}
+
+
+/* ==========================================================================
+   9. CARTE DE SERVICE EN VEDETTE
+   ========================================================================== */
+
+.apt-card-feature {
+  position: relative;
+  overflow: hidden;
+  padding: var(--apt-space-8);
+  border-radius: var(--apt-radius-xl);
+  isolation: isolate;
+}
+
+.apt-card-feature__pattern {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: var(--apt-blanc);
+  opacity: .15;
+}
+
+.apt-card-feature__content h3 {
+  color: var(--apt-blanc);
+  margin-top: var(--apt-space-3);
+  font-size: var(--apt-fs-2xl);
+}
+
+.apt-card-feature__content p {
+  margin-top: var(--apt-space-4);
+  color: rgba(255, 255, 255, .88);
+}
+
+.apt-card-feature__content .apt-btn {
+  margin-top: var(--apt-space-6);
+}
+
+
+/* ==========================================================================
+   10. BLOC TEXTE + VISUEL ALTERNÉ (SPLIT)
+   ========================================================================== */
+
+/* Le bloc est autonome : il porte lui-même sa grille. Sans `display: grid`,
+   le visuel retombait sous le texte au lieu de se placer à côté. */
+.apt-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--apt-grid-gap);
+  align-items: center;
+}
+
+@media (min-width: 64rem) {
+  .apt-split {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(2.5rem, 1.5rem + 3vw, 5rem);
+  }
+
+  .apt-split--reverse .apt-split__text {
+    order: 2;
+  }
+
+  .apt-split--reverse .apt-split__visual {
+    order: 1;
+  }
+}
+
+.apt-split__text .apt-eyebrow {
+  margin-bottom: var(--apt-space-3);
+}
+
+.apt-split__text h2 {
+  margin-bottom: var(--apt-space-4);
+  max-width: 18ch; /* évite qu'un titre long occupe toute la largeur du bloc */
+}
+
+.apt-split__text .apt-btn {
+  margin-top: var(--apt-space-6);
+}
+
+.apt-split__visual {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--apt-radius-xl);
+  overflow: hidden;
+  background: var(--apt-gradient-brand);
+  isolation: isolate;
+}
+
+.apt-split__visual .apt-pattern-feathers {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--apt-blanc);
+  opacity: .18;
+}
+
+.apt-split__visual .apt-split__ring {
+  position: absolute;
+  width: 60%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: var(--apt-radius-full);
+  bottom: -15%;
+  right: -10%;
+}
+
+.apt-split__visual .apt-split__icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apt-split__visual .apt-split__icon .apt-icon {
+  width: 40%;
+  height: 40%;
+  color: rgba(255, 255, 255, .9);
+  stroke-width: 1.25;
+}
+
+
+/* ==========================================================================
+   11. TIMELINE « NOTRE MÉTHODE »
+   ========================================================================== */
+
+.apt-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--apt-space-8);
+  counter-reset: apt-step;
+}
+
+.apt-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1.5rem;
+  width: 2px;
+  background: var(--apt-gradient-brand);
+}
+
+@media (min-width: 64rem) {
+  .apt-timeline {
+    flex-direction: row;
+    gap: var(--apt-space-6);
+  }
+
+  .apt-timeline::before {
+    top: 1.5rem;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    width: 100%;
+    height: 2px;
+    background: var(--apt-gradient-brand-h);
+  }
+}
+
+.apt-timeline__step {
+  position: relative;
+  flex: 1;
+  padding-left: var(--apt-space-9);
+  margin-top: 0;
+}
+
+@media (min-width: 64rem) {
+  .apt-timeline__step {
+    padding-left: 0;
+    padding-top: var(--apt-space-9);
+    text-align: center;
+  }
+}
+
+.apt-timeline__index {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid var(--apt-brand-solid);
+  border-radius: var(--apt-radius-full);
+  background-color: var(--apt-bg);
+  font-family: var(--apt-font-heading);
+  font-weight: var(--apt-fw-extrabold);
+  color: var(--apt-brand-solid);
+}
+
+@media (min-width: 64rem) {
+  .apt-timeline__index {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.apt-timeline__step h3 {
+  font-size: var(--apt-fs-lg);
+  margin-bottom: var(--apt-space-2);
+}
+
+.apt-timeline__step p {
+  color: var(--apt-text-muted);
+  font-size: var(--apt-fs-sm);
+}
+
+.apt-section--dark .apt-timeline__index {
+  background-color: var(--apt-bg-dark);
+}
+
+
+/* ==========================================================================
+   12. COMPTEURS CHIFFRÉS
+   ========================================================================== */
+
+.apt-counters {
+  text-align: center;
+}
+
+.apt-counter__value {
+  display: block;
+  font-family: var(--apt-font-heading);
+  font-weight: var(--apt-fw-extrabold);
+  font-size: var(--apt-fs-6xl);
+  line-height: 1;
+  color: var(--apt-brand-solid);
+}
+
+.apt-counter__label {
+  display: block;
+  margin-top: var(--apt-space-3);
+  font-size: var(--apt-fs-sm);
+  color: var(--apt-text-muted);
+}
+
+.apt-section--dark .apt-counter__label {
+  color: var(--apt-text-inverse-muted);
+}
+
+
+/* ==========================================================================
+   13. BLOC « NOS ENGAGEMENTS »
+   ========================================================================== */
+
+/* La carte porte un contour : sans lui, une carte blanche posée sur une
+   section blanche devenait invisible (cas de la page « À propos »). */
+.apt-commitment {
+  height: 100%;
+  padding: var(--apt-space-6);
+  background-color: var(--apt-surface);
+  border: 1px solid var(--apt-border);
+  border-radius: var(--apt-radius-lg);
+  transition: box-shadow var(--apt-duration-base) var(--apt-ease-standard),
+              border-color var(--apt-duration-base) var(--apt-ease-standard),
+              transform var(--apt-duration-base) var(--apt-ease-standard);
+}
+
+.apt-commitment:hover {
+  border-color: var(--apt-border-strong);
+  box-shadow: var(--apt-shadow-md);
+  transform: translateY(-2px);
+}
+
+.apt-section--alt .apt-commitment {
+  background-color: var(--apt-bg);
+}
+
+.apt-commitment__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: var(--apt-space-5);
+  border-radius: var(--apt-radius-full);
+  background-color: var(--apt-bg-alt);
+  color: var(--apt-brand-solid);
+}
+
+.apt-commitment h3 {
+  font-size: var(--apt-fs-lg);
+  margin-bottom: var(--apt-space-3);
+}
+
+.apt-commitment p {
+  color: var(--apt-text-muted);
+  font-size: var(--apt-fs-sm);
+}
+
+
+/* ==========================================================================
+   14. GRILLE DE WORDMARKS PARTENAIRES
+   ========================================================================== */
+
+.apt-wordmarks {
+  text-align: center;
+  padding-left: 0;
+}
+
+.apt-wordmarks > li {
+  margin-top: 0;
+}
+
+/* Tuile de marque partenaire.
+   Elle accueille un vrai fichier de logo s'il est présent dans
+   assets/img/partners/<slug>.svg|png (injecté par main.js §12) ; sinon elle
+   affiche proprement le nom de la marque composé en Montserrat.
+   Aucun logo officiel n'est embarqué par défaut : droits de marque. */
+.apt-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--apt-space-3);
+  min-height: 7.5rem;
+  padding: var(--apt-space-5);
+  background-color: var(--apt-surface);
+  font-family: var(--apt-font-heading);
+  font-weight: var(--apt-fw-semibold);
+  font-size: var(--apt-fs-md);
+  color: var(--apt-text-muted);
+  border: 1px solid var(--apt-border);
+  border-radius: var(--apt-radius-lg);
+  transition: color var(--apt-duration-base) var(--apt-ease-standard),
+              box-shadow var(--apt-duration-base) var(--apt-ease-standard),
+              transform var(--apt-duration-base) var(--apt-ease-standard),
+              border-color var(--apt-duration-base) var(--apt-ease-standard);
+}
+
+.apt-section--alt .apt-wordmark {
+  background-color: var(--apt-bg);
+}
+
+.apt-wordmark:hover,
+.apt-wordmark:focus-visible {
+  color: var(--apt-text);
+  border-color: var(--apt-border-strong);
+  box-shadow: var(--apt-shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Logo réel injecté, affiché dans ses couleurs de marque.
+   Le mur de logos était auparavant désaturé au repos — traitement courant
+   quand on ne dispose que de wordmarks typographiques. Maintenant que les
+   logos officiels sont livrés, les neutraliser reviendrait à masquer
+   précisément ce qu'ils apportent : la reconnaissance immédiate des
+   constructeurs. Ils sont donc en couleur dès le repos. */
+.apt-wordmark__logo {
+  max-height: 2.5rem;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--apt-duration-base) var(--apt-ease-standard);
+}
+
+/* Léger agrandissement au survol : le retour visuel de la tuile est
+   conservé, sans jouer sur la couleur. */
+.apt-wordmark:hover .apt-wordmark__logo,
+.apt-wordmark:focus-visible .apt-wordmark__logo {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .apt-wordmark__logo { transition: none; }
+  .apt-wordmark:hover .apt-wordmark__logo,
+  .apt-wordmark:focus-visible .apt-wordmark__logo { transform: none; }
+}
+
+/* Quand un logo est affiché, le nom passe en légende discrète. */
+.apt-wordmark:has(.apt-wordmark__logo) .apt-wordmark__name {
+  font-size: var(--apt-fs-xs);
+  font-weight: var(--apt-fw-medium);
+  color: var(--apt-text-subtle);
+  text-transform: uppercase;
+  letter-spacing: var(--apt-ls-wide);
+}
+
+
+/* ==========================================================================
+   15. GRILLE DE BADGES CERTIFICATIONS
+   ========================================================================== */
+
+.apt-badges {
+  text-align: center;
+  padding-left: 0;
+}
+
+.apt-badges > li {
+  margin-top: 0;
+}
+
+/* Tuile de certification — même principe que les tuiles partenaires :
+   accueille assets/img/certifications/<slug>.svg|png si le fichier existe,
+   sinon affiche l'anneau monogramme. */
+.apt-badge {
+  --apt-badge-bg: var(--apt-surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--apt-space-4);
+  min-height: 9rem;
+  padding: var(--apt-space-5);
+  background-color: var(--apt-badge-bg);
+  border: 1px solid var(--apt-border);
+  border-radius: var(--apt-radius-lg);
+  transition: box-shadow var(--apt-duration-base) var(--apt-ease-standard),
+              border-color var(--apt-duration-base) var(--apt-ease-standard),
+              transform var(--apt-duration-base) var(--apt-ease-standard);
+}
+
+.apt-section--alt .apt-badge {
+  --apt-badge-bg: var(--apt-bg);
+}
+
+.apt-badge:hover {
+  border-color: var(--apt-border-strong);
+  box-shadow: var(--apt-shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Anneau dégradé circulaire. `border-image` ignore `border-radius` (l'anneau
+   s'affichait carré) : on compose donc le dégradé en double background,
+   padding-box pour l'intérieur, border-box pour le contour. */
+.apt-badge__ring {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border: 2px solid transparent;
+  border-radius: var(--apt-radius-full);
+  background:
+    linear-gradient(var(--apt-badge-bg), var(--apt-badge-bg)) padding-box,
+    var(--apt-gradient-brand) border-box;
+  font-family: var(--apt-font-heading);
+  font-weight: var(--apt-fw-extrabold);
+  font-size: var(--apt-fs-sm);
+  letter-spacing: var(--apt-ls-wide);
+  color: var(--apt-brand-text);
+}
+
+.apt-badge__logo {
+  max-height: 3rem;
+  /* Les wordmarks très allongés (Oracle : 231x30, soit un rapport de 7,7)
+     dépassaient la largeur de la tuile en n'étant contraints qu'en hauteur.
+     La limite de largeur reprend la main dans ce cas ; object-fit conserve
+     les proportions quelle que soit celle des deux limites qui s'applique. */
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Logotype typographique.
+   Quatre filières — ITIL, PRINCE2, COBIT, PMP — n'ont aucun fichier de logo
+   diffusé sous une licence permettant de l'héberger ici (voir le LISEZ-MOI
+   du dossier assets/img/certifications/). Leur nom est donc composé comme
+   une marque, à la même échelle optique que les logos voisins.
+   Ce n'est pas un pis-aller : sur cette même grille, les logos d'IBM et
+   d'Oracle SONT des wordmarks. Le ® signale que le nom est une marque
+   déposée et qu'il est employé pour désigner la certification. */
+/* Emblème + nom, sur le modèle exact de la tuile Microsoft : une marque
+   colorée à gauche, le nom en gris à droite.
+   Chaque certification reçoit SA couleur. Les composer toutes dans l'orange
+   du site les rendait interchangeables et les faisait lire comme du texte
+   décoré plutôt que comme des marques distinctes.
+   Les couleurs sont posées en variable CSS et non en attribut style : la
+   politique de sécurité du site interdit les styles en ligne
+   (style-src 'self', sans 'unsafe-inline'), qui seraient donc ignorés. */
+.apt-badge__mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  color: var(--apt-mark);
+}
+
+.apt-badge__mark--itil    { --apt-mark: #6B2FA0; }  /* cycle de vie des services */
+.apt-badge__mark--prince2 { --apt-mark: #0F8A7E; }  /* étapes maîtrisées */
+.apt-badge__mark--cobit   { --apt-mark: #1668B3; }  /* gouvernance du SI */
+.apt-badge__mark--pmp     { --apt-mark: #1B3B6F; }  /* qualification projet */
+
+.apt-badge__emblem {
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+}
+
+.apt-badge__wordmark {
+  display: inline-flex;
+  align-items: flex-start;
+  font-family: var(--apt-font-heading);
+  font-weight: var(--apt-fw-extrabold);
+  font-size: 1.5rem;
+  line-height: 1.15;
+  letter-spacing: var(--apt-ls-tight);
+  color: var(--apt-text);
+  white-space: nowrap;
+}
+
+.apt-badge__wordmark sup {
+  margin-left: 0.15em;
+  font-size: 0.45em;
+  font-weight: var(--apt-fw-semibold);
+  line-height: 1.6;
+}
+
+.apt-badge__label {
+  font-family: var(--apt-font-heading);
+  font-weight: var(--apt-fw-semibold);
+  font-size: var(--apt-fs-sm);
+  color: var(--apt-text);
+}
+
+
+/* ==========================================================================
+   16. ACCORDÉON FAQ
+   ========================================================================== */
+
+.apt-accordion {
+  display: flex;
+  flex-direction: column;
+}
+
+.apt-accordion__item {
+  border-bottom: 1px solid var(--apt-border);
+}
+
+.apt-accordion__item h3 {
+  font-size: var(--apt-fs-base);
+  margin: 0;
+}
+
+.apt-accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--apt-space-4);
+  width: 100%;
+  padding-block: var(--apt-space-5);
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: var(--apt-font-heading);
+  font-weight: var(--apt-fw-semibold);
+  font-size: var(--apt-fs-base);
+  color: var(--apt-text);
+  cursor: pointer;
+}
+
+.apt-accordion__trigger .apt-icon--chevron {
+  transition: transform var(--apt-duration-fast) var(--apt-ease-standard);
+}
+
+.apt-accordion__trigger[aria-expanded="true"] .apt-icon--chevron {
+  transform: rotate(180deg);
+}
+
+.apt-accordion__panel {
+  padding-bottom: var(--apt-space-5);
+  color: var(--apt-text-muted);
+}
+
+.apt-accordion__panel[hidden] {
+  display: none;
+}
+
+
+/* ==========================================================================
+   17. FORMULAIRE DE CONTACT
+   ========================================================================== */
+
+.apt-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--apt-space-5);
+}
+
+.apt-form__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--apt-space-5);
+}
+
+@media (min-width: 48rem) {
+  .apt-form__row--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.apt-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--apt-space-2);
+  margin-top: 0;
+}
+
+.apt-field label {
+  font-family: var(--apt-font-heading);
+  font-weight: var(--apt-fw-semibold);
+  font-size: var(--apt-fs-sm);
+  color: var(--apt-text);
+}
+
+.apt-field input,
+.apt-field select,
+.apt-field textarea {
+  width: 100%;
+  padding: var(--apt-space-3) var(--apt-space-4);
+  background-color: var(--apt-surface);
+  border: 1px solid var(--apt-border-strong);
+  border-radius: var(--apt-radius-sm);
+  font-size: var(--apt-fs-base);
+  color: var(--apt-text);
+  transition: border-color var(--apt-duration-fast) var(--apt-ease-standard),
+              box-shadow var(--apt-duration-fast) var(--apt-ease-standard);
+}
+
+.apt-field textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+.apt-field input:focus-visible,
+.apt-field select:focus-visible,
+.apt-field textarea:focus-visible {
+  outline: none;
+  border-color: var(--apt-brand-solid);
+  box-shadow: var(--apt-focus-ring);
+}
+
+.apt-field input[aria-invalid="true"],
+.apt-field select[aria-invalid="true"],
+.apt-field textarea[aria-invalid="true"] {
+  border-color: var(--apt-error);
+}
+
+.apt-field input[disabled],
+.apt-field select[disabled],
+.apt-field textarea[disabled] {
+  opacity: .6;
+  background-color: var(--apt-bg-alt);
+}
+
+.apt-field__error {
+  display: flex;
+  align-items: center;
+  gap: var(--apt-space-2);
+  padding: var(--apt-space-2) var(--apt-space-3);
+  background-color: var(--apt-error-bg);
+  color: var(--apt-error);
+  font-size: var(--apt-fs-xs);
+  border-radius: var(--apt-radius-xs);
+}
+
+.apt-field__error[hidden] {
+  display: none;
+}
+
+.apt-field__hint {
+  font-size: var(--apt-fs-xs);
+  color: var(--apt-text-subtle);
+}
+
+.apt-form__privacy {
+  font-size: var(--apt-fs-xs);
+  color: var(--apt-text-subtle);
+}
+
+.apt-form__success {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--apt-space-3);
+  padding: var(--apt-space-5);
+  background-color: var(--apt-success-bg);
+  color: var(--apt-success);
+  border-radius: var(--apt-radius-md);
+}
+
+.apt-form__success[hidden] {
+  display: none;
+}
+
+.apt-form__error-summary {
+  padding: var(--apt-space-4) var(--apt-space-5);
+  background-color: var(--apt-error-bg);
+  color: var(--apt-error);
+  border-radius: var(--apt-radius-md);
+  font-size: var(--apt-fs-sm);
+}
+
+.apt-form__error-summary[hidden] {
+  display: none;
+}
+
+
+/* ==========================================================================
+   18. FIL D'ARIANE
+   ========================================================================== */
+
+.apt-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-left: 0;
+}
+
+.apt-breadcrumb li {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  font-size: var(--apt-fs-sm);
+  color: var(--apt-text-muted);
+}
+
+.apt-breadcrumb li + li::before {
+  content: '/';
+  margin-inline: var(--apt-space-2);
+  color: var(--apt-border-strong);
+}
+
+.apt-breadcrumb a {
+  color: var(--apt-text-muted);
+}
+
+.apt-breadcrumb a:hover {
+  color: var(--apt-brand-text);
+}
+
+.apt-breadcrumb li[aria-current="page"] {
+  color: var(--apt-text);
+}
+
+
+/* ==========================================================================
+   19. HERO DE PAGE INTERNE
+   ========================================================================== */
+
+.apt-hero--page {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--apt-bg-alt);
+  isolation: isolate;
+}
+
+.apt-hero--page .apt-pattern-feathers {
+  position: absolute;
+  right: -5%;
+  top: -10%;
+  width: 26rem;
+  height: 26rem;
+  color: var(--apt-brun);
+  opacity: .07;
+  z-index: -1;
+}
+
+/* Le h1 d'une page interne est un cran sous celui du hero d'accueil : il
+   partage la largeur avec le reste de la page et ne doit pas l'écraser. */
+.apt-hero--page h1 {
+  max-width: 24ch;
+  margin-top: var(--apt-space-3);
+  font-size: var(--apt-fs-4xl);
+}
+
+.apt-hero--page__lead {
+  max-width: 65ch;
+  margin-top: var(--apt-space-5);
+  font-size: var(--apt-fs-md);
+  color: var(--apt-text-muted);
+}
+
+
+/* ==========================================================================
+   20. HERO D'ACCUEIL
+   ========================================================================== */
+
+.apt-hero--home {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 38rem;
+  padding-block: var(--apt-space-9);
+  overflow: hidden;
+  background: var(--apt-gradient-brand);
+  color: var(--apt-text-inverse);
+  isolation: isolate;
+}
+
+.apt-hero--home .apt-pattern-feathers {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--apt-blanc);
+  opacity: .12;
+  z-index: -1;
+}
+
+.apt-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--apt-space-8);
+  align-items: center;
+}
+
+@media (min-width: 64rem) {
+  .apt-hero__grid {
+    grid-template-columns: 1.1fr .9fr;
+  }
+}
+
+.apt-hero__eyebrow {
+  color: var(--apt-blanc);
+  opacity: .85;
+}
+
+.apt-hero__eyebrow::before {
+  background: var(--apt-blanc);
+  opacity: .6;
+}
+
+.apt-hero--home h1 {
+  margin-top: var(--apt-space-4);
+  max-width: 17ch; /* garde le titre sur 3 lignes maximum en grand écran */
+  color: var(--apt-blanc);
+}
+
+.apt-hero__lead {
+  max-width: 55ch;
+  margin-top: var(--apt-space-5);
+  font-size: var(--apt-fs-md);
+  color: rgba(255, 255, 255, .88);
+}
+
+.apt-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--apt-space-4) var(--apt-space-5);
+  margin-top: var(--apt-space-8);
+}
+
+/* Le hero d'accueil et le bandeau CTA final sont des aplats dégradés orange :
+   un bouton orange s'y fondrait. On inverse donc le primaire (blanc plein) et
+   on donne au secondaire un contour blanc franc — contraste garanti dès
+   l'arrivée sur la page, avant tout défilement. */
+.apt-hero--home .apt-btn--primary,
+.apt-cta-final .apt-btn--primary,
+.apt-card-feature .apt-btn--primary {
+  background-color: var(--apt-blanc);
+  color: var(--apt-brun);
+  border-color: var(--apt-blanc);
+  box-shadow: var(--apt-shadow-md);
+}
+
+.apt-hero--home .apt-btn--primary:hover,
+.apt-cta-final .apt-btn--primary:hover,
+.apt-card-feature .apt-btn--primary:hover {
+  background-color: var(--apt-gray-100);
+  border-color: var(--apt-gray-100);
+  color: var(--apt-brun);
+}
+
+.apt-hero--home .apt-btn--secondary,
+.apt-cta-final .apt-btn--secondary {
+  color: var(--apt-blanc);
+  border-color: rgba(255, 255, 255, .75);
+}
+
+.apt-hero--home .apt-btn--secondary:hover,
+.apt-cta-final .apt-btn--secondary:hover {
+  background-color: rgba(255, 255, 255, .14);
+  border-color: var(--apt-blanc);
+}
+
+.apt-hero__actions .apt-btn--tertiary {
+  color: var(--apt-blanc);
+}
+
+.apt-hero__visual {
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+
+.apt-hero__visual .apt-split__ring {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: var(--apt-radius-full);
+}
+
+.apt-hero__visual .apt-split__ring--1 {
+  inset: 8%;
+}
+
+.apt-hero__visual .apt-split__ring--2 {
+  inset: 22%;
+  border-color: rgba(255, 255, 255, .5);
+}
+
+.apt-hero__visual .apt-hero__glyph {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apt-hero__visual .apt-hero__glyph .apt-icon {
+  width: 40%;
+  height: 40%;
+  color: rgba(255, 255, 255, .9);
+  stroke-width: 1.1;
+}
+
+
+/* ==========================================================================
+   21. MISE EN PAGE D'ARTICLE DE SERVICE
+   ========================================================================== */
+
+.apt-service-article {
+  max-width: var(--apt-container-narrow);
+  margin-inline: auto;
+}
+
+.apt-service-article__lead {
+  font-size: var(--apt-fs-md);
+  color: var(--apt-text-muted);
+  margin-bottom: var(--apt-space-8);
+}
+
+.apt-service-article section + section {
+  margin-top: var(--apt-space-9);
+}
+
+.apt-service-article h2 {
+  font-size: var(--apt-fs-2xl);
+  margin-bottom: var(--apt-space-4);
+}
+
+.apt-service-article h3 {
+  font-size: var(--apt-fs-lg);
+  margin-top: var(--apt-space-6);
+  margin-bottom: var(--apt-space-3);
+}
+
+.apt-service-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--apt-space-3);
+  margin-top: var(--apt-space-5);
+}
+
+.apt-service-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--apt-space-3);
+  padding: var(--apt-space-4);
+  background-color: var(--apt-bg-alt);
+  border-radius: var(--apt-radius-md);
+  margin-top: 0;
+}
+
+.apt-service-list .apt-icon {
+  color: var(--apt-brand-solid);
+  margin-top: .15em;
+}
+
+.apt-benefits {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--apt-space-5);
+  margin-top: var(--apt-space-5);
+}
+
+@media (min-width: 48rem) {
+  .apt-benefits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Carte de bénéfice — bordure uniforme + filet de marque en tête de carte
+   (le liseré latéral asymétrique a été retiré : rendu peu professionnel et
+   incohérent avec les autres cartes du système). */
+.apt-benefit-box {
+  position: relative;
+  overflow: hidden;
+  padding: var(--apt-space-6);
+  border: 1px solid var(--apt-border);
+  border-radius: var(--apt-radius-lg);
+  background-color: var(--apt-surface);
+  box-shadow: var(--apt-shadow-sm);
+  transition: box-shadow var(--apt-duration-base) var(--apt-ease-standard),
+              border-color var(--apt-duration-base) var(--apt-ease-standard),
+              transform var(--apt-duration-base) var(--apt-ease-standard);
+}
+
+.apt-benefit-box::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--apt-gradient-brand-h);
+  opacity: 0;
+  transition: opacity var(--apt-duration-base) var(--apt-ease-standard);
+}
+
+.apt-benefit-box:hover {
+  border-color: var(--apt-border-strong);
+  box-shadow: var(--apt-shadow-md);
+  transform: translateY(-2px);
+}
+
+.apt-benefit-box:hover::before {
+  opacity: 1;
+}
+
+/* Sur fond alterné, la carte reste blanche pour se détacher proprement. */
+.apt-section--alt .apt-benefit-box {
+  background-color: var(--apt-bg);
+}
+
+.apt-benefit-box h3 {
+  font-size: var(--apt-fs-lg);
+  margin-top: 0;
+  margin-bottom: var(--apt-space-3);
+}
+
+.apt-benefit-box p {
+  font-size: var(--apt-fs-sm);
+  color: var(--apt-text-muted);
+}
+
+.apt-service-article__cta {
+  margin-top: var(--apt-space-9);
+  padding: var(--apt-space-8);
+  background-color: var(--apt-bg-alt);
+  border-radius: var(--apt-radius-lg);
+  text-align: center;
+}
+
+.apt-service-article__cta h2 {
+  margin-bottom: var(--apt-space-3);
+}
+
+.apt-service-article__related {
+  margin-top: var(--apt-space-11);
+}
+
+.apt-service-article__related h2 {
+  margin-bottom: var(--apt-space-6);
+}
+
+
+/* ==========================================================================
+   22. BANDEAU CTA FINAL
+   ========================================================================== */
+
+.apt-cta-final {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.apt-cta-final .apt-pattern-feathers {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--apt-blanc);
+  opacity: .1;
+  z-index: -1;
+}
+
+.apt-cta-final__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--apt-space-6);
+  text-align: center;
+}
+
+.apt-cta-final__inner h2 {
+  color: var(--apt-blanc);
+  max-width: 32ch;
+}
+
+@media (min-width: 64rem) {
+  .apt-cta-final__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+
+/* ==========================================================================
+   23. FOOTER (4 COLONNES)
+   ========================================================================== */
+
+.apt-footer {
+  background-color: var(--apt-bg-dark);
+  color: var(--apt-text-inverse-muted);
+}
+
+.apt-footer a {
+  color: var(--apt-text-inverse-muted);
+}
+
+.apt-footer a:hover {
+  color: var(--apt-blanc);
+}
+
+.apt-footer__top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--apt-space-8);
+  padding-block: var(--apt-space-10);
+}
+
+@media (min-width: 48rem) {
+  .apt-footer__top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 64rem) {
+  .apt-footer__top {
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  }
+}
+
+.apt-footer__col--brand {
+  padding-inline: 0;
+}
+
+.apt-footer__col--brand img {
+  margin-bottom: var(--apt-space-5);
+}
+
+.apt-footer__col--brand p {
+  margin-top: var(--apt-space-2);
+  font-size: var(--apt-fs-sm);
+}
+
+.apt-footer__col h3 {
+  color: var(--apt-blanc);
+  font-size: var(--apt-fs-sm);
+  text-transform: uppercase;
+  letter-spacing: var(--apt-ls-wide);
+  margin-bottom: var(--apt-space-4);
+}
+
+.apt-footer__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--apt-space-3);
+  padding-left: 0;
+  list-style: none; /* les <ul> du footer n'ont pas de classe : la règle
+                       globale ul[class] ne s'y applique pas et les puces
+                       natives réapparaissaient. */
+}
+
+/* Dans un pied de page, un soulignement sur chaque lien alourdit la lecture :
+   on le réserve au survol et au focus clavier. */
+.apt-footer a {
+  text-decoration: none;
+}
+
+.apt-footer a:hover,
+.apt-footer a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+
+.apt-footer__col li {
+  margin-top: 0;
+  font-size: var(--apt-fs-sm);
+}
+
+.apt-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--apt-space-3);
+  padding-block: var(--apt-space-5);
+  border-top: 1px solid var(--apt-border-dark);
+  font-size: var(--apt-fs-xs);
+}
+
+
+/* ==========================================================================
+   24. BOUTON RETOUR EN HAUT
+   ========================================================================== */
+
+.apt-back-to-top {
+  position: fixed;
+  right: var(--apt-space-5);
+  bottom: var(--apt-space-5);
+  z-index: var(--apt-z-sticky);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--apt-brand-solid);
+  color: var(--apt-blanc);
+  border-radius: var(--apt-radius-full);
+  box-shadow: var(--apt-shadow-md);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity var(--apt-duration-base) var(--apt-ease-standard),
+              transform var(--apt-duration-base) var(--apt-ease-standard),
+              background-color var(--apt-duration-fast) var(--apt-ease-standard);
+}
+
+.apt-back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.apt-back-to-top:hover {
+  background-color: var(--apt-orange-vif);
+}
+
+.apt-back-to-top[hidden] {
+  display: none;
+}
+
+
+/* ==========================================================================
+   25. PAGE 404
+   ========================================================================== */
+
+.apt-404 {
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.apt-404__inner {
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.apt-404__code {
+  font-family: var(--apt-font-heading);
+  font-weight: var(--apt-fw-extrabold);
+  font-size: var(--apt-fs-6xl);
+  color: var(--apt-brand-solid);
+  line-height: 1;
+}
+
+.apt-404 p {
+  margin-top: var(--apt-space-5);
+  margin-inline: auto;
+  color: var(--apt-text-muted);
+}
+
+.apt-404__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--apt-space-4);
+  margin-top: var(--apt-space-8);
+}
+
+
+/* ==========================================================================
+   26. MOTIFS GRAPHIQUES DÉCORATIFS
+   ========================================================================== */
+
+.apt-pattern-feathers {
+  pointer-events: none;
+}
+
+.apt-shape-ring {
+  position: absolute;
+  border: 1px solid var(--apt-border);
+  border-radius: var(--apt-radius-full);
+  pointer-events: none;
+}
+
+.apt-section--dark .apt-shape-ring {
+  border-color: var(--apt-border-dark);
+}
+
+
+/* ==========================================================================
+   27. ANIMATIONS AU SCROLL (REVEAL)
+   ========================================================================== */
+
+/* L'état masqué est conditionné à la classe `js` posée par le script en tête
+   de page. Sans JavaScript — ou si main.js échoue à se charger — le contenu
+   reste visible : il ne doit jamais dépendre d'une animation pour s'afficher. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity var(--apt-duration-slow) var(--apt-ease-brand),
+              transform var(--apt-duration-slow) var(--apt-ease-brand);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+
+.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+
+/* ==========================================================================
+   28. UTILITAIRES DIVERS
+   ========================================================================== */
+
+.apt-text-center {
+  text-align: center;
+}
+
+.apt-mt-0 {
+  margin-top: 0;
+}
+
+.apt-flow > * + * {
+  margin-top: var(--apt-space-4);
+}
+
+/* Regroupement de boutons (CTA doubles, bandeau final, page 404…) */
+.apt-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--apt-space-4);
+}
+
+.apt-mt-3 {
+  margin-top: var(--apt-space-3);
+}
+
+.apt-mt-4 {
+  margin-top: var(--apt-space-4);
+}
+
+.apt-text-muted {
+  color: var(--apt-text-muted);
+}
+
+.apt-mt-6 {
+  margin-top: var(--apt-space-6);
+}
+
+.apt-mt-8 {
+  margin-top: var(--apt-space-8);
+}
+
+/* Ligne coordonnée (icône + texte), utilisée dans le bloc contact */
+.apt-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--apt-space-3);
+}
+
+/* Encadré « nous trouver » de la page contact */
+.apt-contact-note {
+  margin-top: var(--apt-space-8);
+  padding: var(--apt-space-6);
+  background-color: var(--apt-bg-alt);
+  border-radius: var(--apt-radius-lg);
+}
+
+.apt-text-inverse-muted {
+  color: var(--apt-text-inverse-muted);
+}
+
+/* Paragraphe d'accompagnement du bandeau CTA final (texte blanc atténué) */
+.apt-cta-final__lead {
+  margin-top: var(--apt-space-4);
+  max-width: 55ch;
+  color: rgba(255, 255, 255, .88);
+}
+
+/* Emplacement réservé pour visuel client (encart clairement identifié en
+   développement, invisible en production — utilisé conjointement avec le
+   commentaire HTML <!-- À COMPLÉTER PAR LE CLIENT : ... --> ) */
+.apt-placeholder-note {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Grille de cartes à rangée finale centrée.
+   Une grille CSS classique laisse les cartes orphelines calées à gauche, ce
+   qui donne un bloc visuellement déséquilibré dès que le nombre d'éléments
+   n'est pas un multiple du nombre de colonnes (7 valeurs sur 3 colonnes…).
+   Ce conteneur en flex conserve les mêmes largeurs de colonnes mais centre
+   la dernière rangée incomplète.
+   -------------------------------------------------------------------------- */
+.apt-cards-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--apt-grid-gap);
+  padding-left: 0;
+}
+
+.apt-cards-center > * {
+  margin-top: 0;
+  flex: 0 1 100%;
+}
+
+@media (min-width: 48rem) {
+  .apt-cards-center > * {
+    flex-basis: calc((100% - var(--apt-grid-gap)) / 2);
+  }
+}
+
+@media (min-width: 64rem) {
+  .apt-cards-center > * {
+    flex-basis: calc((100% - 2 * var(--apt-grid-gap)) / 3);
+  }
+
+  .apt-cards-center--4 > * {
+    flex-basis: calc((100% - 3 * var(--apt-grid-gap)) / 4);
+  }
+}
+
+
+/* ==========================================================================
+   30. BOUTIQUE — SOMMAIRE DES FAMILLES ET CARTES PRODUIT
+   ========================================================================== */
+
+/* Sommaire cliquable en tête de la page Boutique. La page est longue
+   (7 familles) : sans ce raccourci, atteindre « Énergie » demande un long
+   défilement. */
+.apt-catnav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--apt-space-3);
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.apt-catnav > * { margin-top: 0; }
+
+.apt-catnav a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--apt-space-2);
+  padding: var(--apt-space-3) var(--apt-space-4);
+  background-color: var(--apt-surface);
+  border: 1px solid var(--apt-border);
+  border-radius: var(--apt-radius-pill);
+  color: var(--apt-text);
+  font-size: var(--apt-fs-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color var(--apt-duration-base) var(--apt-ease-out),
+              color var(--apt-duration-base) var(--apt-ease-out),
+              box-shadow var(--apt-duration-base) var(--apt-ease-out);
+}
+
+.apt-catnav a:hover,
+.apt-catnav a:focus-visible {
+  border-color: color-mix(in srgb, var(--apt-orange) 45%, var(--apt-border));
+  color: var(--apt-brand-text);
+  box-shadow: var(--apt-shadow-sm);
+}
+
+.apt-catnav .apt-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  color: var(--apt-brand-solid);
+}
+
+/* --- Carte produit -------------------------------------------------------
+   Même ossature que .apt-card-service (bordure, rayon, survol) pour rester
+   cohérent, mais avec une zone visuelle et une liste de caractéristiques.
+   Aucun prix n'est affiché : les configurations sont établies sur devis. */
+.apt-product {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--apt-space-6);
+  background-color: var(--apt-surface);
+  border: 1px solid var(--apt-border);
+  border-radius: var(--apt-radius-lg);
+  transition: box-shadow var(--apt-duration-base) var(--apt-ease-out),
+              transform var(--apt-duration-base) var(--apt-ease-out),
+              border-color var(--apt-duration-base) var(--apt-ease-out);
+}
+
+.apt-product:hover {
+  box-shadow: var(--apt-shadow-md);
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--apt-orange) 35%, var(--apt-border));
+}
+
+/* Étiquette factuelle (format, type d'équipement) plutôt qu'un argument
+   commercial : elle aide à situer le produit d'un coup d'œil. */
+.apt-product__tag {
+  align-self: flex-start;
+  margin: 0 0 var(--apt-space-4);
+  padding: 0.25rem 0.625rem;
+  background-color: var(--apt-bg-alt);
+  border-radius: var(--apt-radius-pill);
+  color: var(--apt-text-muted);
+  font-size: var(--apt-fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Pictogramme au trait, dessiné pour le site. Les photos officielles des
+   constructeurs sont protégées : elles ne sont pas embarquées. */
+.apt-product__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8.5rem;
+  margin-bottom: var(--apt-space-5);
+  background-color: var(--apt-bg-alt);
+  border-radius: var(--apt-radius-md);
+  color: var(--apt-brand-solid);
+}
+
+.apt-product__visual .apt-icon {
+  width: 3.25rem;
+  height: 3.25rem;
+}
+
+/* Illustration de l'équipement.
+   Chaque produit a son propre dessin (gabarit 160x96), tracé en currentColor
+   — donc dans la couleur de marque héritée de .apt-product__visual. Le
+   format est nettement plus large que haut : il occupe la bande sans la
+   remplir jusqu'aux bords, ce qui laisse respirer le dessin.
+   Aucune photo de constructeur n'est utilisée : les images de produits sont
+   des œuvres protégées, et les rares photos sous licence libre disponibles
+   représentaient d'autres générations de matériel que celles présentées
+   ici. Un dessin exact vaut mieux qu'une photo qui montre autre chose. */
+.apt-product__art {
+  width: 100%;
+  max-width: 12rem;
+  height: 6rem;
+}
+
+/* Photo du produit, quand elle est disponible.
+   Elle prime sur le dessin : une vraie photo du matériel vaut mieux qu'une
+   illustration. Les deux traitements cohabitent tant que le catalogue n'est
+   pas entièrement photographié. */
+.apt-product__visual--photo {
+  /* Les photos fournies sont détourées sur fond blanc. Le mode « multiply »
+     fait disparaître ce blanc dans le gris du panneau : la photo semble
+     posée dessus, sans le rectangle blanc qui trahirait un détourage
+     approximatif. Sur un fond clair, le reste de l'image est inchangé. */
+  overflow: hidden;
+}
+
+.apt-product__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--apt-space-1);
+  mix-blend-mode: multiply;
+}
+
+.apt-product__name {
+  font-size: var(--apt-fs-lg);
+  margin-bottom: var(--apt-space-4);
+}
+
+.apt-product__specs {
+  flex: 1;
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 var(--apt-space-5);
+  color: var(--apt-text-muted);
+  font-size: var(--apt-fs-sm);
+}
+
+.apt-product__specs > li {
+  position: relative;
+  margin-top: 0;
+  padding-left: var(--apt-space-5);
+}
+
+.apt-product__specs > li + li {
+  margin-top: var(--apt-space-2);
+}
+
+/* Puce ronde aux couleurs de la marque, comme dans le reste du site. */
+.apt-product__specs > li::before {
+  content: "";
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background-color: var(--apt-orange);
+}
+
+/* Pas de surcharge sur les sections à fond alterné : la carte est blanche
+   dans les deux cas (--apt-surface), donc la teinte --apt-bg-alt de la zone
+   visuelle et de l'étiquette s'y détache aussi bien. Une première version
+   les repassait en blanc sur ces sections, ce qui les faisait purement et
+   simplement disparaître — vérifié en capture. */

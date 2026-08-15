@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Signale que JavaScript est actif : les blocs animés ne sont masqués que dans ce cas. -->
+  <script>document.documentElement.classList.add('js');</script>
+  <title>Cloud computing à Ouagadougou — Infrastructure souveraine</title>
+  <meta name="description" content="Cloud sécurisé pour entreprises à Ouagadougou : migration progressive, AWS et Azure, réduction des coûts d’infrastructure. Audit de vos besoins.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://aquilaprimetech.com/services/cloud-computing.html">
+
+  <!-- Favicons -->
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/img/logo/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="../assets/img/logo/favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/img/logo/favicon-180.png">
+
+  <!-- Préchargement des polices critiques -->
+  <link rel="preload" href="../assets/fonts/montserrat-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/poppins-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Aquila Prime Technologies">
+  <meta property="og:url" content="https://aquilaprimetech.com/services/cloud-computing.html">
+  <meta property="og:title" content="Cloud computing à Ouagadougou — Infrastructure souveraine">
+  <meta property="og:description" content="Cloud sécurisé pour entreprises à Ouagadougou : migration progressive, AWS et Azure, réduction des coûts d’infrastructure. Audit de vos besoins.">
+  <!-- Image de partage : logo par défaut en attendant un visuel dédié.
+       À COMPLÉTER PAR LE CLIENT : image Open Graph 1200×630 dédiée -->
+  <meta property="og:image" content="https://aquilaprimetech.com/assets/img/logo/logo-couleur.png">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="394">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloud computing à Ouagadougou — Infrastructure souveraine">
+  <meta name="twitter:description" content="Cloud sécurisé pour entreprises à Ouagadougou : migration progressive, AWS et Azure, réduction des coûts d’infrastructure. Audit de vos besoins.">
+  <meta name="twitter:image" content="https://aquilaprimetech.com/assets/img/logo/logo-couleur.png">
+
+  <!-- JSON-LD : BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://aquilaprimetech.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://aquilaprimetech.com/services.html" },
+      { "@type": "ListItem", "position": 3, "name": "Cloud Computing", "item": "https://aquilaprimetech.com/services/cloud-computing.html" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD : Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Cloud computing à Ouagadougou — Infrastructure souveraine",
+    "description": "Cloud sécurisé : migration progressive, AWS/Azure, réduction coûts infra. Scalabilité, flexibilité. Audit gratuit.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Aquila Prime Technologies",
+      "url": "https://aquilaprimetech.com/",
+      "telephone": "+226-02-21-53-53",
+      "email": "info@aquilaprimetech.com",
+      "address": { "@type": "PostalAddress", "streetAddress": "Secteur 38", "addressLocality": "Ouagadougou", "addressCountry": "BF" }
+    },
+    "url": "https://aquilaprimetech.com/services/cloud-computing.html",
+    "areaServed": { "@type": "Country", "name": "Burkina Faso" }
+  }
+  </script>
+
+  <!-- JSON-LD : FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quels sont les risques de sécurité du cloud ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Les données cloud sont protégées par des mesures de sécurité souvent supérieures à celles des petites entreprises (chiffrement, redondance, audit). Le risque principal vient de la configuration : accès mal restreints, mots de passe faibles. Nous sécurisons votre configuration cloud dès le départ."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Combien coûte une migration cloud pour une PME ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le coût dépend de la taille de vos données, de la complexité de vos applications et du temps d'accompagnement. Nous proposons une phase d'audit gratuite pour estimer les investissements, puis un modèle de migration progressive pour répartir les coûts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Risquez-vous d'être dépendant du cloud provider ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "C'est un risque réel appelé « cloud lock-in ». Nous minimisons ce risque en utilisant des technologies cloud standard, en documentant votre architecture et en maintenant la capacité à exporter vos données facilement."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="apt-skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <!-- ==================================================================
+       EN-TÊTE (identique sur toutes les pages — voir brief/PATTERN-PAGE.md)
+       ================================================================== -->
+  <header class="apt-header" data-header>
+    <div class="apt-container apt-header__inner">
+      <a href="../index.html" class="apt-header__brand apt-logo-protect" aria-label="Aquila Prime Technologies — accueil">
+        <img src="../assets/img/logo/logo-couleur.png" alt="Aquila Prime Technologies"
+             class="apt-header__logo" width="220" height="54" loading="eager">
+      </a>
+
+      <nav class="apt-nav" aria-label="Navigation principale">
+        <ul class="apt-nav__list">
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="../a-propos.html">À propos</a></li>
+          <li class="apt-nav__item--has-mega">
+            <button class="apt-nav__trigger" aria-expanded="false" aria-controls="mega-services">
+              Services
+              <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+
+            <div id="mega-services" class="apt-mega" role="menu" hidden>
+              <div class="apt-container apt-mega__inner">
+                <ul class="apt-mega__grid" role="none">
+                  <li role="none">
+                    <a role="menuitem" href="vente-materiels-informatiques.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg>
+                      <span><strong>Vente de Matériels Informatiques</strong><small>Équipements dernière génération</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="infogerance.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+                      <span><strong>Infogérance</strong><small>Gestion IT externalisée</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="cloud-computing.html" aria-current="page" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.96A5 5 0 0 1 16.9 8.05 4.5 4.5 0 0 1 16.5 18H7Z"/><path d="M12 15V9M9 12l3-3 3 3"/></svg>
+                      <span><strong>Cloud Computing</strong><small>Données accessibles et sécurisées</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="cyber-securite.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+                      <span><strong>Cyber Sécurité</strong><small>Protection contre les cybermenaces</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="technologies-energie.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M13 7l-4 6h3l-1 4 5-6h-3l1-4Z"/></svg>
+                      <span><strong>Nouvelles Technologies de l'Énergie</strong><small>Transition énergétique d'entreprise</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="consultation-formation.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M4 20c0-3 2.5-5 5-5s5 2 5 5"/><path d="M16 6h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-1l-2 2v-2h-1a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z"/></svg>
+                      <span><strong>Consultation &amp; Formation</strong><small>Renforcement des compétences</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="audit-conformite.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M9 12l2 2 4-4"/></svg>
+                      <span><strong>Audit &amp; Conformité</strong><small>Contrôle et conformité aux normes</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="ingenierie-systeme.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1"/><rect x="3" y="10" width="18" height="5" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/><path d="M6 6.5h.01M6 12.5h.01"/></svg>
+                      <span><strong>Ingénierie Système</strong><small>Infrastructure informatique fiable</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="ingenierie-reseau.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="12" cy="11" r="2"/><path d="M7.5 7l3 3M16.5 7l-3 3M12 13v3"/></svg>
+                      <span><strong>Ingénierie Réseau</strong><small>Réseaux locaux et interconnectés</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="ingenierie-logicielle.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13 6l-2 12"/></svg>
+                      <span><strong>Ingénierie Logicielle</strong><small>Applications et logiciels sur mesure</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="business-intelligence.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V6M16 20V13M4 20h16"/><path d="M4 9l6-3 6 4 4-3"/></svg>
+                      <span><strong>Business Intelligence</strong><small>Données, indicateurs, tableaux de bord</small></span>
+                    </a>
+                  </li>
+                  <li role="none">
+                    <a role="menuitem" href="sauvegarde-reprise-sinistre.html" class="apt-mega__item">
+                      <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 1 2.5 5.8"/><path d="M4 17v-4h4"/><circle cx="12" cy="12" r="2.5"/></svg>
+                      <span><strong>Sauvegarde &amp; Reprise après Sinistre</strong><small>Continuité de votre activité</small></span>
+                    </a>
+                  </li>
+                </ul>
+                <a href="../services.html" class="apt-mega__all">
+                  Tous nos services
+                  <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li><a href="../boutique.html">Boutique</a></li>
+          <li><a href="../academy.html">Academy</a></li>
+          <li><a href="../partenaires.html">Partenaires</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="../contact.html" class="apt-btn apt-btn--primary apt-header__cta">Demander un devis</a>
+      <button class="apt-nav__burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu mobile plein écran -->
+  <div id="mobile-menu" class="apt-mobile-menu" hidden>
+    <div class="apt-container apt-mobile-menu__head">
+      <a href="../index.html" class="apt-header__brand apt-logo-protect" aria-label="Aquila Prime Technologies — accueil">
+        <img src="../assets/img/logo/logo-couleur.png" alt="Aquila Prime Technologies"
+             class="apt-header__logo" width="220" height="54" loading="lazy">
+      </a>
+      <button class="apt-mobile-menu__close" aria-label="Fermer le menu" data-menu-close>
+        <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <ul class="apt-mobile-menu__list">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="../a-propos.html">À propos</a></li>
+      <li>
+        <button class="apt-mobile-menu__sub-trigger" aria-expanded="false" aria-controls="mobile-services">
+          Services
+          <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul id="mobile-services" class="apt-mobile-menu__sub" hidden>
+          <li><a href="vente-materiels-informatiques.html">Vente de Matériels Informatiques</a></li>
+          <li><a href="infogerance.html">Infogérance</a></li>
+          <li><a href="cloud-computing.html" aria-current="page">Cloud Computing</a></li>
+          <li><a href="cyber-securite.html">Cyber Sécurité</a></li>
+          <li><a href="technologies-energie.html">Nouvelles Technologies de l'Énergie</a></li>
+          <li><a href="consultation-formation.html">Consultation &amp; Formation</a></li>
+          <li><a href="audit-conformite.html">Audit &amp; Conformité</a></li>
+          <li><a href="ingenierie-systeme.html">Ingénierie Système</a></li>
+          <li><a href="ingenierie-reseau.html">Ingénierie Réseau</a></li>
+          <li><a href="ingenierie-logicielle.html">Ingénierie Logicielle</a></li>
+          <li><a href="business-intelligence.html">Business Intelligence</a></li>
+          <li><a href="sauvegarde-reprise-sinistre.html">Sauvegarde &amp; Reprise après Sinistre</a></li>
+          <li><a href="../services.html">Tous nos services</a></li>
+        </ul>
+      </li>
+      <li><a href="../boutique.html">Boutique</a></li>
+      <li><a href="../academy.html">Academy</a></li>
+      <li><a href="../partenaires.html">Partenaires</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <div class="apt-container">
+      <a href="../contact.html" class="apt-btn apt-btn--primary apt-btn--block apt-mobile-menu__cta">Demander un devis</a>
+    </div>
+  </div>
+
+  <main id="contenu">
+
+    <!-- Fil d'Ariane -->
+    <nav class="apt-breadcrumb apt-section--sm" aria-label="Fil d'Ariane">
+      <div class="apt-container">
+        <ol>
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li aria-current="page">Cloud Computing</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Hero de page interne -->
+    <section class="apt-hero--page apt-section--sm">
+      <svg class="apt-pattern-feathers" viewBox="0 0 400 400" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5">
+          <path d="M40 360C120 320 160 240 150 120" />
+          <path d="M120 375C185 340 210 260 200 140" />
+        </g>
+      </svg>
+      <div class="apt-container">
+        <span class="apt-eyebrow">
+          <svg class="apt-icon apt-icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 18a4 4 0 0 1-.6-7.96A5 5 0 0 1 16.9 8.05 4.5 4.5 0 0 1 16.5 18H7Z"/><path d="M12 15V9M9 12l3-3 3 3"/></svg>
+          Infrastructure cloud souveraine
+        </span>
+        <h1>Accès rapide à vos données délocalisées, sans coûts élevés d'infrastructure sur site</h1>
+        <p class="apt-hero--page__lead">Le cloud computing vous permet de déplacer vos données, applications et infrastructure informatique sur des serveurs distants sécurisés, accessibles partout via Internet.</p>
+      </div>
+    </section>
+
+    <section class="apt-section">
+      <div class="apt-container apt-service-article">
+        <p class="apt-service-article__lead">Le cloud computing vous permet de déplacer vos données, applications et infrastructure informatique sur des serveurs distants sécurisés, accessibles partout via Internet. Aquila Prime Technologies vous offre une transition cloud progressive et sécurisée, réduisant vos investissements en infrastructure tout en gagnant en flexibilité et en scalabilité.</p>
+
+        <section>
+          <h2>Le défi</h2>
+          <p>Beaucoup d'entreprises ouest-africaines voient le cloud comme inaccessible&nbsp;: coûts d'infrastructure locale élevés, infrastructure réseau instable dans la région, craintes sur la sécurité des données hébergées à l'étranger, dépendance à Internet peu fiable. Passer au cloud semble complexe et risqué, sans guidance d'expert.</p>
+        </section>
+
+        <section>
+          <h2>Notre réponse</h2>
+          <p>Nous vous guidons pas à pas dans votre transition cloud, en sélectionnant le modèle adapté (IaaS, PaaS, SaaS), en intégrant progressivement applications et données, et en mettant en place la sécurité nécessaire. Nous vous aidons à évaluer les coûts, optimiser vos consommations cloud et maintenir performance et disponibilité.</p>
+        </section>
+
+        <section>
+          <h2>Ce que nous prenons en charge</h2>
+          <ul class="apt-service-list">
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Audit cloud et stratégie</strong> — Évaluation de votre patrimoine IT, identification des applications migables, business case</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Migration progressive</strong> — Déplacement sécurisé de vos données et applications vers le cloud</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Architecture cloud</strong> — Conception d'une infrastructure cloud performante, scalable et sécurisée</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Configuration et intégration</strong> — Mise en place des environnements (dev, staging, production), intégration avec systèmes existants</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Monitoring et optimisation</strong> — Surveillance continue, tuning des performances, réduction des coûts cloud</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Sécurité et conformité cloud</strong> — Chiffrement des données, contrôles d'accès, audit de conformité</span>
+            </li>
+            <li>
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg>
+              <span><strong>Support et maintenance</strong> — Support technique escaladé, gestion des mises à jour cloud</span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Les bénéfices pour vous</h2>
+          <div class="apt-benefits">
+            <div class="apt-benefit-box">
+              <h3>Réduction des investissements</h3>
+              <p>Plus de gros capex en serveurs et infrastructure, modèle opex flexible</p>
+            </div>
+            <div class="apt-benefit-box">
+              <h3>Scalabilité</h3>
+              <p>Augmentez ou réduisez vos ressources en fonction de vos besoins</p>
+            </div>
+            <div class="apt-benefit-box">
+              <h3>Accessibilité</h3>
+              <p>Accédez vos données et applications de n'importe où, en toute sécurité</p>
+            </div>
+            <div class="apt-benefit-box">
+              <h3>Fiabilité</h3>
+              <p>Infrastructure hautement disponible et redondante, sauvegardes automatiques</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Pour qui</h2>
+          <ul class="apt-check-list">
+            <li><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Startup en croissance</li>
+            <li><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> PME en transformation digitale</li>
+            <li><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Entreprises avec activité saisonnière</li>
+            <li><svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg> Organisations distribuées géographiquement</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Technologies et partenaires mobilisés</h2>
+          <ul class="apt-wordmarks apt-cards-center">
+            <li class="apt-wordmark" tabindex="0" data-logo="amazon" data-logo-dir="partners"><img src="../assets/img/partners/amazon.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Amazon</span></li>
+            <li class="apt-wordmark" tabindex="0" data-logo="oracle" data-logo-dir="partners"><img src="../assets/img/partners/oracle.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Oracle</span></li>
+            <li class="apt-wordmark" tabindex="0" data-logo="microsoft" data-logo-dir="partners"><img src="../assets/img/partners/microsoft.svg" alt="" loading="lazy" class="apt-wordmark__logo"><span class="apt-wordmark__name">Microsoft</span></li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Questions fréquentes</h2>
+          <div class="apt-accordion">
+            <div class="apt-accordion__item">
+              <h3>
+                <button class="apt-accordion__trigger" aria-expanded="false" aria-controls="faq-1" id="faq-1-trigger">
+                  Quels sont les risques de sécurité du cloud&nbsp;?
+                  <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="apt-accordion__panel" id="faq-1" role="region" aria-labelledby="faq-1-trigger" hidden>
+                <p>Les données cloud sont protégées par des mesures de sécurité souvent supérieures à celles des petites entreprises (chiffrement, redondance, audit). Le risque principal vient de la configuration&nbsp;: accès mal restreints, mots de passe faibles. Nous sécurisons votre configuration cloud dès le départ.</p>
+              </div>
+            </div>
+            <div class="apt-accordion__item">
+              <h3>
+                <button class="apt-accordion__trigger" aria-expanded="false" aria-controls="faq-2" id="faq-2-trigger">
+                  Combien coûte une migration cloud pour une PME&nbsp;?
+                  <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="apt-accordion__panel" id="faq-2" role="region" aria-labelledby="faq-2-trigger" hidden>
+                <p>Le coût dépend de la taille de vos données, de la complexité de vos applications et du temps d'accompagnement. Nous proposons une phase d'audit gratuite pour estimer les investissements, puis un modèle de migration progressive pour répartir les coûts.</p>
+              </div>
+            </div>
+            <div class="apt-accordion__item">
+              <h3>
+                <button class="apt-accordion__trigger" aria-expanded="false" aria-controls="faq-3" id="faq-3-trigger">
+                  Risquez-vous d'être dépendant du cloud provider&nbsp;?
+                  <svg class="apt-icon apt-icon--chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+              </h3>
+              <div class="apt-accordion__panel" id="faq-3" role="region" aria-labelledby="faq-3-trigger" hidden>
+                <p>C'est un risque réel appelé «&nbsp;cloud lock-in&nbsp;». Nous minimisons ce risque en utilisant des technologies cloud standard, en documentant votre architecture et en maintenant la capacité à exporter vos données facilement.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="apt-service-article__cta">
+          <h2>Explorez la migration cloud adaptée à votre secteur</h2>
+          <a href="../contact.html" class="apt-btn apt-btn--primary">Demander une évaluation cloud</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Maillage interne -->
+    <section class="apt-section apt-section--alt">
+      <div class="apt-container">
+        <div class="apt-section__head apt-section__head--center">
+          <span class="apt-eyebrow">Services complémentaires</span>
+          <h2>À découvrir également</h2>
+        </div>
+        <div class="apt-grid-3">
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="5" rx="1"/><rect x="3" y="10" width="18" height="5" rx="1"/><rect x="3" y="16" width="18" height="4" rx="1"/><path d="M6 6.5h.01M6 12.5h.01"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Ingénierie Système</h3>
+            <p class="apt-card-service__text">Concevoir une infrastructure hybride (sur site + cloud)</p>
+            <a href="ingenierie-systeme.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Cyber Sécurité</h3>
+            <p class="apt-card-service__text">Sécuriser vos données et accès cloud</p>
+            <a href="cyber-securite.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+          <article class="apt-card-service" data-reveal>
+            <div class="apt-card-service__icon">
+              <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V6M16 20V13M4 20h16"/><path d="M4 9l6-3 6 4 4-3"/></svg>
+            </div>
+            <h3 class="apt-card-service__title">Business Intelligence</h3>
+            <p class="apt-card-service__text">Analyser vos données cloud pour optimiser votre activité</p>
+            <a href="business-intelligence.html" class="apt-btn apt-btn--tertiary">En savoir plus
+              <svg class="apt-icon apt-icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bandeau CTA final -->
+    <section class="apt-cta-final apt-bg-gradient-brand apt-section--sm">
+      <svg class="apt-pattern-feathers" viewBox="0 0 400 400" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".5">
+          <path d="M40 360C120 320 160 240 150 120" />
+          <path d="M200 380C245 350 260 280 250 160" />
+        </g>
+      </svg>
+      <div class="apt-container apt-cta-final__inner">
+        <div>
+          <h2>Passez au cloud à votre rythme</h2>
+          <p class="apt-cta-final__lead">Accédez rapidement à vos données délocalisées et évitez les coûts élevés d'une infrastructure sur site, grâce à une migration progressive et maîtrisée.</p>
+        </div>
+        <div class="apt-btn-group">
+          <a href="../contact.html" class="apt-btn apt-btn--primary">Nous contacter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================================================================
+       PIED DE PAGE (identique sur toutes les pages — voir brief/PATTERN-PAGE.md)
+       ================================================================== -->
+  <footer class="apt-footer">
+    <div class="apt-container apt-footer__top">
+      <div class="apt-footer__col apt-footer__col--brand apt-logo-protect">
+        <img src="../assets/img/logo/logo-blanc.png" alt="Aquila Prime Technologies" width="180" height="44" loading="lazy">
+        <p>« Connecter l'innovation à vos ambitions pour inventer demain, dès aujourd'hui »</p>
+      </div>
+      <nav class="apt-footer__col" aria-label="Nos services">
+        <h3>Nos services</h3>
+        <ul>
+          <li><a href="infogerance.html">Infogérance</a></li>
+          <li><a href="cyber-securite.html">Cyber Sécurité</a></li>
+          <li><a href="cloud-computing.html">Cloud Computing</a></li>
+          <li><a href="ingenierie-logicielle.html">Ingénierie Logicielle</a></li>
+          <li><a href="consultation-formation.html">Consultation &amp; Formation</a></li>
+          <li><a href="business-intelligence.html">Business Intelligence</a></li>
+          <li><a href="../services.html">Tous nos services</a></li>
+        </ul>
+      </nav>
+      <nav class="apt-footer__col" aria-label="Entreprise">
+        <h3>Entreprise</h3>
+        <ul>
+          <li><a href="../a-propos.html">À propos</a></li>
+          <li><a href="../boutique.html">Boutique</a></li>
+          <li><a href="../academy.html">Aquila Academy</a></li>
+          <li><a href="../partenaires.html">Partenaires</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </nav>
+      <div class="apt-footer__col" aria-label="Coordonnées">
+        <h3>Contact</h3>
+        <ul>
+          <li>Secteur 38, Ouagadougou, Burkina Faso</li>
+          <li><a href="tel:+22602215353">+226 02 21 53 53</a></li>
+          <li><a href="tel:+22604446969">+226 04 44 69 69</a></li>
+          <li><a href="mailto:info@aquilaprimetech.com">info@aquilaprimetech.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="apt-container apt-footer__bottom">
+      <p>© <span data-current-year>2026</span> Aquila Prime Technologies. Tous droits réservés.</p>
+      <p><a href="../mentions-legales.html">Mentions légales</a></p>
+    </div>
+  </footer>
+
+  <button class="apt-back-to-top" aria-label="Retour en haut de page" data-back-to-top hidden>
+    <svg class="apt-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
